@@ -1,0 +1,8 @@
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_100_1.xtc top1_fdu_solvated_1_100.pdb top1_FDU_nowat_100_1.xtc top1_FDU_nowat_100_1.pdb 1 1000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_100_2.xtc top1_fdu_solvated_2_100.pdb top1_FDU_nowat_100_2.xtc top1_FDU_nowat_100_2.pdb 1 1000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_100_3.xtc top1_fdu_solvated_3_100.pdb top1_FDU_nowat_100_3.xtc top1_FDU_nowat_100_3.pdb 1 1000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_100_4.xtc top1_fdu_solvated_4_100.pdb top1_FDU_nowat_100_4.xtc top1_FDU_nowat_100_4.pdb 1 1000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_10_1.xtc top1_fdu_solvated_1_10.pdb top1_FDU_nowat_10_1.xtc top1_FDU_nowat_10_1.pdb 1 10000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_10_2.xtc top1_fdu_solvated_2_10.pdb top1_FDU_nowat_10_2.xtc top1_FDU_nowat_10_2.pdb 1 10000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_10_3.xtc top1_fdu_solvated_3_10.pdb top1_FDU_nowat_10_3.xtc top1_FDU_nowat_10_3.pdb 1 10000 0-9310
+python /deac/phy/salsburyGrp/group_python/process_trajectory_large_atomrange.py top1_FDU_solvated_wrapped_10_4.xtc top1_fdu_solvated_4_10.pdb top1_FDU_nowat_10_4.xtc top1_FDU_nowat_10_4.pdb 1 10000 0-9310
