@@ -1,0 +1,5 @@
+# Ignore all files in the SANDBOX and CSH directores 
+SANDBOX/
+CSH/
+meta.yml
+__init__.py  

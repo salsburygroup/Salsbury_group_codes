@@ -1,0 +1,18 @@
+package:
+  name: salsbury Group Python Codes
+  version: 0.1
+  packages=find_packages(exclude=["SANDBOX", "CSH"]
+source:
+  path: ..
+
+build:
+  script: python setup.py install
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
