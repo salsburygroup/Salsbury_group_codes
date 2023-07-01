@@ -1,4 +1,0 @@
-python /deac/phy/salsburyGrp/group_python/calculate_pca_projections.py top1_FDU_nowat_10_1.pdb 1a35_FDU_nowat_10_merged.xtc all 1a35_FDU
-python /deac/phy/salsburyGrp/group_python/calculate_FES_PCA.py 1a35_FDU_projections.txt 1a35_FDU
-python /deac/phy/salsburyGrp/group_python/find_minima_find_structures.py 1a35_FDU_bins_16_free_energy.txt 1a35_FDU_bin_indices.txt 1a35_FDU
-python/deac/phy/salsburyGrp/group_python/ extract_structures_minima.py 1a35_FDU_projection_minima.txt 1a35_FDU_nowat_10_merged.xtc top1_FDU_nowat_10_2.pdb 1a35_FDU
