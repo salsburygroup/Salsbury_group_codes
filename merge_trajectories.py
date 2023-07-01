@@ -14,7 +14,9 @@ def concatenate_trajectories(files, topology, output, chunk_size, reference_stru
             alignment.run(step=chunk_size)
 
             for ts in u.trajectory:
+                align.alignto(u_atoms, ref_atoms)
                 W.write(u_atoms)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Concatenate and align multiple MD trajectories.")

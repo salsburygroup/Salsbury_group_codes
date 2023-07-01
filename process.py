@@ -174,7 +174,10 @@ if __name__ == "__main__":
     parser.add_argument('--pdb_prefix', type=str, default="ionized", help='Prefix for the pdb files.')
     parser.add_argument('--psf_prefix', type=str, default="ionized", help='Prefix for the psf files.')
     parser.add_argument('--length', type=int, default=1000, help='Total length of the trajectory.')
-    parser.add_argument('--nowat_psf_prefix', type=str, default="{prefix}_autopsf", help='Prefix for the no-water psf files.')
+    # Parse the known arguments to get the prefix value
+    known_args, remaining = parser.parse_known_args()
+    # Add the '--nowat_psf_prefix' argument using the prefix value
+    parser.add_argument('--nowat_psf_prefix', type=str, default=f"{known_args.prefix}_autopsf", help='Prefix for the no-water psf files.')
     parser.add_argument('--merge_selection', type=str, default="all", help='Selection for merge_trajectories.py script.')
     parser.add_argument('--norun', action='store_true', help='If provided, the script only writes the commands to a .csh file instead of running them.')
     parser.add_argument('--corr_range', type=str, help='Range for calculate_corr.py script.')
