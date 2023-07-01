@@ -8,6 +8,9 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
 
     first_value = length // 10
     second_value = length // 100
+    # Check if second_value equals to 1, if so, set it to 2; seems to be bug in process and wrap when its 1
+    if second_value == 1:
+      second_value = 2
     first_multiplier = 1000
     second_multiplier = 10000
     smaller_number = min(first_value, second_value)
@@ -121,7 +124,6 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     commands.append(f"mv *minima* {pca_dir}/")
     commands.append(f"mv *bin* {pca_dir}/")
     commands.append(f"mv *corner* {pca_dir}/") 
-    commands.append(f"mv *contour* {pca_dir}/")
     # HDBSCAN Clustering
     command = f"python {os.path.join(script_path, 'cluster_HDBSCAN.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
     commands.append(command)
