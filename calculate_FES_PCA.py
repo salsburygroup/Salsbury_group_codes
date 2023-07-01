@@ -33,26 +33,30 @@ np.savetxt(f'{args.output_prefix}_bin_indices.txt', bin_indices, fmt='%d')
 free_energy = np.full(hist.shape, np.inf)  # initialize with infinities
 mask = hist > 0  # create a mask for non-zero elements
 free_energy[mask] = -k_b * T * np.log(hist[mask])
-
 # Shift energy scale to set global minimum at 0
 min_fe = np.min(free_energy[mask])
 free_energy[mask] -= min_fe
-
 # Prepare filename
 output_filename = f"{args.output_prefix}_bins_{num_bins}_free_energy"
+output_filename2 = f"{args.output_prefix}_free_energy"
 
 # Save free energy surface to a text file
 np.savetxt(f'{output_filename}.txt', free_energy)
 
+free_energy_transposed = np.transpose(free_energy)
 # Plot free energy surface with linear color scale
 plt.figure(figsize=(6, 5))
-plt.imshow(free_energy, origin='lower', extent=(x_edges[0], x_edges[-1], y_edges[0], y_edges[-1]))
+plt.imshow(free_energy_transposed, origin='lower', extent=(x_edges[0], x_edges[-1], y_edges[0], y_edges[-1]))
 plt.colorbar(label='Free energy (kcal/mol)')
 plt.xlabel('PC1')
 plt.ylabel('PC2')
-plt.title('Free energy surface')
-plt.savefig(f'{output_filename}.png')
+plt.savefig(f'{output_filename}.png')  # Save the plot
 
-# Show the plot on the screen
-plt.show()
+# Create a filled contour plot of the free energy surface
+plt.figure(figsize=(6, 5))
+plt.contourf((x_edges[1:] + x_edges[:-1]) / 2, (y_edges[1:] + y_edges[:-1]) / 2, free_energy_transposed, levels=15, cmap='viridis')
+plt.colorbar(label='Free energy (kcal/mol)')
+plt.xlabel('PC1')
+plt.ylabel('PC2')
+plt.savefig(f'{output_filename2}_contour.png')  # Save the contour plot
 
