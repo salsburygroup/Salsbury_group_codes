@@ -1,8 +1,0 @@
-# Ignore all files in the SANDBOX and CSH directores 
-SANDBOX/
-CSH/
-SCREENING/
-setup.py
-meta.yaml
-__init__.py
-.gitignore 
