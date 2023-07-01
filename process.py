@@ -95,13 +95,17 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     command = f"python {os.path.join(script_path, 'calculate_pca_projections.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix}"
     commands.append(command)
 
-    # calculate_FES_PCA.py
-    command = f"python {os.path.join(script_path, 'calculate_FES_PCA.py')}  {prefix}_projections.txt {prefix}"
+   # corner plot
+    command = f"python {os.path.join(script_path, 'calculate_pca_corner.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix} 5"
     commands.append(command)
-
-    # Calculate bin number
+ 
+   # Calculate bin number
     bin_number = round(1 + math.log2(n*length*100/smaller_number))
     bins = bins if bins is not None else bin_number
+
+   # calculate_FES_PCA.py
+    command = f"python {os.path.join(script_path, 'calculate_FES_PCA.py')}  {prefix}_projections.txt {prefix} -b {bins}"
+    commands.append(command)
 
    # find_minima_find_structures.py
     command = f"python {os.path.join(script_path, 'find_minima_find_structures.py')} {prefix}_bins_{bins}_free_energy.txt {prefix}_bin_indices.txt {prefix}"
@@ -116,7 +120,8 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     commands.append(f"mv *energy* {pca_dir}/")
     commands.append(f"mv *minima* {pca_dir}/")
     commands.append(f"mv *bin* {pca_dir}/")
-  
+    commands.append(f"mv *corner* {pca_dir}/") 
+    commands.append(f"mv *contour* {pca_dir}/")
     # HDBSCAN Clustering
     command = f"python {os.path.join(script_path, 'cluster_HDBSCAN.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
     commands.append(command)
