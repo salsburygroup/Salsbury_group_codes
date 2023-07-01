@@ -3,6 +3,6 @@ SANDBOX/
 CSH/
 SCREENING/
 setup.py
-meta.yml
+meta.yaml
 __init__.py
 .gitignore 
