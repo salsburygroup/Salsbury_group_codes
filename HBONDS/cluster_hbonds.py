@@ -48,16 +48,19 @@ def cluster_hbonds(prefix, hbond_file=None):
     unique, counts = np.unique(cluster_labels, return_counts=True)
     cluster_occupancies = np.asarray((unique, counts)).T
 
-    # Write the cluster occupancies to a file
+    # Sort clusters by occupancy (counts) in descending order
+    cluster_occupancies = cluster_occupancies[cluster_occupancies[:,1].argsort()[::-1]]
+
+    # Write the sorted cluster occupancies to a file
     np.savetxt(f'{output_prefix}_cluster_occupancies.txt', cluster_occupancies, fmt='%d')
 
-    # Write the hydrogen bonds in each cluster to a file
-    for cluster in unique:
+    # Write the hydrogen bonds in each of the top 10 clusters (if they exist) to files
+    for cluster, _ in cluster_occupancies[:10]:
         if cluster != -1:  # exclude noise points labelled as -1
             indices = [i for i, x in enumerate(cluster_labels) if x == cluster]
-            cluster_hbonds = [unique_hbond_ids[i] for i in indices]
-            np.savetxt(f'{output_prefix}_cluster_{cluster}.txt', cluster_hbonds, fmt='%s')
-
+            cluster_hbonds = np.where(hbond_vectors[indices].any(axis=0))[0]
+            cluster_hbond_ids = [unique_hbond_ids[i] for i in cluster_hbonds]
+            np.savetxt(f'{output_prefix}_cluster_{int(cluster)}.txt', cluster_hbond_ids, fmt='%s')
 def main():
     parser = argparse.ArgumentParser(description='Cluster frames by hydrogen bonds.')
     parser.add_argument('prefix', help='Prefix for the output files.')
@@ -68,4 +71,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

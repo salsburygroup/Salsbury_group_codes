@@ -32,8 +32,8 @@ def calculate_rmsf(structure_file, xtc_file, output_name, selection='all', selec
     # Plot the RMSF and save the plot
     plt.figure()
     plt.plot(rmsf)
-    plt.xlabel('Atom')
-    plt.ylabel('RMSF')
+    plt.xlabel('Atom Number')
+    plt.ylabel('RMSF (Å) ')
     plt.title(f'RMSF Plot ({selection_name})')
     plt.savefig(f'{output_name}_{selection_name}_rmsf_plot.png')
     plt.close()

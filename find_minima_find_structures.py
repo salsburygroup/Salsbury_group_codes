@@ -31,6 +31,9 @@ smooth_energy = gaussian_filter(free_energy, sigma=1)
 # Save the smoothed energy surface to a text file
 np.savetxt(f'{args.output_prefix}_smooth_energy.txt', smooth_energy)
 
+#transpose due to imshow
+smooth_energy_transposed = np.transpose(smooth_energy)
+
 # Plot the smoothed energy surface and save it as a PNG image
 plt.imshow(smooth_energy, origin='lower')
 plt.colorbar(label='Smoothed energy')
