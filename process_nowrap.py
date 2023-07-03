@@ -8,9 +8,6 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
 
     first_value = length // 10
     second_value = length // 100
-    # Check if second_value equals to 1, if so, set it to 2; seems to be bug in process and wrap when its 1
-    if second_value == 1:
-      second_value = 2
     first_multiplier = 1000
     second_multiplier = 10000
     smaller_number = min(first_value, second_value)
@@ -37,13 +34,8 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
             command = f"python {os.path.join(script_path, 'process_trajectory_juststride.py')} {prefix}_{i}.xtc {pdb_prefix}.pdb {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {value} {multiplier}"
             commands.append(command)
 
-            # wrap.py
-            htmd_conda_path = "/home/salsbufr/anaconda3/bin/"  # Replace with your path to conda's bin
-            command = f"{conda_path}conda run -n htmd python {os.path.join(script_path, 'wrap.py')} -t {prefix}_{value}_{i}.xtc -s {psf_prefix}.psf -o {prefix}_solvated_wrapped_{value}_{i}.xtc"
-            commands.append(command)
-
             # process_trajectory_large_atomrange.py
-            command = f"python {os.path.join(script_path, 'process_trajectory_large_atomrange.py')} {prefix}_solvated_wrapped_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb 1 {multiplier} {atom_range}"
+            command = f"python {os.path.join(script_path, 'process_trajectory_large_atomrange.py')} {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb 1 {multiplier} {atom_range}"
             commands.append(command)
 
             # calculate_rmsd.py
