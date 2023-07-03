@@ -58,5 +58,5 @@ plt.contourf((x_edges[1:] + x_edges[:-1]) / 2, (y_edges[1:] + y_edges[:-1]) / 2,
 plt.colorbar(label='Free energy (kcal/mol)')
 plt.xlabel('PC1')
 plt.ylabel('PC2')
-plt.savefig(f'{output_filename2}_contour.png')  # Save the contour plot
+plt.savefig(f'{output_filename}_contour.png')  # Save the contour plot
 
