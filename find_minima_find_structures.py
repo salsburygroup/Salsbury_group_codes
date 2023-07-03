@@ -15,6 +15,11 @@ args = parser.parse_args()
 free_energy = np.loadtxt(args.energy_file)
 bin_indices = np.loadtxt(args.indices_file, dtype=int)
 
+
+# Generate bin centers filename and load bin centers
+bin_centers_file = args.energy_file.replace('_free_energy.txt', '_centers_free_energy.txt')
+bin_centers = np.loadtxt(bin_centers_file)
+
 # Check if bin_indices have the right shape, if not, reshape
 if bin_indices.ndim == 1:
     bin_indices = bin_indices.reshape(-1, 2)
@@ -32,7 +37,7 @@ smooth_energy = gaussian_filter(free_energy, sigma=1)
 np.savetxt(f'{args.output_prefix}_smooth_energy.txt', smooth_energy)
 
 #transpose due to imshow
-smooth_energy_transposed = np.transpose(smooth_energy)
+#smooth_energy_transposed = np.transpose(smooth_energy)
 
 # Plot the smoothed energy surface and save it as a PNG image
 plt.imshow(smooth_energy, origin='lower')
@@ -49,12 +54,10 @@ diff = smooth_energy - min_filtered
 peaks = np.where(diff == 0)
 
 # Extract the coordinates of the local minima
-minima = np.column_stack(peaks)
-
-# Assign unique labels to the minima
+minima = np.column_stack(peaks) # Assign unique labels to the minima
 labels = np.arange(len(minima)) + 1
 
-# Output the bin coordinates and labels of the minima
+# Output the big coordinates and labels of the minima
 minima_bins = np.column_stack([minima, labels])
 np.savetxt(f'{args.output_prefix}_minima_bins.txt', minima_bins, fmt='%d')
 
@@ -67,7 +70,7 @@ for i, bin_coord in enumerate(bin_indices):
     for j, minima_coord in enumerate(minima_coords):
         if np.array_equal(bin_coord, minima_coord):
             minima_mask[i] = labels[j]
-            projection_minima.append((i + 1, labels[j]))  # i + 1 because of 1-based indexing
+            projection_minima.append((i + 1, labels[j], minima_coord[0], minima_coord[1]))  # i + 1 because of 1-based indexing and added minima_coord for coordinates
             break
 
 # Output the labels of the local minima that each bin belongs to
@@ -77,6 +80,23 @@ np.savetxt(f'{args.output_prefix}_projection_minima.txt', projection_minima, fmt
 # Calculate the percentage of total projections for each minima
 unique, counts = np.unique(projection_minima[:, 1], return_counts=True)
 percentages = counts / bin_indices.shape[0] * 100
-minima_percentages = np.column_stack((unique, percentages))
-np.savetxt(f'{args.output_prefix}_minima_percentages.txt', minima_percentages, fmt=['%d', '%.2f'])
+
+# Reshape unique array to 2D
+unique = unique.reshape(-1, 1)
+
+# Fetch corresponding minima_coords and bin_centers for unique labels
+minima_coords_unique = [minima_coords[np.where(labels == u)[0][0]] for u in unique]
+bin_centers_unique = [bin_centers[np.ravel_multi_index(minima_coords[np.where(labels == u)[0][0]], free_energy.shape)] for u in unique]
+
+# Convert lists to 2D arrays
+minima_coords_unique = np.array(minima_coords_unique)
+bin_centers_unique = np.array(bin_centers_unique)
+
+# Reshape percentages to 2D
+percentages = percentages.reshape(-1, 1)
+
+# Join unique, minima_coords_unique, bin_centers_unique, and percentages
+minima_percentages_with_coords_centers = np.hstack((unique, minima_coords_unique, bin_centers_unique, percentages))
+
+np.savetxt(f'{args.output_prefix}_minima_percentages.txt', minima_percentages_with_coords_centers, fmt=['%d', '%d', '%d', '%.2f', '%.2f', '%.2f'])
 

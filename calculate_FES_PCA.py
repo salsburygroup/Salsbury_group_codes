@@ -23,27 +23,41 @@ num_bins = args.bins if args.bins is not None else int(round(1 + np.log2(project
 # Calculate 2D histogram and bin edges
 hist, x_edges, y_edges = np.histogram2d(projections[:, 0], projections[:, 1], bins=num_bins, density=True)
 
+# Calculate bin centers
+x_centers = x_edges[:-1] + 0.5 * (x_edges[1] - x_edges[0])
+y_centers = y_edges[:-1] + 0.5 * (y_edges[1] - y_edges[0])
+
+# Manually create bin centers to match the orientation of free_energy and bin_indices
+bin_centers = np.array([[x, y] for y in y_centers for x in x_centers])
+
 # Calculate bin indices for each projection
 bin_indices = np.vstack([np.digitize(projections[:, i], bins=[x_edges, y_edges][i])-1 for i in range(2)]).T
-
+bin_indices = np.flip(bin_indices)
 # Save bin indices to a file
 np.savetxt(f'{args.output_prefix}_bin_indices.txt', bin_indices, fmt='%d')
+
+# Save bin centers to a file
+np.savetxt(f'{args.output_prefix}_bins_{num_bins}_centers_free_energy.txt', bin_centers)
 
 # Calculate free energy only for bins with non-zero population
 free_energy = np.full(hist.shape, np.inf)  # initialize with infinities
 mask = hist > 0  # create a mask for non-zero elements
 free_energy[mask] = -k_b * T * np.log(hist[mask])
+
 # Shift energy scale to set global minimum at 0
 min_fe = np.min(free_energy[mask])
 free_energy[mask] -= min_fe
+
 # Prepare filename
 output_filename = f"{args.output_prefix}_bins_{num_bins}_free_energy"
 output_filename2 = f"{args.output_prefix}_free_energy"
 
-# Save free energy surface to a text file
-np.savetxt(f'{output_filename}.txt', free_energy)
-
+# Transpose free energy array before saving
 free_energy_transposed = np.transpose(free_energy)
+
+# Save free energy surface to a text file
+np.savetxt(f'{output_filename}.txt', free_energy_transposed)
+
 # Plot free energy surface with linear color scale
 plt.figure(figsize=(6, 5))
 plt.imshow(free_energy_transposed, origin='lower', extent=(x_edges[0], x_edges[-1], y_edges[0], y_edges[-1]))
