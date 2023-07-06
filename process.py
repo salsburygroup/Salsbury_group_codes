@@ -141,7 +141,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
 
     # Move everything from the prefix directory into the HDBSCAN directory and remove the prefix directory
     commands.append(f"mv {prefix}/* {hdbscan_dir}/")
-    #commands.append(f"rmdir {prefix}")
+    commands.append(f"rmdir {prefix}")
 
     # AH Clustering
     command = f"python {os.path.join(script_path, 'cluster_AH.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
@@ -159,8 +159,8 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     commands.append(f"mv *AH* {AH_dir}/")
 
     # Move everything from the prefix directory into the AH directory 
-    #commands.append(f"mv {prefix}/* {AH_dir}/")
-
+    commands.append(f"mv {prefix}/* {AH_dir}/")
+    commands.append(f"rmdir {prefix}")
     #HBOND analysis
     command = f"python {os.path.join(script_path, 'HBONDS', 'find_hbonds.py')} {start_dir}/{nowat_psf_prefix}.psf  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
     commands.append(command)
