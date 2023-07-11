@@ -58,7 +58,7 @@ def plot_correlation_matrix(correlation_matrix, filename, alignment):
     plt.xlabel('Residue Index')
     plt.ylabel('Residue Index')
     plt.savefig(f"{filename}_{alignment}_correlation_matrix.png")
-    plt.show()
+    #plt.show()
     plt.close()
 
 def save_correlation_matrix(correlation_matrix, filename, alignment):

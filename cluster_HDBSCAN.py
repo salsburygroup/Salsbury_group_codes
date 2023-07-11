@@ -47,7 +47,7 @@ plt.xlabel('Time (frame number)')
 plt.ylabel('Cluster number')
 plt.title('Cluster number versus time')
 plt.savefig(f'{args.prefix}_HDBSCAN_cluster_vs_time.png')
-plt.show(block=True)
+#plt.show(block=True)
 
 # Plot cluster occupancies versus cluster number, sorted by occupancy
 plt.figure(figsize=(10, 6))
@@ -59,7 +59,7 @@ plt.title('Cluster occupancies versus cluster number')
 plt.xticks(rotation=90)
 plt.tight_layout()
 plt.savefig(f'{args.prefix}_HDBSCAN_occupancy_vs_cluster.png')
-plt.show(block=True)
+#plt.show(block=True)
 
 # Plot cumulative sum of sorted occupancies
 plt.figure(figsize=(10, 6))
@@ -70,5 +70,5 @@ plt.ylabel('Cumulative occupancy')
 plt.title('Cumulative sum of sorted occupancies')
 plt.tight_layout()
 plt.savefig(f'{args.prefix}_HDBSCAN_cumulative_occupancy.png')
-plt.show(block=True)
+#plt.show(block=True)
 

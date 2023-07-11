@@ -71,5 +71,5 @@ if __name__ == "__main__":
     for ax in axs:
         ax.set(xlabel='Atom', ylabel='RMSF')
     plt.tight_layout()
-    plt.show()
+    #plt.show()
 

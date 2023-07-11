@@ -43,7 +43,7 @@ def calculate_rmsd(input_xtc, input_top, input_name):
     fig2.savefig(f'{input_name}_all_atom_rmsd.png')
 
     # Display both figures
-    plt.show()
+    #plt.show()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Calculate the alpha carbon RMSD and all-atom RMSD for a given trajectory file based on the first structure.')
