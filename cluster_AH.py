@@ -76,20 +76,20 @@ for k in k_to_try:
     D = pairwise_distances(data)
 
     # Check for NaN values
-    if np.isnan(D).any():
-        print("Pairwise distance matrix contains NaN values.")
+#    if np.isnan(D).any():
+#        print("Pairwise distance matrix contains NaN values.")
 
     # Check for inf values
-    if np.isinf(D).any():
-        print("Pairwise distance matrix contains inf values.")
+#    if np.isinf(D).any():
+#        print("Pairwise distance matrix contains inf values.")
 
     # Check for excessively large values
-    if np.max(np.abs(D[np.isfinite(D)])) > 1e100: # You can adjust the threshold according to your needs
-        print("Pairwise distance matrix contains excessively large values.")
+#    if np.max(np.abs(D[np.isfinite(D)])) > 1e100: # You can adjust the threshold according to your needs
+#        print("Pairwise distance matrix contains excessively large values.")
 
     # Check for excessively small values
-    if np.min(np.abs(D[np.isfinite(D)])) < 1e-100: # You can adjust the threshold according to your needs
-        print("Pairwise distance matrix contains excessively small values.")
+#    if np.min(np.abs(D[np.isfinite(D)])) < 1e-100: # You can adjust the threshold according to your needs
+#        print("Pairwise distance matrix contains excessively small values.")
     try:
      silhouette_averages[k - 2] = sklearn.metrics.silhouette_score(data, labels, sample_size=sample_size)
     except FloatingPointError:
