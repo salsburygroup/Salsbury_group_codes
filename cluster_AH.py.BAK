@@ -10,8 +10,6 @@ import matplotlib.pyplot as plt
 plt.style.use('bmh')
 import copy
 from collections import Counter
-from sklearn.metrics.pairwise import pairwise_distances
-
 
 parser = argparse.ArgumentParser(description='Compare Minkowski weights', add_help=False)
 
@@ -35,7 +33,7 @@ temp = t.xyz
 frames = t.xyz.shape[0]
 atoms = t.xyz.shape[1]
 original_data = temp.reshape((frames, atoms * 3))
-#original_data = original_data.astype('float64')
+original_data = original_data.astype('float64')
 temp = []
 
 np.seterr(all='raise')
@@ -72,24 +70,6 @@ for k in k_to_try:
     kmeans_clusters = kmeans_clusterer.fit(data)
     labels = kmeans_clusters.labels_
     centroids = kmeans_clusters.cluster_centers_
-    # Compute pairwise distance matrix
-    D = pairwise_distances(data)
-
-    # Check for NaN values
-    if np.isnan(D).any():
-        print("Pairwise distance matrix contains NaN values.")
-
-    # Check for inf values
-    if np.isinf(D).any():
-        print("Pairwise distance matrix contains inf values.")
-
-    # Check for excessively large values
-    if np.max(np.abs(D[np.isfinite(D)])) > 1e100: # You can adjust the threshold according to your needs
-        print("Pairwise distance matrix contains excessively large values.")
-
-    # Check for excessively small values
-    if np.min(np.abs(D[np.isfinite(D)])) < 1e-100: # You can adjust the threshold according to your needs
-        print("Pairwise distance matrix contains excessively small values.")
     try:
      silhouette_averages[k - 2] = sklearn.metrics.silhouette_score(data, labels, sample_size=sample_size)
     except FloatingPointError:
