@@ -38,6 +38,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
             commands.append(command)
 
             # wrap.py
+            htmd_conda_path = "/home/salsbufr/anaconda3/bin/"  # Replace with your path to conda's bin
             command = f"{conda_path}conda run -n htmd python {os.path.join(script_path, 'wrap.py')} -t {prefix}_{value}_{i}.xtc -s {psf_prefix}.psf -o {prefix}_solvated_wrapped_{value}_{i}.xtc"
             commands.append(command)
 
@@ -75,118 +76,118 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
      # Move remaining files to SCRATCH directory
      commands.append(f"mv *.xtc {scratch_dir}/")
      commands.append(f"mv *.pdb {scratch_dir}/")
-    if not args.processonly:
+
      # calculate_rmsf.py
-     command = f"python {os.path.join(script_path, 'calculate_rmsf.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
-     commands.append(command)
+    command = f"python {os.path.join(script_path, 'calculate_rmsf.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
+    commands.append(command)
    
-     #Move RMSF files to RMSF directory
-     commands.append(f"mv *rmsf* {rmsf_dir}/")
+    #Move RMSF files to RMSF directory
+    commands.append(f"mv *rmsf* {rmsf_dir}/")
 
-     # calculate_corr.py
-     if corr_range is not None:
-       command = f"python {os.path.join(script_path, 'calculate_corr.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}_{smaller_number} --range {corr_range}"
-     else:
-       command = f"python {os.path.join(script_path, 'calculate_corr.py')}  {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc  {prefix}_{smaller_number} --align "
-     commands.append(command)
+    # calculate_corr.py
+    if corr_range is not None:
+      command = f"python {os.path.join(script_path, 'calculate_corr.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}_{smaller_number} --range {corr_range}"
+    else:
+      command = f"python {os.path.join(script_path, 'calculate_corr.py')}  {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc  {prefix}_{smaller_number} --align "
+    commands.append(command)
 
-     # Move correlation matrix files to CORR directory
-     commands.append(f"mv *correlation_matrix* {corr_dir}/")
+    # Move correlation matrix files to CORR directory
+    commands.append(f"mv *correlation_matrix* {corr_dir}/")
 
-     # calculate_pca_projections.py
-     command = f"python {os.path.join(script_path, 'calculate_pca_projections.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix}"
-     commands.append(command)
+    # calculate_pca_projections.py
+    command = f"python {os.path.join(script_path, 'calculate_pca_projections.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix}"
+    commands.append(command)
 
-    # corner plot
-     command = f"python {os.path.join(script_path, 'calculate_pca_corner.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix} 5"
-     commands.append(command)
+   # corner plot
+    command = f"python {os.path.join(script_path, 'calculate_pca_corner.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix} 5"
+    commands.append(command)
  
-    # Calculate bin number
-     bin_number = round(1 + math.log2(n*length*100/smaller_number))
-     bins = bins if bins is not None else bin_number
+   # Calculate bin number
+    bin_number = round(1 + math.log2(n*length*100/smaller_number))
+    bins = bins if bins is not None else bin_number
 
-    # calculate_FES_PCA.py
-     command = f"python {os.path.join(script_path, 'calculate_FES_PCA.py')}  {prefix}_projections.txt {prefix} -b {bins}"
-     commands.append(command)
+   # calculate_FES_PCA.py
+    command = f"python {os.path.join(script_path, 'calculate_FES_PCA.py')}  {prefix}_projections.txt {prefix} -b {bins}"
+    commands.append(command)
 
-    # find_minima_find_structures.py
-     command = f"python {os.path.join(script_path, 'find_minima_find_structures.py')} {prefix}_bins_{bins}_free_energy.txt {prefix}_bin_indices.txt {prefix}"
-     commands.append(command)
+   # find_minima_find_structures.py
+    command = f"python {os.path.join(script_path, 'find_minima_find_structures.py')} {prefix}_bins_{bins}_free_energy.txt {prefix}_bin_indices.txt {prefix}"
+    commands.append(command)
 
-     # extract_structures_minima.py
-     command = f"python {os.path.join(script_path, 'extract_structures_minima.py')} {prefix}_projection_minima.txt {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
-     commands.append(command)
+    # extract_structures_minima.py
+    command = f"python {os.path.join(script_path, 'extract_structures_minima.py')} {prefix}_projection_minima.txt {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+    commands.append(command)
 
-     # Move PCA files to PCA directory
-     commands.append(f"mv *projection* {pca_dir}/")
-     commands.append(f"mv *energy* {pca_dir}/")
-     commands.append(f"mv *minima* {pca_dir}/")
-     commands.append(f"mv *bin* {pca_dir}/")
-     commands.append(f"mv *corner* {pca_dir}/") 
-     # HDBSCAN Clustering
-     command = f"python {os.path.join(script_path, 'cluster_HDBSCAN.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
-     commands.append(command)
+    # Move PCA files to PCA directory
+    commands.append(f"mv *projection* {pca_dir}/")
+    commands.append(f"mv *energy* {pca_dir}/")
+    commands.append(f"mv *minima* {pca_dir}/")
+    commands.append(f"mv *bin* {pca_dir}/")
+    commands.append(f"mv *corner* {pca_dir}/") 
+    # HDBSCAN Clustering
+    command = f"python {os.path.join(script_path, 'cluster_HDBSCAN.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+    commands.append(command)
 
-     # HDBSCAN Cluster Trajectory Analysis
-     command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_HDBSCAN_frame_clusters.txt"
-     commands.append(command)
+    # HDBSCAN Cluster Trajectory Analysis
+    command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_HDBSCAN_frame_clusters.txt"
+    commands.append(command)
 
-     # HDBSCAN directory creation command
-     hdbscan_dir = os.path.join(analysis_dir, "HDBSCAN")
-     commands.append(f"mkdir -p {hdbscan_dir}")
+    # HDBSCAN directory creation command
+    hdbscan_dir = os.path.join(analysis_dir, "HDBSCAN")
+    commands.append(f"mkdir -p {hdbscan_dir}")
 
-    # Move files with HDBSCAN in their names into the HDBSCAN directory
-     commands.append(f"mv *HDBSCAN* {hdbscan_dir}/")
+   # Move files with HDBSCAN in their names into the HDBSCAN directory
+    commands.append(f"mv *HDBSCAN* {hdbscan_dir}/")
 
-     # Move everything from the prefix directory into the HDBSCAN directory and remove the prefix directory
-     commands.append(f"mv {prefix}/* {hdbscan_dir}/")
-     commands.append(f"rmdir {prefix}")
+    # Move everything from the prefix directory into the HDBSCAN directory and remove the prefix directory
+    commands.append(f"mv {prefix}/* {hdbscan_dir}/")
+    commands.append(f"rmdir {prefix}")
 
-     # AH Clustering
-     command = f"python {os.path.join(script_path, 'cluster_AH.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
-     commands.append(command)
+    # AH Clustering
+    command = f"python {os.path.join(script_path, 'cluster_AH.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+    commands.append(command)
 
-     # AH Cluster Trajectory Analysis
-     command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_AH_frame_clusters.txt"
-     commands.append(command)
+    # AH Cluster Trajectory Analysis
+    command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_AH_frame_clusters.txt"
+    commands.append(command)
 
-     # AH directory creation command
-     AH_dir = os.path.join(analysis_dir, "AH")
-     commands.append(f"mkdir -p {AH_dir}")
+    # AH directory creation command
+    AH_dir = os.path.join(analysis_dir, "AH")
+    commands.append(f"mkdir -p {AH_dir}")
 
-     # Move files with AH in their names into the AH directory
-     commands.append(f"mv *AH* {AH_dir}/")
+    # Move files with AH in their names into the AH directory
+    commands.append(f"mv *AH* {AH_dir}/")
 
-     # Move everything from the prefix directory into the AH directory 
-     commands.append(f"mv {prefix}/* {AH_dir}/")
-     commands.append(f"rmdir {prefix}")
-     #HBOND analysis
-     command = f"python {os.path.join(script_path, 'HBONDS', 'find_hbonds.py')} {start_dir}/{nowat_psf_prefix}.psf  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
-     commands.append(command)
+    # Move everything from the prefix directory into the AH directory 
+    commands.append(f"mv {prefix}/* {AH_dir}/")
+    commands.append(f"rmdir {prefix}")
+    #HBOND analysis
+    command = f"python {os.path.join(script_path, 'HBONDS', 'find_hbonds.py')} {start_dir}/{nowat_psf_prefix}.psf  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
+    commands.append(command)
 
-     #HBOND filtering 
-     command = f"python {os.path.join(script_path, 'HBONDS', 'filter_hbonds_cutoff.py')} {prefix}"
-     commands.append(command)
+    #HBOND filtering 
+    command = f"python {os.path.join(script_path, 'HBONDS', 'filter_hbonds_cutoff.py')} {prefix}"
+    commands.append(command)
 
-     #HBOND clustering on filtered
-     command = f"python {os.path.join(script_path, 'HBONDS/cluster_hbonds.py')} {prefix}"
-     commands.append(command)
+    #HBOND clustering on filtered
+    command = f"python {os.path.join(script_path, 'HBONDS/cluster_hbonds.py')} {prefix}"
+    commands.append(command)
   
-     #HBOND clustering on all
-     #command = f"python {os.path.join(script_path, 'HBONDS', 'cluster_hbonds.py')} {prefix} --hbond_file {prefix}_WT_hbonds.txt"
-     #commands.append(command)
+    #HBOND clustering on all
+    #command = f"python {os.path.join(script_path, 'HBONDS', 'cluster_hbonds.py')} {prefix} --hbond_file {prefix}_WT_hbonds.txt"
+    #commands.append(command)
  
-     #HBONDS directory creation command
-     hbond_dir = os.path.join(analysis_dir, "HBONDS")
-     commands.append(f"mkdir -p {hbond_dir}")
+    #HBONDS directory creation command
+    hbond_dir = os.path.join(analysis_dir, "HBONDS")
+    commands.append(f"mkdir -p {hbond_dir}")
 
-     #Move files with hbond in their names or info into the HBONDS directory
-     commands.append(f"mv *hbond* {hbond_dir}/")
-     commands.append(f"mv *info* {hbond_dir}/")
+    #Move files with hbond in their names or info into the HBONDS directory
+    commands.append(f"mv *hbond* {hbond_dir}/")
+    commands.append(f"mv *info* {hbond_dir}/")
 
-     #remove the prefix directory
-     commands.append(f"rmdir {prefix}")
-     pass 
+    #remove the prefix directory
+    #commands.append(f"rmdir {prefix}")
+
     if norun:
         with open(f"{prefix}.csh", 'w') as f:
             for command in commands:
@@ -215,10 +216,9 @@ if __name__ == "__main__":
     parser.add_argument('--corr_range', type=str, help='Range for calculate_corr.py script.')
     parser.add_argument('--pca_selection', type=str, default="all", help='Selection for calculate_pca_projections.py script.')
     parser.add_argument('--bins', type=int, help='Number of bins for calculate_FES_PCA.py and find_minima_find_structures.py scripts.')
-    parser.add_argument('--conda_path', type=str, default=os.path.join('/home', os.getlogin(), '/deac/phy/salsburyGrp/software/miniconda3/bin/'), help='Path to conda\'s bin.')
+    parser.add_argument('--conda_path', type=str, default=os.path.join('/home', os.getlogin(), 'anaconda3/bin/'), help='Path to conda\'s bin.')
     parser.add_argument('--analysisonly', action='store_true', help='If provided, the script only runs the analysis part.')
     parser.add_argument("--n_clusters", type=int, default=10)
-    parser.add_argument('--processonly', action='store_true', help='If provided, the script only runs the processing part.')
     args = parser.parse_args()
 
 if __name__ == "__main__":
