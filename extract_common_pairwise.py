@@ -4,8 +4,8 @@ import argparse
 
 def merge_common_atoms(prefix1, prefix2, xtcname1, xtcname2, stepsize):
     # Load the PDB and XTC files
-    u1 = mda.Universe(f'{prefix1}.pdb', f'{xtcname1}.xtc')
-    u2 = mda.Universe(f'{prefix2}.pdb', f'{xtcname2}.xtc')
+    u1 = mda.Universe(f'{prefix1}_nowat_1_1.pdb', f'{xtcname1}_nowat_1_merged.xtc')
+    u2 = mda.Universe(f'{prefix2}_nowat_1_1.pdb', f'{xtcname2}_nowat_1_merged.xtc')
 
     # Get the atoms from each structure
     atoms1 = [(atom.resid, atom.resname, atom.name) for atom in u1.atoms]
