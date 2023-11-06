@@ -1,0 +1,59 @@
+# Forcefield configuration
+
+           parameters ../input/par_all36_prot.prm
+           parameters ../input/par_all36_na.prm
+           parameters ../input/par_all36_cgenff.prm
+           parameters ../input/par_all36_lipid.prm
+           parameters ../input/par_all36_carb.prm
+           parameters ../input/toppar_water_ions_namd.str
+
+# Initial State
+
+            structure ../input/ionized.psf
+          coordinates ../input/ionized.pdb
+          temperature 300.00 # K
+              boxSize    120    120   120 # A
+
+# Output
+
+       trajectoryFile output.xtc
+     trajectoryPeriod 2500
+
+# Electrostatics 
+
+                  PME on
+               cutoff 9.00 # A
+            switching on
+       switchDistance 7.50 # A
+      implicitSolvent off
+
+# Temperature Control 
+
+           thermostat on
+ thermostatTemperature 300.00 # K
+    thermostatDamping 0.10 # /ps
+
+# Pressure Control 
+
+             barostat on
+     barostatPressure 1.01325 # bar
+  barostatAnisotropic off
+   barostatConstRatio off
+      barostatConstXY off
+
+# Integration
+
+             timeStep 4.00 # fs
+           slowPeriod 1.00 # fs (timeStep*slowPeriod)
+
+# External forces
+
+
+# Restraints
+
+
+# Run Configuration
+
+              restart on
+             minimize 1000
+                  run 250000000

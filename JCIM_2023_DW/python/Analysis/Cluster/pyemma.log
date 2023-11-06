@@ -1,0 +1,10 @@
+2016-05-17 19:09:08,809 pyemma/util/pystallone.py ERROR    jvm startup failed
+Traceback (most recent call last):
+  File "/Users/melvrl13/anaconda/envs/ClusterPrediction/lib/python2.7/site-packages/pyEMMA-1.0.2-py2.7-macosx-10.5-x86_64.egg/pyemma/util/pystallone.py", line 51, in <module>
+    startJVM(None, args)
+  File "/Users/melvrl13/anaconda/envs/ClusterPrediction/lib/python2.7/site-packages/pystallone-1.0.0b7-py2.7.egg/pystallone/__init__.py", line 143, in startJVM
+    _startJVM(jvm, *args)
+  File "/Users/melvrl13/anaconda/envs/ClusterPrediction/lib/python2.7/site-packages/jpype/_core.py", line 50, in startJVM
+    _jpype.startup(jvm, tuple(args), True)
+RuntimeError: Unable to load DLL [/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libjvm.dylib], error = dlopen(/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libjvm.dylib, 9): no suitable image found.  Did find:
+	/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries/libjvm.dylib: mach-o, but wrong architecture at native/common/include/jp_platform_linux.h:45

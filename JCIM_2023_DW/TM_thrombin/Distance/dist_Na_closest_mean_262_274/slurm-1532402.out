@@ -1,0 +1,64 @@
+#########################BEGIN-PROLOG#########################
+JobId             = 1532402
+JobName           = NaBindingSubmit.slurm
+UserId            = wud18(20279)
+GroupId           = wud18(20279)
+MCS_label         = N/A
+Priority          = 91
+Nice              = 0
+Account           = salsburygrp
+QOS               = normal
+Requeue           = 1
+Restarts          = 0
+BatchFlag         = 1
+Reboot            = 0
+ExitCode          = 0:0
+RunTime           = 00:00:02
+TimeLimit         = 7-00:00:00
+TimeMin           = N/A
+SubmitTime        = 2022-04-01T12:35:28
+EligibleTime      = 2022-04-01T12:35:28
+AccrueTime        = 2022-04-01T12:35:28
+StartTime         = 2022-04-01T12:35:29
+EndTime           = 2022-04-08T12:35:29
+Deadline          = N/A
+Partition         = medium
+AllocNode:Sid     = comp-08-7:42654
+NodeList          = comp-21-3
+BatchHost         = comp-21-3
+NumNodes          = 1
+NumCPUs           = 1
+NumTasks          = 1
+CPUs/Task         = 1
+ReqB:S:C:T        = 0:0:*:*
+TRES=cpu=1,mem=128G,node=1,billing= cpu=1,mem=128G,node=1,billing=1
+Socks/Node        = *
+NtasksPerN:B:S:C  = 1:0:*:*
+CoreSpec          = *
+MinCPUsNode       = 1
+MinMemoryNode     = 128G
+MinTmpDiskNode    = 0
+Command           = /home/wud18/bash/NaBindingSubmit.slurm
+WorkDir           = /deac/phy/salsburyGrp/wud18/md/TM/TM_thrombin/Distance/dist_Na_closest_mean_262_274
+StdErr            = /deac/phy/salsburyGrp/wud18/md/TM/TM_thrombin/Distance/dist_Na_closest_mean_262_274/slurm-1532402.out
+StdOut            = /deac/phy/salsburyGrp/wud18/md/TM/TM_thrombin/Distance/dist_Na_closest_mean_262_274/slurm-1532402.out
+Power             = 
+NtasksPerTRES:0   = NtasksPerTRES:0
+###########################END-PROLOG#########################
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+amd-python/  bash/  github/  install/  jobs/  python/  useless/  vmd/
+   PID TTY          TIME CMD
+162024 ?        00:00:00 slurm_script
+162220 ?        00:00:00 ps
+amd-python/  bash/  github/  install/  jobs/  python/  useless/  vmd/
+/deac/salsburyGrp/wud18/install/anaconda3/envs/py36/lib/python3.6/site-packages/Bio/KDTree/__init__.py:25: BiopythonDeprecationWarning: Bio.KDTree has been deprecated, and we intend to remove it in a future release of Biopython. Please use Bio.PDB.kdtrees instead, which is functionally very similar.
+  BiopythonDeprecationWarning)
+/deac/salsburyGrp/wud18/install/anaconda3/envs/py36/lib/python3.6/site-packages/MDAnalysis/due.py:88: UserWarning: No module named 'mock'
+  warnings.warn(str(err))
+Make sure to use the absolute path for output directory(-o)

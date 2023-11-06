@@ -1,0 +1,93 @@
+#########################BEGIN-PROLOG#########################
+JobId             = 1564577
+JobName           = HDsubmit.slurm
+UserId            = wud18(20279)
+GroupId           = wud18(20279)
+MCS_label         = N/A
+Priority          = 124
+Nice              = 0
+Account           = salsburygrp
+QOS               = normal
+Requeue           = 1
+Restarts          = 0
+BatchFlag         = 1
+Reboot            = 0
+ExitCode          = 0:0
+RunTime           = 00:00:07
+TimeLimit         = 1-00:00:00
+TimeMin           = N/A
+SubmitTime        = 2022-04-04T23:35:46
+EligibleTime      = 2022-04-04T23:35:46
+AccrueTime        = 2022-04-04T23:35:46
+StartTime         = 2022-04-04T23:35:46
+EndTime           = 2022-04-05T23:35:47
+Deadline          = N/A
+Partition         = small
+AllocNode:Sid     = gemini:91313
+NodeList          = comp-24-3
+BatchHost         = comp-24-3
+NumNodes          = 1
+NumCPUs           = 1
+NumTasks          = 1
+CPUs/Task         = 1
+ReqB:S:C:T        = 0:0:*:*
+TRES=cpu=1,mem=32G,node=1,billing= cpu=1,mem=32G,node=1,billing=1
+Socks/Node        = *
+NtasksPerN:B:S:C  = 1:0:*:*
+CoreSpec          = *
+MinCPUsNode       = 1
+MinMemoryNode     = 32G
+MinTmpDiskNode    = 0
+Command           = /home/wud18/bash/HDsubmit.slurm
+WorkDir           = /deac/phy/salsburyGrp/wud18/md/TM/clustering/protein_stride100_170sLoop
+StdErr            = /deac/phy/salsburyGrp/wud18/md/TM/clustering/protein_stride100_170sLoop/slurm-1564577.out
+StdOut            = /deac/phy/salsburyGrp/wud18/md/TM/clustering/protein_stride100_170sLoop/slurm-1564577.out
+Power             = 
+NtasksPerTRES:0   = NtasksPerTRES:0
+###########################END-PROLOG#########################
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+amd-python/  sed46yNwz	sedbH29r9  sedGcxjjg  sedn2xGuT  sedRykJaT  sedyriame
+bash/	     sed4BTLyz	sedbHmJg7  sedH5gZCB  sedNBO2fm  sedSbKbBQ  sedz7b3mT
+github/      sed4jrPgc	sedBwxgwQ  sedH99NYO  sednzQxOb  sedTl8tNV  sedZaxDXl
+install/     sed5u8OGD	sedc6HRbB  sedhurkls  sedOFooGV  sedu3DKJi  sedZRX11K
+jobs/	     sed60PHNw	sedc6Nt1I  sedK6JFuT  sedoiewis  seduCgaW9  sedZX19fD
+python/      sed65XhwD	sedClfv55  sedkCU0R6  sedoqL9Ip  sedUzytVP  useless/
+sed02hQYg    sed7ROWB6	sedCWy0dT  sedKENQGD  sedoXLiK0  sedVSnYKw  vmd/
+sed0OFv9D    sed7X6Em7	sedeCxxqd  sedksjVVE  sedoZAkUc  sedWK0G6O
+sed1q3Suh    sed8i6FpE	sedEp00Zb  sedkxdUy6  sedqdLPxx  sedWNacse
+sed2rtcwE    sed9zY5uF	sedF2b4rw  sedl4dwLV  sedQVmUsI  sedxXbnj6
+sed2yGBr7    seda5wI3q	sedfcrcB4  sedLhzG3g  sedr5oSd0  sedy6Ru3h
+sed313CWI    sedaf0WZO	sedFMbhzx  sedlRsv90  sedR5XR6v  sedyOHYlz
+sed3okr16    sedATaRQY	sedG8yBwq  sedmMpzj7  sedRP3chq  sedyOiWRM
+   PID TTY          TIME CMD
+ 85932 ?        00:00:00 slurm_script
+ 86261 ?        00:00:00 slurm_script
+ 86262 ?        00:00:00 python
+ 86271 ?        00:00:00 slurm_script
+ 86279 ?        00:00:00 slurm_script
+ 86820 ?        00:00:00 ps
+ 86821 ?        00:00:00 ps
+amd-python/  sed46yNwz	sedbH29r9  sedGcxjjg  sedn2xGuT  sedRykJaT  sedyriame
+bash/	     sed4BTLyz	sedbHmJg7  sedH5gZCB  sedNBO2fm  sedSbKbBQ  sedz7b3mT
+github/      sed4jrPgc	sedBwxgwQ  sedH99NYO  sednzQxOb  sedTl8tNV  sedZaxDXl
+install/     sed5u8OGD	sedc6HRbB  sedhurkls  sedOFooGV  sedu3DKJi  sedZRX11K
+jobs/	     sed60PHNw	sedc6Nt1I  sedK6JFuT  sedoiewis  seduCgaW9  sedZX19fD
+python/      sed65XhwD	sedClfv55  sedkCU0R6  sedoqL9Ip  sedUzytVP  useless/
+sed02hQYg    sed7ROWB6	sedCWy0dT  sedKENQGD  sedoXLiK0  sedVSnYKw  vmd/
+sed0OFv9D    sed7X6Em7	sedeCxxqd  sedksjVVE  sedoZAkUc  sedWK0G6O
+sed1q3Suh    sed8i6FpE	sedEp00Zb  sedkxdUy6  sedqdLPxx  sedWNacse
+sed2rtcwE    sed9zY5uF	sedF2b4rw  sedl4dwLV  sedQVmUsI  sedxXbnj6
+sed2yGBr7    seda5wI3q	sedfcrcB4  sedLhzG3g  sedr5oSd0  sedy6Ru3h
+sed313CWI    sedaf0WZO	sedFMbhzx  sedlRsv90  sedR5XR6v  sedyOHYlz
+sed3okr16    sedATaRQY	sedG8yBwq  sedmMpzj7  sedRP3chq  sedyOiWRM
+/deac/salsburyGrp/wud18/install/anaconda3/envs/py36/lib/python3.6/site-packages/pyemma/__init__.py:92: UserWarning: You are not using the latest release of PyEMMA. Latest is 2.5.7, you have 2.5.6.
+  .format(latest=latest, current=current), category=UserWarning)
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+Make sure to use the absolute path for output directory(-o)

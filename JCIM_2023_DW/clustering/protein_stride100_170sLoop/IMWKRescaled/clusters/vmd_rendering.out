@@ -1,0 +1,23 @@
+Info) VMD for LINUXAMD64, version 1.9.4a35 (July 10, 2019)
+Info) http://www.ks.uiuc.edu/Research/vmd/                         
+Info) Email questions and bug reports to vmd@ks.uiuc.edu           
+Info) Please include this reference in published work using VMD:   
+Info)    Humphrey, W., Dalke, A. and Schulten, K., `VMD - Visual   
+Info)    Molecular Dynamics', J. Molec. Graphics 1996, 14.1, 33-38.
+Info) -------------------------------------------------------------
+Info) Multithreading available, 6 CPUs detected.
+Info)   CPU features: SSE2 AVX AVX2 FMA 
+Info) Free system memory: 46GB (72%)
+Info) Creating CUDA device pool and initializing hardware...
+Info) Detected 1 available CUDA accelerator::
+Info) [0] NVIDIA GeForce GTX 1660 SUPER 22 SM_7.5 1.8 GHz, 5.8GB RAM SP32 KT AE3 ZC
+Info) Detected 1 available TachyonL/OptiX ray tracing accelerator
+Info)   Compiling 1 OptiX shaders on 1 target GPU...
+Info) Dynamically loaded 3 plugins in directory:
+Info) /home/wud18/.local/lib/vmd/plugins/LINUXAMD64/molfile
+after#0
+/home/wud18/.local/lib/vmd/scripts/tcl8.5 /home/wud18/.local/lib/vmd/scripts /home/wud18/.local/lib/lib /Projects/johns/tcl/8.5.6/lib_LINUXAMD64/lib /home/wud18/.local/lib/vmd/scripts/vmd /home/wud18/.local/lib/vmd/plugins/LINUXAMD64/tcl /home/wud18/.local/lib/vmd/plugins/noarch/tcl /deac/salsburyGrp/wud18/install/tcllib-1.18/modules/
+/home/wud18/.local/lib/vmd/scripts/tcl8.5 /home/wud18/.local/lib/vmd/scripts /home/wud18/.local/lib/lib /Projects/johns/tcl/8.5.6/lib_LINUXAMD64/lib /home/wud18/.local/lib/vmd/scripts/vmd /home/wud18/.local/lib/vmd/plugins/LINUXAMD64/tcl /home/wud18/.local/lib/vmd/plugins/noarch/tcl /deac/salsburyGrp/wud18/install/tcllib-1.18/modules/ /home/wud18/vmd/VMDScripts/
+ERROR) Error opening file ../generate_images.vmd
+ERROR) couldn't open "../generate_images.vmd": no such file or directory
+vmd > 

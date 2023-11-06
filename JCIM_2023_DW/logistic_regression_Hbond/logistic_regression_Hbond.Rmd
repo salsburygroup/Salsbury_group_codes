@@ -1,0 +1,371 @@
+---
+title: "Logistic regression for Hbond analysis"
+author: "Dizhou Wu"
+date: "3/24/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+suppressMessages(library(rlang))
+suppressMessages(library(ggplot2))
+suppressMessages(library(ggmosaic))
+```
+
+```{r}
+# Read data 
+hbond_stride100_trajectory=read.csv("/deac/salsburyGrp/wud18/md/TM/hbond/hbond_stride100_trajectory_selected.csv")
+```
+
+```{r}
+# Replace headers
+Colnames1 <- c("LEU11-HIS152","ARG12-GLU16","ARG12-ASP22","ARG12-MET47","GLU16-GLU16","LYS17-ARG12","SER19-PHE15","LEU20-PHE15","ASP22-GLU25","THR24-ASP22","GLU25-ASP22","ARG26-GLU30","LEU28-GLU25","GLU30-ARG26","SER31-GLU27","SER31-LEU28","TYR32-LYS248","MET53-ARG98","ARG56-SER58","LYS57-ASP94","LYS57-ASN93","SER58-GLU359","GLN60-LYS57","ALA66-VAL52","ILE69-TRP73","SER70-TRP73","ARG72-ASP71","ARG72-LEU141","ARG72-GLU118","TRP73-SER70","ALA77-THR76","ALA78-ASP135","LEU82-ALA78","ASP87-PRO84","LYS88-TYR83","PHE90-LEU81","THR91-ASP94","GLU92-GLU92","ARG98-ARG106","THR105-ASP368","ARG106-ASP368","TYR107-ASP367","ARG109-TYR107","ARG109-ASP374","ARG109-THR373","ASN110-GLU379","ILE111-GLU108","GLU112-GLU108","ILE114-ASN380","LYS119-GLU92","ILE120-GLU92","ASN127-ASP133","LYS140-PHE293","LYS140-GLU118","LYS143-ASP412","VAL145-ASP71","SER148-ILE151","TYR150-SER148","ARG159-GLU160","THR161-ASP158","ALA163-ARG159","SER164-GLU160","LEU165-THR161","LEU166-ALA162","GLN167-SER164","GLY169-ILE203","LYS171-SER31","LYS171-GLU27","GLY172-LEU201","ARG173-ASN200","ARG173-ASP22","ARG173-THR24","VAL174-VAL199","TRP177-HIS102","LYS181-GLU39","LEU196-HIS102","GLN197-GLY176","GLN197-ASP42","GLN197-VAL195","ASN200-THR24","ASN200-GLU27","GLU205-GLU205","ARG206-MET221","ARG206-THR218","VAL208-GLU205","CYS209-GLU205","LYS210-ARG206","ASP211-PRO207","SER212-VAL208","THR213-GLU265","ARG216-GLU130","THR218-ASP133","TYR226-ASN200","LYS227-GLU205","ASP229-ASP229","GLU230-LYS227","LYS232-GLU27","ARG233-ASP270","ALA236-ASP235","ASP240-CYS237","GLY243-ASP240","MET247-TYR256","LYS248-GLU16","LYS248-GLU25","PHE251-SER249","ARG254-ASP8","ARG254-CYS9","TRP255-GLU16","GLN257-GLY259","MET258-PHE245","ILE260-THR277","VAL261-GLY243","CYS267-GLU182","ASP268-ASP235","LYS272-ARG269","LYS272-GLU265","LYS272-SER212","PHE275-TRP263","HIS278-MET258","VAL279-MET258","LYS283-GLN287","ILE286-LEU282","GLN287-LYS283","LYS288-LYS284","VAL289-TRP285","ILE290-ILE286","ASP291-GLN287","PHE293-VAL289","ALA348-PHE370","ASP351-SER357","ASN353-ASP351","GLU359-ASP349","TYR364-PRO361","ILE371-ASP367","ASP374-THR344","ILE375-GLY363","GLU379-ASP376","ASN380-ASP376","ASN380-ILE114","ASN380-GLY381","GLY381-GLU377","VAL387-ILE398","LEU391-THR394","GLY393-ASP374","PHE395-THR394")
+Colnames2 <- c("CYS399-ALA406","ALA406-CYS399","PHE15-ARG12","LYS18-PHE15","SER41-VAL198","MET47-GLU44","GLN51-SER48","LYS57-GLU362","LEU81-ALA78","ASP94-THR91","VAL97-SER115","ASN131-ARG216","ILE151-SER148","HIS152-PRO49","HIS152-SER148","VAL154-LEU68","ALA162-ASP158","GLN167-LEU165","GLY176-GLN197","VAL199-VAL174","ALA224-GLY274","ASP235-VAL38","ASN252-TYR256","ARG254-ASN252","THR277-ASP135","ARG281-HIS278","LEU282-VAL279","LYS283-PHE280","LYS283-PRO157","TRP285-LEU282","GLY369-ASP368","ASP376-TYR107","PHE383-GLY381","ASP402-ASP402","TYR32-LEU28","ARG36-ASP34","SER48-THR175","GLU61-PRO59","ASP71-SER70","ARG106-ASP367","ILE111-ARG109","LYS143-GLY382","HIS152-ILE151","GLN167-ALA163","ASN179-GLU238","SER212-CYS209","LYS288-ASP291","GLY294-ILE290","ASP349-GLU359","THR354-ASP351","HIS408-ASP412","GLN60-TYR364","ARG72-GLU295","HIS123-ILE136","ASN220-THR218","MET221-THR218","ASP229-LYS227","ASN253-SER249","GLY259-PHE245","LEU29-GLU25","TYR32-LYS171","CYS155-TRP255","GLN197-LEU196","ARG206-ASP219","GLY239-SER241","MET258-TYR256","ASN390-ASP376","PHE2-THR1","LYS18-PRO13","ARG26-GLU21","TYR32-LEU29","ILE33-LEU29","ASP71-ASP71","LYS113-GLU379","ILE136-ARG134","LYS142-GLU118","GLN192-ASN179","LYS227-ASP229","GLY274-ALA224","THR277-ILE260","ARG36-GLY35","ARG36-GLU30","GLN51-VAL52","LYS88-TRP86","ARG104-GLU61","TYR126-HIS123","ARG214-ASP211","SER262-PHE275","TRP50-SER48","TYR170-GLN167","LEU28-THR24","ILE215-THR213","LYS227-GLU230","LYS248-TYR32","ALA404-PRO401","TRP86-TYR83","ARG129-ASN127","LYS140-GLU295","THR1-GLU6","GLU160-GLU160","SER19-GLU16","GLY243-SER241","CYS9-ASP8","ARG109-ASP376","LYS248-ASN253","ASN252-SER249","LEU405-PRO401","ASP412-THR411","LYS119-GLU118","GLU238-CYS237","LYS283-LEU156","SER241-HIS79","PHE370-ASP367","THR1-ASP71","ARG26-ASP22","ASP133-ASN127","LYS210-ILE217","LYS210-ASP219","ILE217-ILE215","LYS17-ASP149","ARG281-ASP219","GLN257-GLN257","GLU16-ARG12","LYS18-LEU14","ASP158-THR161","SER48-MET47","ASP219-ASP219","LYS283-VAL279","SER194-THR105","SER194-SER103","SER241-SER262","ARG159-ASP158","GLU27-LYS23","LYS283-ASP158","ARG214-GLU265","GLY46-HIS102","TRP86-GLU238","ARG106-SER103","ARG173-GLU25","ARG206-ILE217","LEU62-GLU61","ASN220-HIS278","ARG104-TRP177","ASN131-ARG129","LEU180-GLN192","THR218-LEU132","ARG109-ASP367","VAL195-SER194","TRP128-ASN127","THR105-SER194","SER212-GLY271","HIS123-PRO124","TRP263-SER262","LEU132-ARG216","THR213-CYS209","LEU132-ASN131","LYS232-GLU39","ILE33-TYR170","GLY400-ALA406","LYS23-GLU21","GLY234-ASP268","SER357-GLU61","LYS23-GLU44","TYR273-SER212","ALA406-ASP402","LYS17-PRO13")
+Colnames <- c(Colnames1,Colnames2)
+colnames(hbond_stride100_trajectory) <- Colnames 
+```
+
+```{r}
+# Add column TM4
+a=rep(1, 8000)
+b=rep(0, 8000)
+c <- c(a,b)
+hbond_stride100_trajectory$TM4 <- c
+levels(as.factor(hbond_stride100_trajectory$TM4))
+```
+
+```{r}
+# Train the logistic regression model
+m2 <- glm(formula = TM4 ~ ., data=hbond_stride100_trajectory, family='binomial')
+```
+
+```{r}
+# Save coef
+coef <- data.frame(m2$coefficients)
+write.csv(coef, "/deac/salsburyGrp/wud18/md/TM/logistic_regression_Hbond/logistic_regression.csv", row.names = TRUE)
+```
+
+```{r}
+# Coef in order
+coef_sorted <- sort(m2$coefficients, decreasing = TRUE)
+knitr::kable(c(coef_sorted[1:10],coef_sorted[303:312]))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+alpha_list <- seq(from =0, to = 1, by =.0625)
+EN <- function(Lambda) {
+tuningGrid <- data.frame("alpha" = alpha_list, "lambda"= rep(Lambda, length(alpha_list)))
+set.seed(100)
+hbond_elnet = train(
+  as.factor(TM4) ~ ., data = hbond_stride100_trajectory,
+  method = "glmnet",
+  lambda=Lambda,
+  tuneGrid = tuningGrid,
+  trControl = trainControl(method = "cv", number = 10)
+)
+return(hbond_elnet)
+}
+```
+
+```{r}
+lambda_list=seq(from =0, to = 0.005, by =.00015625)
+EN_list=EN(lambda_list[1])$results$Accuracy
+for (i in 2:length(lambda_list)){
+  print(lambda_list[i])
+  EN_list=data.frame(EN_list, EN(lambda_list[i])$results$Accuracy)
+}
+```
+
+```{r}
+# Row and column names
+rownames(EN_list) <- alpha_list
+colnames(EN_list) <- lambda_list
+```
+
+```{r}
+# Save csv
+write.csv(EN_list, "/deac/salsburyGrp/wud18/md/TM/logistic_regression_Hbond/TM.csv", row.names=TRUE)
+```
+
+```{r}
+EN_list
+```
+
+```{r}
+tuningGrid <- data.frame("alpha" = c(0), "lambda"= c(0.0034375))
+set.seed(100)
+E8K_final_model = train(
+  as.factor(TM4) ~ ., data = hbond_stride100_trajectory,
+  method = "glmnet",
+  lambda=0.0034375,
+  tuneGrid = tuningGrid,
+  trControl = trainControl(method = "cv", number = 10)
+)
+```
+
+```{r}
+E8K_final_model
+```
+
+```{r}
+# Parameters
+Beta1 <- m2$coefficients
+Beta2 <- as.numeric(coef(E8K_final_model$finalModel))
+```
+
+```{r}
+# Compare them
+Comparison <- data.frame("LogisticRegression" = Beta1, "Elastic_net" = Beta2)
+rownames(Comparison) <- c('(Intercept)',Colnames)
+tmp1 <- Comparison[order(-Comparison$Elastic_net)[1:10],]
+tmp2 <- Comparison[order(-Comparison$Elastic_net)[303:312],]
+Betas=rbind(tmp1,tmp2)
+knitr::kable(Betas)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+suppressMessages(library(rlang))
+suppressMessages(library(ggplot2))
+suppressMessages(library(ggmosaic))
+suppressMessages(library(caret))
+suppressMessages(library(glmnet))
+```
+
+```{r}
+## TM56 TM456 (only between thrombin and TM56 or within TM56)
+# Read data 
+hbond_stride100_trajectory=read.csv("/deac/salsburyGrp/wud18/md/TM/hbond/hbond_stride100_trajectory_selected.csv")
+```
+
+```{r}
+# Replace headers
+Colnames1 <- c("LEU11-HIS152","ARG12-GLU16","ARG12-ASP22","ARG12-MET47","GLU16-GLU16","LYS17-ARG12","SER19-PHE15","LEU20-PHE15","ASP22-GLU25","THR24-ASP22","GLU25-ASP22","ARG26-GLU30","LEU28-GLU25","GLU30-ARG26","SER31-GLU27","SER31-LEU28","TYR32-LYS248","MET53-ARG98","ARG56-SER58","LYS57-ASP94","LYS57-ASN93","SER58-GLU359","GLN60-LYS57","ALA66-VAL52","ILE69-TRP73","SER70-TRP73","ARG72-ASP71","ARG72-LEU141","ARG72-GLU118","TRP73-SER70","ALA77-THR76","ALA78-ASP135","LEU82-ALA78","ASP87-PRO84","LYS88-TYR83","PHE90-LEU81","THR91-ASP94","GLU92-GLU92","ARG98-ARG106","THR105-ASP368","ARG106-ASP368","TYR107-ASP367","ARG109-TYR107","ARG109-ASP374","ARG109-THR373","ASN110-GLU379","ILE111-GLU108","GLU112-GLU108","ILE114-ASN380","LYS119-GLU92","ILE120-GLU92","ASN127-ASP133","LYS140-PHE293","LYS140-GLU118","LYS143-ASP412","VAL145-ASP71","SER148-ILE151","TYR150-SER148","ARG159-GLU160","THR161-ASP158","ALA163-ARG159","SER164-GLU160","LEU165-THR161","LEU166-ALA162","GLN167-SER164","GLY169-ILE203","LYS171-SER31","LYS171-GLU27","GLY172-LEU201","ARG173-ASN200","ARG173-ASP22","ARG173-THR24","VAL174-VAL199","TRP177-HIS102","LYS181-GLU39","LEU196-HIS102","GLN197-GLY176","GLN197-ASP42","GLN197-VAL195","ASN200-THR24","ASN200-GLU27","GLU205-GLU205","ARG206-MET221","ARG206-THR218","VAL208-GLU205","CYS209-GLU205","LYS210-ARG206","ASP211-PRO207","SER212-VAL208","THR213-GLU265","ARG216-GLU130","THR218-ASP133","TYR226-ASN200","LYS227-GLU205","ASP229-ASP229","GLU230-LYS227","LYS232-GLU27","ARG233-ASP270","ALA236-ASP235","ASP240-CYS237","GLY243-ASP240","MET247-TYR256","LYS248-GLU16","LYS248-GLU25","PHE251-SER249","ARG254-ASP8","ARG254-CYS9","TRP255-GLU16","GLN257-GLY259","MET258-PHE245","ILE260-THR277","VAL261-GLY243","CYS267-GLU182","ASP268-ASP235","LYS272-ARG269","LYS272-GLU265","LYS272-SER212","PHE275-TRP263","HIS278-MET258","VAL279-MET258","LYS283-GLN287","ILE286-LEU282","GLN287-LYS283","LYS288-LYS284","VAL289-TRP285","ILE290-ILE286","ASP291-GLN287","PHE293-VAL289","ALA348-PHE370","ASP351-SER357","ASN353-ASP351","GLU359-ASP349","TYR364-PRO361","ILE371-ASP367","ASP374-THR344","ILE375-GLY363","GLU379-ASP376","ASN380-ASP376","ASN380-ILE114","ASN380-GLY381","GLY381-GLU377","VAL387-ILE398","LEU391-THR394","GLY393-ASP374","PHE395-THR394")
+Colnames2 <- c("CYS399-ALA406","ALA406-CYS399","PHE15-ARG12","LYS18-PHE15","SER41-VAL198","MET47-GLU44","GLN51-SER48","LYS57-GLU362","LEU81-ALA78","ASP94-THR91","VAL97-SER115","ASN131-ARG216","ILE151-SER148","HIS152-PRO49","HIS152-SER148","VAL154-LEU68","ALA162-ASP158","GLN167-LEU165","GLY176-GLN197","VAL199-VAL174","ALA224-GLY274","ASP235-VAL38","ASN252-TYR256","ARG254-ASN252","THR277-ASP135","ARG281-HIS278","LEU282-VAL279","LYS283-PHE280","LYS283-PRO157","TRP285-LEU282","GLY369-ASP368","ASP376-TYR107","PHE383-GLY381","ASP402-ASP402","TYR32-LEU28","ARG36-ASP34","SER48-THR175","GLU61-PRO59","ASP71-SER70","ARG106-ASP367","ILE111-ARG109","LYS143-GLY382","HIS152-ILE151","GLN167-ALA163","ASN179-GLU238","SER212-CYS209","LYS288-ASP291","GLY294-ILE290","ASP349-GLU359","THR354-ASP351","HIS408-ASP412","GLN60-TYR364","ARG72-GLU295","HIS123-ILE136","ASN220-THR218","MET221-THR218","ASP229-LYS227","ASN253-SER249","GLY259-PHE245","LEU29-GLU25","TYR32-LYS171","CYS155-TRP255","GLN197-LEU196","ARG206-ASP219","GLY239-SER241","MET258-TYR256","ASN390-ASP376","PHE2-THR1","LYS18-PRO13","ARG26-GLU21","TYR32-LEU29","ILE33-LEU29","ASP71-ASP71","LYS113-GLU379","ILE136-ARG134","LYS142-GLU118","GLN192-ASN179","LYS227-ASP229","GLY274-ALA224","THR277-ILE260","ARG36-GLY35","ARG36-GLU30","GLN51-VAL52","LYS88-TRP86","ARG104-GLU61","TYR126-HIS123","ARG214-ASP211","SER262-PHE275","TRP50-SER48","TYR170-GLN167","LEU28-THR24","ILE215-THR213","LYS227-GLU230","LYS248-TYR32","ALA404-PRO401","TRP86-TYR83","ARG129-ASN127","LYS140-GLU295","THR1-GLU6","GLU160-GLU160","SER19-GLU16","GLY243-SER241","CYS9-ASP8","ARG109-ASP376","LYS248-ASN253","ASN252-SER249","LEU405-PRO401","ASP412-THR411","LYS119-GLU118","GLU238-CYS237","LYS283-LEU156","SER241-HIS79","PHE370-ASP367","THR1-ASP71","ARG26-ASP22","ASP133-ASN127","LYS210-ILE217","LYS210-ASP219","ILE217-ILE215","LYS17-ASP149","ARG281-ASP219","GLN257-GLN257","GLU16-ARG12","LYS18-LEU14","ASP158-THR161","SER48-MET47","ASP219-ASP219","LYS283-VAL279","SER194-THR105","SER194-SER103","SER241-SER262","ARG159-ASP158","GLU27-LYS23","LYS283-ASP158","ARG214-GLU265","GLY46-HIS102","TRP86-GLU238","ARG106-SER103","ARG173-GLU25","ARG206-ILE217","LEU62-GLU61","ASN220-HIS278","ARG104-TRP177","ASN131-ARG129","LEU180-GLN192","THR218-LEU132","ARG109-ASP367","VAL195-SER194","TRP128-ASN127","THR105-SER194","SER212-GLY271","HIS123-PRO124","TRP263-SER262","LEU132-ARG216","THR213-CYS209","LEU132-ASN131","LYS232-GLU39","ILE33-TYR170","GLY400-ALA406","LYS23-GLU21","GLY234-ASP268","SER357-GLU61","LYS23-GLU44","TYR273-SER212","ALA406-ASP402","LYS17-PRO13")
+Colnames <- c(Colnames1,Colnames2)
+colnames(hbond_stride100_trajectory) <- Colnames 
+```
+
+```{r}
+# your dataframe
+df <- hbond_stride100_trajectory
+
+# Extract the numbers from the column names
+numbers <- lapply(strsplit(colnames(df), "-"), function(x) {
+  unlist(lapply(strsplit(x, "[A-Za-z]+"), as.integer))
+})
+
+# Check if any number in each column name is greater than 295
+keep_cols <- sapply(numbers, function(x) any(x > 295))
+
+# Replace NA values with FALSE
+keep_cols[is.na(keep_cols)] <- FALSE
+
+# Subset the dataframe to keep only the desired columns
+hbond_stride100_trajectory <- df[, keep_cols];hbond_stride100_trajectory
+```
+
+```{r}
+# Add column TM4
+a=rep(0, 8000)
+b=rep(1, 8000)
+d <- c(a,b)
+hbond_stride100_trajectory$TM4 <- d
+levels(as.factor(hbond_stride100_trajectory$TM4))
+```
+
+```{r}
+# Train the logistic regression model
+m2 <- glm(formula = TM4 ~ ., data=hbond_stride100_trajectory, family='binomial')
+#summary(m2)
+```
+
+```{r}
+# Save coef
+coef <- data.frame(m2$coefficients)
+write.csv(coef, "/deac/salsburyGrp/wud18/md/TM/logistic_regression_Hbond/TM56_TM456_without_within_thrombin_coef.csv", row.names = TRUE)
+```
+
+```{r}
+# Coef in order
+coef_sorted <- sort(m2$coefficients, decreasing = TRUE)
+knitr::kable(c(coef_sorted[1:11],coef_sorted[42:51]))
+```
+
+```{r}
+alpha_list <- seq(from =0, to = 1, by =.0625)
+EN <- function(Lambda) {
+tuningGrid <- data.frame("alpha" = alpha_list, "lambda"= rep(Lambda, length(alpha_list)))
+set.seed(100)
+hbond_elnet = train(
+  as.factor(TM4) ~ ., data = hbond_stride100_trajectory,
+  method = "glmnet",
+  lambda=Lambda,
+  tuneGrid = tuningGrid,
+  trControl = trainControl(method = "cv", number = 10)
+)
+return(hbond_elnet)
+}
+```
+
+```{r eval=FALSE, include=FALSE}
+lambda_list=seq(from =0, to = 0.1, by =.003125)
+EN_list=EN(lambda_list[1])$results$Accuracy
+for (i in 2:length(lambda_list)){
+  print(lambda_list[i])
+  EN_list=data.frame(EN_list, EN(lambda_list[i])$results$Accuracy)
+}
+```
+
+```{r eval=FALSE, include=FALSE}
+# Row and column names
+rownames(EN_list) <- alpha_list
+colnames(EN_list) <- lambda_list
+```
+
+```{r eval=FALSE, include=FALSE}
+# Save csv
+write.csv(EN_list, "/deac/salsburyGrp/wud18/md/TM/logistic_regression_Hbond/TM56_TM456_without_within_thrombin.csv", row.names=TRUE)
+```
+
+
+
+
+
+
+
+
+
+
+```{r}
+# Elastic net
+tuningGrid <- data.frame("alpha" = c(0), "lambda"= c(0.021875))
+set.seed(100)
+TM_final_model = train(
+  as.factor(TM4) ~ ., data = hbond_stride100_trajectory,
+  method = "glmnet",
+  lambda=0.021875,
+  tuneGrid = tuningGrid,
+  trControl = trainControl(method = "cv", number = 10)
+)
+TM_final_model
+```
+
+```{r}
+# Parameters
+Beta1 <- m2$coefficients
+Beta2 <- as.numeric(coef(TM_final_model$finalModel))
+```
+
+```{r}
+# Compare them
+Comparison <- data.frame("LogisticRegression" = Beta1, "Elastic_net" = Beta2)
+rownames(Comparison) <- c('(Intercept)',colnames(hbond_stride100_trajectory[1:50]))
+tmp1 <- Comparison[order(-Comparison$Elastic_net)[1:10],]
+tmp2 <- Comparison[order(-Comparison$Elastic_net)[41:51],]
+Betas=rbind(tmp1,tmp2)
+knitr::kable(Betas)
+```
+
+```{r}
+# Elastic net (top 2)
+Top2_TM <- c("ALA404-PRO401","ILE114-ASN380")
+tuningGrid <- data.frame("alpha" = c(0), "lambda"= c(0.021875))
+set.seed(100)
+TM_final_model_top2 = train(
+  as.factor(TM4) ~ ., data = hbond_stride100_trajectory[ , names(hbond_stride100_trajectory) %in% 
+    c(Top2_TM,"TM4")],
+  method = "glmnet",
+  lambda=0.021875,
+  tuneGrid = tuningGrid,
+  trControl = trainControl(method = "cv", number = 10)
+)
+TM_final_model_top2
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

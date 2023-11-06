@@ -1,0 +1,88 @@
+---
+title: "hbond_stride100_TM45_TM456_unique"
+author: "Dizhou Wu"
+date: '2023-05-22'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## TM56 TM456
+
+```{r}
+# Read data 
+hbond_stride100_trajectory=read.csv("/deac/salsburyGrp/wud18/md/TM/hbond/hbond_stride100_raw.csv")
+```
+
+```{r}
+colnames(hbond_stride100_trajectory)
+```
+
+```{r}
+hbond_stride100_trajectory$donor_resnm[1:10]
+hbond_stride100_trajectory$donor_resid[1:10]
+hbond_stride100_trajectory$donor_index[1:10]
+```
+
+```{r}
+hbond_stride100_trajectory$acceptor_resnm[1:10]
+hbond_stride100_trajectory$acceptor_resid[1:10]
+hbond_stride100_trajectory$acceptor_index[1:10]
+```
+
+```{r}
+hbond_stride100_trajectory6 <- hbond_stride100_trajectory[c("donor_index","acceptor_index","donor_resnm","donor_resid","acceptor_resnm","acceptor_resid")]
+```
+
+```{r}
+library(dplyr)
+df_unique <- distinct(hbond_stride100_trajectory6);df_unique
+```
+
+```{r}
+# Save csv
+write.csv(df_unique, "/deac/salsburyGrp/wud18/md/TM/logistic_regression_Hbond/visualize/Hbond_stride100_TM56_TM456_unique.csv", row.names=F)
+```
+
+
+```{r}
+#hbond_stride100_trajectory$donor_resid
+```
+
+```{r}
+# Create a variable for the condition
+resid_condition <- hbond_stride100_trajectory$donor_resid > 295 | hbond_stride100_trajectory$acceptor_resid > 295
+
+# Filter the dataframe based on the condition
+filtered_hbond_trajectory <- hbond_stride100_trajectory[resid_condition, ]
+```
+
+
+
+```{r}
+length(hbond_stride100_trajectory[,1])
+length(filtered_hbond_trajectory[,1])
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

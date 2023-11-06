@@ -1,0 +1,152 @@
+#########################BEGIN-PROLOG#########################
+JobId             = 1564593
+JobName           = AHsubmit.slurm
+UserId            = wud18(20279)
+GroupId           = wud18(20279)
+MCS_label         = N/A
+Priority          = 57
+Nice              = 0
+Account           = salsburygrp
+QOS               = normal
+Requeue           = 1
+Restarts          = 0
+BatchFlag         = 1
+Reboot            = 0
+ExitCode          = 0:0
+RunTime           = 00:00:05
+TimeLimit         = 120-00:00:00
+TimeMin           = N/A
+SubmitTime        = 2022-04-04T23:35:46
+EligibleTime      = 2022-04-04T23:35:46
+AccrueTime        = 2022-04-04T23:35:46
+StartTime         = 2022-04-04T23:35:46
+EndTime           = 2022-08-02T23:35:47
+Deadline          = N/A
+Partition         = large
+AllocNode:Sid     = gemini:91313
+NodeList          = comp-25-5
+BatchHost         = comp-25-5
+NumNodes          = 1
+NumCPUs           = 1
+NumTasks          = 1
+CPUs/Task         = 1
+ReqB:S:C:T        = 0:0:*:*
+TRES=cpu=1,mem=20G,node=1,billing= cpu=1,mem=20G,node=1,billing=1
+Socks/Node        = *
+NtasksPerN:B:S:C  = 1:0:*:*
+CoreSpec          = *
+MinCPUsNode       = 1
+MinMemoryNode     = 20G
+MinTmpDiskNode    = 0
+Command           = /home/wud18/bash/AHsubmit.slurm
+WorkDir           = /deac/phy/salsburyGrp/wud18/md/TM/clustering/protein_stride100_220sLoop
+StdErr            = /deac/phy/salsburyGrp/wud18/md/TM/clustering/protein_stride100_220sLoop/slurm-1564593.out
+StdOut            = /deac/phy/salsburyGrp/wud18/md/TM/clustering/protein_stride100_220sLoop/slurm-1564593.out
+Power             = 
+NtasksPerTRES:0   = NtasksPerTRES:0
+###########################END-PROLOG#########################
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+sed: can't read .bash_profile_revise: No such file or directory
+amd-python/  sed3okr16	sedATaRQY  sedFMbhzx  sedLhzG3g  sedr5oSd0  sedxXbnj6
+bash/	     sed46yNwz	sedbH29r9  sedG8yBwq  sedlRsv90  sedR5XR6v  sedy6Ru3h
+github/      sed4BTLyz	sedbHmJg7  sedGcxjjg  sedmMpzj7  sedRP3chq  sedyOHYlz
+install/     sed4jrPgc	sedBwxgwQ  sedH5gZCB  sedn2xGuT  sedRykJaT  sedyOiWRM
+jobs/	     sed5u8OGD	sedc6HRbB  sedH99NYO  sedNBO2fm  sedSbKbBQ  sedyriame
+python/      sed60PHNw	sedc6Nt1I  sedhurkls  sednzQxOb  sedTl8tNV  sedz7b3mT
+sed02hQYg    sed65XhwD	sedClfv55  sedK6JFuT  sedOFooGV  sedu3DKJi  sedZaxDXl
+sed0OFv9D    sed7ROWB6	sedCWy0dT  sedkCU0R6  sedoiewis  seduCgaW9  sedZRX11K
+sed1q3Suh    sed7X6Em7	sedeCxxqd  sedKENQGD  sedoXLiK0  sedUzytVP  sedZX19fD
+sed2rtcwE    sed8i6FpE	sedEp00Zb  sedksjVVE  sedoZAkUc  sedVSnYKw  useless/
+sed2yGBr7    sed9zY5uF	sedF2b4rw  sedkxdUy6  sedqdLPxx  sedWK0G6O  vmd/
+sed313CWI    sedaf0WZO	sedfcrcB4  sedl4dwLV  sedQVmUsI  sedWNacse
+   PID TTY          TIME CMD
+235956 ?        00:00:00 slurm_script
+236181 ?        00:00:00 slurm_script
+236189 ?        00:00:00 slurm_script
+236518 ?        00:00:00 slurm_script
+236526 ?        00:00:00 slurm_script
+236851 ?        00:00:00 python
+236935 ?        00:00:00 python
+236936 ?        00:00:00 python
+236967 ?        00:00:00 ps
+236968 ?        00:00:00 ps
+amd-python/  sed3okr16	sedATaRQY  sedFMbhzx  sedl4dwLV  sedQVmUsI  sedWNacse
+bash/	     sed46yNwz	sedbH29r9  sedG8yBwq  sedLhzG3g  sedr5oSd0  sedxXbnj6
+github/      sed4BTLyz	sedbHmJg7  sedGcxjjg  sedlRsv90  sedR5XR6v  sedy6Ru3h
+install/     sed4jrPgc	sedBwxgwQ  sedH5gZCB  sedmMpzj7  sedRP3chq  sedyOHYlz
+jobs/	     sed5u8OGD	sedc6HRbB  sedH99NYO  sedn2xGuT  sedRykJaT  sedyOiWRM
+python/      sed60PHNw	sedc6Nt1I  sedHHtRVy  sedNBO2fm  sedSbKbBQ  sedyriame
+sed02hQYg    sed65XhwD	sedClfv55  sedhurkls  sednzQxOb  sedTl8tNV  sedz7b3mT
+sed0OFv9D    sed7ROWB6	sedCWy0dT  sedK6JFuT  sedOFooGV  sedu3DKJi  sedZaxDXl
+sed1q3Suh    sed7X6Em7	sedeCxxqd  sedkCU0R6  sedoiewis  seduCgaW9  sedZRX11K
+sed2rtcwE    sed8i6FpE	sedEp00Zb  sedKENQGD  sedoXLiK0  sedUzytVP  sedZX19fD
+sed2yGBr7    sed9zY5uF	sedF2b4rw  sedksjVVE  sedoZAkUc  sedVSnYKw  useless/
+sed313CWI    sedaf0WZO	sedfcrcB4  sedkxdUy6  sedqdLPxx  sedWK0G6O  vmd/
+/deac/salsburyGrp/wud18/install/anaconda3/envs/py36/lib/python3.6/site-packages/pyemma/__init__.py:92: UserWarning: You are not using the latest release of PyEMMA. Latest is 2.5.7, you have 2.5.6.
+  .format(latest=latest, current=current), category=UserWarning)
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+/deac/salsburyGrp/wud18/site-packages/Analysis/Cluster/Scorer.py:70: UserWarning: More than 10,000 samples. Silhouette will score on random sampling of 10,000.To override, score directly with scikit-learn
+  warnings.warn("More than 10,000 samples. "
+Make sure to use the absolute path for output directory(-o)
