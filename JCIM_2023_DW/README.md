@@ -22,6 +22,7 @@ Add the Analysis/ sub-directory, located within the python/ directory, to your P
 
 Edit the .sh files to correctly point to the Python scripts in the python/ directory.
 
+The following python libraries will be needed: numpy,mdtraj,scipy,pyemma,MDAnalysis,matplotlib,and pandas.
 
 Basic Analyses
 
