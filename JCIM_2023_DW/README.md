@@ -20,7 +20,7 @@ Initial Setup
 
 Add the Analysis/ sub-directory, located within the python/ directory, to your Python path. To do this, execute the following command: 'export PYTHONPATH=$PYTHONPATH:/your_path/Analysis'
 
-Edit the .sh files to correctly point to the Python scripts in the python/ directory.
+**Edit the .sh and .py files for the paths on your local computer.**
 
 The following python libraries will be needed: numpy,mdtraj,scipy,pyemma,MDAnalysis,matplotlib,and pandas.
 
