@@ -1,0 +1,3 @@
+analysis_dir: ANALYSIS
+conda_path: /home/USER/miniconda3/bin/
+script_path: group_python

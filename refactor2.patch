@@ -1,0 +1,1866 @@
+diff --git a/AH_clustering/__pycache__/__init__.cpython-310.pyc b/AH_clustering/__pycache__/__init__.cpython-310.pyc
+deleted file mode 100644
+index cea181f3d73f8fe4f326e23986fc5f64e9c7368e..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 153
+zcmd1j<>g`kf~N@!Qb6=$5P=LBfgA@QE@lA|DGb33nv8xc8Hzx{2;!HGeoAU$vVK8E
+zrG9Z@PH|FcQKfrPfqr^XerZ8`L1jrsexAOgM|^TlX>mzvQD$DcetdjpUS>&ryk0@&
+WEe@O9{FKt1R6CHV#Y{kgg#iHcOC)Xp
+
+diff --git a/AH_clustering/__pycache__/__init__.cpython-37.pyc b/AH_clustering/__pycache__/__init__.cpython-37.pyc
+deleted file mode 100644
+index 79d9cc9c92f67c05c4741e389090741e421df967..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 147
+zcmZ?b<>g`kf~N@!Qb6=$5CH>>K!yVl7qb9~6oz01O-8?!3`HPe1o6v8KP5FWS-&8o
+zQolGcr#Pv!sM5WtKtH`GzqBB}pt2+*KTqG$BR)B&w74X-C^IizKR!M)FS8^*Uaz3?
+U7Kcr4eoARhsvXGG&p^xo0EG}Fy8r+H
+
+diff --git a/AH_clustering/__pycache__/__init__.cpython-39.pyc b/AH_clustering/__pycache__/__init__.cpython-39.pyc
+deleted file mode 100644
+index 5c9ccbd48cc9ea2ef4063321e14b05cb997cef5c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 151
+zcmYe~<>g`kf~N@!Qb6=$5P=LBfgA@QE@lA|DGb33nv8xc8Hzx{2;!HGeoAU$vVK8E
+zrG9Z@PH|FcQKfrPfqr^XerZ8`L1jrsexAOgM|^TlX>mzvQD$DcetdjpUS>&ryk0@&
+UEe@O9{FKt1R6CHVpMjVG0HviQ+5i9m
+
+diff --git a/AH_clustering/__pycache__/clustering.cpython-310.pyc b/AH_clustering/__pycache__/clustering.cpython-310.pyc
+deleted file mode 100644
+index 31ae7babf10e2a25b7854e1ce731695ac0ee66bf..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2621
+zcma)8OK;mo5a#=(hZVn?I4|ebmTeLJfg*?z6e&<h2;cw)cwuM`YcVDzWl6!6!Jh0N
+z5*_oGcr6Ol=iGYg%&tVzasqUX9nErgcE6c#cE^)W$C0r8{q7@JmL&Z}gJ#ok@Dh7A
+zLID!UiImEoER(JzN~(G)*VRNzbx-HImKdq&nOxTsE44kF>qg?FEw9COGij$CuOmyZ
+zC9uH0l)#R<7pk`b&Y|SCu4FvUl}lqV9|ZY`wBH6%FwRgjk1Ev~)cWq5faP%>PsRsq
+zG8@Anf=LWypdAGa@K+xky*U_!xbwB9;^-yzY>Xn3JQ*ZU0U4A_$y4DTm|$JXo(A{9
+zffi~yJb*TIP&42mbYTNE6ZWA8w@|a-5p2OWYBoHE9oR+9fhTYq?x5C!r?3ZiQEP*S
+zjy@}$SII2PBNmTOLUMZ5NLR4G!k)EJ<kE#yNIs%Fls?HrS79_=n(5q6MToR4N`C(&
+zu?~L!_eCF~AnZ>^^L`d2+3}3cU$bfd1Y<Mxr}KO?8TSu<^~37)eyu*A&P&Vp<8hq(
+zKAoM>QEmBrs|NdgHO~m?uxuTE_+=I*F`hcU`UhhgVmejLMvXdo^LZadj=sE?FXTV1
+z!uqHba-kGzp%r>z6z0M_lo+L@t1=>owNRAish{!;uo*!rH3;&clut{CMbjh>gFMR0
+zF2@{3<D3!sxG2u@Ql4U%f<OE?k4oh<<pC0+OWSXu*uegolHHMa<@3#kpUY#fa83#h
+zlFMe|FLmzIJya^6jKXO8w9vogj}@;RGPy%+8@FIPC`vsaMd+JF;Dd1(u{$(%mjrR!
+zfc_AN1b+#A^EySV6GDE+aTzrVCUt_HJw;K$b_%Bno2V$P!d}=le2S2u!#Z2RZ>_=i
+zv|~iizQLtsoAYrN#V4aYV~@ysmjric4>eCcyGh6soFMZ|5VCjOtJT3@O)$1eM=TRa
+zC!HsdovtihkwSIE1s*z*QA7krf>)|&v>x<lIKjyv($BXWxl)}F(y^;XNkg4SoOZ1u
+zt`~Y8@dZ8zH&HurwW(_~BF!U6*~0cod`n_2IljYhlpxD6_T=-O2G)AtE5JqnFPh|r
+zh^9IX(wlK4ay>zMD&Ajqn@noHH6IPvk-E5sNM}5v-3Cfr{MAdx9+1hB=Ng%PJc|>c
+zW8C$dwGPJdtF`Npe!#scfb21fYa~}DZ$rBNt47Zqb<Q#&t5`M*vu2r|xP?(OO(r6u
+zdU{5ftp>@QUy7Y)&$38>t&`I;d~UK1{YNyQzT|ydKJPUm%1uHQ=U0tx8Fh}F7_5-1
+zg({FQlo~NPEf8yGR9Lk&z@F~Y_jOc1p;;gM5*1dHjRq>dlP+or>*2B?yM@x#hU`B6
+zichXF9CB^BZn<K}hhn`V*1OlY`kuB@m-~vrTVccpGS}S>6}@qgM!sJ<zMoEDmXO}|
+z{SUJs5i^V`1uq$l?iS-|OD_WB*+QAjD0dh!z{u%FAovC4HHV5JWo}0Cwj@h&R7Y$6
+zbu~t7hHlR@(m7RlUhh5QlvhDs7(EjoPpXNG=<_UmDa4RJdK?PB790hqjf0|;D~-wV
+e`zXx$AzwmRT0e^byrBA?5hZQ>7oh&zR{sN;bpC+=
+
+diff --git a/AH_clustering/__pycache__/clustering.cpython-37.pyc b/AH_clustering/__pycache__/clustering.cpython-37.pyc
+deleted file mode 100644
+index 22040428a7367c17024635f0b86429b91375b972..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2655
+zcmbtW*>2lL6y?52vYmKo_BdM$p+NKlMG!YAQlO9!AOQ^Ug{3)+#h8?oAq7_f`(%Ge
+z^w?kGYf+&7g+BG38H=Rlym^Fsbw)FH=G<jw^mDK0Db)V?{VQ`EMfn?@RWk^@CdtR7
+zn8MUl$y8refwff2bYB-(PmRp<O@WQn%52{j*i4<w^<9Cj)XO@4M_@bcW<9^BDsL6$
+zF!x+xZoF}(`<u*ruk<??Ds9(SD{HtIhQ%1@w_zMkazgfD4V__w_uhrPNQz`SIpEXz
+zgbiahO&AP}!;mxjHiw7r4u%n}TsMo*Ym$6IDpq`zDZa*3rkyLk&K@wEIp?Zxu!qcJ
+z9YQ91#Ja3U$YPJ#2HPZLvwgP3ZV__W6SmEE2)XPj+hu!%Job#;VRs32*mHJ|-6zy#
+z208hn^4_HLyoh-+Iga2k8oo7>HzawNRH2+Hr4kS`vQbBUjbpg7vqg}}&=`4~e*8<}
+znEl_Y0gJ<EFdHuhd6?!$bG~@XXM<yk$t;*Hit%(ZIQTV)>YWD-d^uZGP7oxMqzD46
+zmSZbL{j%K<eYqOvU^=Qg??3-CkJ5y8om~8@D@sHqB$`VaB0SkAP>>&=)HC%@r*yt*
+zrCMsGUK*uYTBW_TrFS}~B@~W=tn8B@6FGNz2YrKuMOdjPmB-^*nnYm{=hcQ_8^x1?
+zBi%G9$%{&zQGmiff~1Hm?IaVSk*bH~Z;{$0$x+^l>ZxCDw>-Su_5x!ODg@2G6yePS
+z>eSv?rPcOkX<qllNmj1d!WDj-7U0{YDzg~J<dp;3;UtRrcNn@0g$%Sv-={828q)2w
+ztagaRS*B?S8AK3%PM{|2m0p`L!e2V2yL4B?5fzyN=X6E9vqs!Ej)*tkrKwd{<lr<;
+zj>kpLAHsSEO1N@|kguO!Pr@S_z>IJEv)cHk<z#}0C?_{tt=X3a)nq|3g)jUulwc3y
+zl}<+MiP)zBB%>j|)2g0&mk3*<p@bkJ6ZZ(znJ`PU$;1+u0v&LjH=MnsUaoJoG9V(0
+zV&Eu6{sd~RT%OWzaHe6o+hW<Qd%<YZO`{C=WR&$;m|c%A0_w{$$>hDv_h8agh!K$C
+zx(_JZXC#de8!aEm;3mhj;p`sGlazr#fBk%})AWLR?mF2QMD&L%WZPv?n|+9Im7w9G
+zgowJpX{hVMF72i+a6vAuRc*jPM%v6y!Pse)g{TO`)OY83EU7ld>|22_SttHI8T?4n
+zM0u+fWnmKOG>(R=0U|gfg*9ir)FtPow&Ds$C0FAVPq48@)i(qDzRm|h9FR18Hd}ne
+zN~U~$I4<!K-y+>NMjU5L{?xZdBY`gGUCtPZuAHyQ`TeU)q1xyK%5`PugESHyRp5RP
+z&*UV`;vlHJAjqa{o&tA+;PX68<p|#Z9XvH0w*^Or`92hmCP!^^)C@=bIh<|<LL6rC
+zR^bW7{gvYkIhvz;#?=qUj8T8fx3UHP5s3c>zI7trPVt=jHeJ7XNjXyIJ9MYWuDECf
+p5pfs<2az;E38hw9)1yyuRESN!#jkRHlJ394|A8Dnch%NM{~vSd5eEPO
+
+diff --git a/AH_clustering/__pycache__/clustering.cpython-39.pyc b/AH_clustering/__pycache__/clustering.cpython-39.pyc
+deleted file mode 100644
+index d3b4237cf772dd1aad58b458296204f94e50bd2c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2721
+zcmb_e+iu%N5MACcl58iwH1{}()0QX@{Xh}K2#ORaBm{5(1AJj=4r4JUDP>7PRlq*k
+z9}+$0m-t!~sDGhPomrX}D}HO%nDtri?aa*CUHOB7&9MCa`)4ps#{Qy4x2V{7g_cdQ
+z0tQmd63LY$!g4GpimM2$#A>3sn!swTCx&YXti@(xxt73sY$rXpC$JIslYu*s*c%2W
+zSQiYeaN}HYH^Dw)PVZ8}?HsApN6V3)PYC@s3jH)gWE?lp9JP4wt<Uo)kEZD%pUzVl
+zg)ohPCaA|g2mG&%j^7@R0$ll8(XsUkElaTqnJWQvWspF=V6FlWzyR|?a#eT;HuMl_
+z@Cf=aK%~QC*nmw$2JFKY+(Kl+6WE3wL>4@SUD!ip!!x)8cM<jA0PewkM14@v(dVW8
+zI-X~F$fNW$AgAj>SVnt|mi4j9**PnihwP5n7isLsoVrURS$atoA~g%+_g@$v;P-!D
+z4k7e|;cT)TW`3NV%=z*SpAAnjHZyOw%qP=yc=)RqG`kO5_+qv!P0x$cDEB<tJEN_b
+z^l7^#`=ajW#B^Ntjz0b}58?=SO)vjZ7z<ENO|cM>32*ih<mk%>>0J8LEX>bxAr*3=
+z6l$RrdSR@LBgRRVj>2&v#(P+m#+jE01z4OYl`8nTUrJ}C&BIw71%4i8<%ZxKglWzx
+z`8X)b@=}^%nEXGyC=W~dED-^!stsEHHddQx8Ht@qw)E+C$Iq*6FR3pet<=RpKqh>8
+zfS~b7FZ8ZYEA1wK%&2zA5DxKeT!QalRciSpMBhvz@25e??@-r0swlS|>a;D*YpHir
+zRPPXoGmgWkP%y~^?E?f2ZM(3$v?&#ZSy(HprB4y6(qS%Y`n@&!u6ly(`5q1}`ywBU
+zFgl&&8Gl5xcc~H%-9_Xoi?0*%7(2d0yV<LH<8LD{jpzu0SxLRJQ%S7NNX3^t;`>wy
+zABcXb;H34WJi(6pXf6Gnj-Hxb0@}JRBrGzK70Psz6|K<PtgP_TsE<a=+>V+>9letc
+z5oJ;oe@N9+s@4Sb48KvhTdunuuI;*)fP=nG#L3Mn;>yfVzK%5o*R6z;RChQhF?2Me
+zdN^_2ljk^wylFkz=y-w?{{P`^nOi6GC<db8te@U>vbNWZU8np#(*5BY<*rbgY3~BM
+zX6i!MDw$9Uov21BMq#u{p{sPIw`!p&Rn)a)LA=e5P=rQEEv_}s!isP!a##1nly&+<
+z{U@|G;#-}Fiz$JE{dJ+sgG?}|!_+WW3Z-Jcl3T{)bj4U*&;zcn5q33?zOS?T5vL8&
+zT2`AKR$?Wsdb9Wz4jc1ZSUc*N(~+${Ir?}k(ABuB5o6J;#>>@s=lW6yw3KqSZq;~K
+zO%e@BU}r#&Yw9PV=ashSB~zHkg!`WNaqh=e52qJNJWZS~c}|Cv)6K$3<eb#bNk5#j
+zz{%-OAjBaTZyP<jbo*zNVpBF1TfP3rX~fvsa`j|Mzazx23Rgc9Z>@NKT?4OZdU-h|
+z&o%L`shZ*f5=6wo5FA9(1SJw&sZUQngh4JgxrtwC{#?2Ll72;GM7b|@{*?a!%0?1Q
+
+diff --git a/AH_clustering/__pycache__/kmeans.cpython-37.pyc b/AH_clustering/__pycache__/kmeans.cpython-37.pyc
+deleted file mode 100644
+index ab18d247dd451357affab4ea0f23a01fec32a08f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3028
+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
+MOXp-$pZoUz0Jw+W@&Et;
+
+diff --git a/AH_clustering/__pycache__/kmeans.cpython-39.pyc b/AH_clustering/__pycache__/kmeans.cpython-39.pyc
+deleted file mode 100644
+index fa114ba9c22f9b1bb6ba96fd23f6d402677ecabe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3028
+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
+
+diff --git a/AH_clustering/__pycache__/mwkmeans.cpython-37.pyc b/AH_clustering/__pycache__/mwkmeans.cpython-37.pyc
+deleted file mode 100644
+index f527080b8bfe8c81a2e688e066bad3ec38e0819f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2089
+zcmZt{%Z?*8(C$aN(|KpID;^6%2qeN`XU}M~ybg<mcC-Sdm2xpXu_x(C(%tKJb|!;!
+z+JW;*TsS62E}ZxZKEdLG5Qq5##EB{=-7|}DWT&cJZ&y`+)@nrr)?eRl_>Wye{zRl)
+z9sr-fE<S*R6He!3M7hJ=xwCLbE+vl$_qcyWxG%gH?#So#Yci}|12;Lorf?3a37&rW
+zSj1^DMryfU(JW9a895wuUy+f^8@$GYD?0Lclh=6!kk4Jv+%n<gQk%0^h5xuehh1PO
+znrgzpTi~b1Xn(O{i&#yEj`0dHKQ$rSQ+_5g1c85!4!MZOhxv4MSj6+<WGPpVWPUi2
+z*)nJON=>u$@Y65Yc)l!@kV!f@T%6Aq7}NcH1?pImCW^6l(F5xiz3i2K-Y;*DC0<=`
+zexPKGR&mu~H(*=e-vdAqP0r{Gx(;=?aUc>$yV}!`S6u@r*w!H`=h*ZgC+RFZFJ=kL
+z)$~brF67XaE@+TG940)UG3(&4E^A2ec&uVWXNKmcZQUJ<RLLyig=t#+TqKjJDoi9r
+zK2OH65(T6#zF>(G#)Wuou676dZR(JOossteE$~H&6Vc0l6?(-Wu@uJW8Lm69tEkT)
+zD^=9Kre{zEuak9+lXU<)gk9HA9h`jc06oI|Y+Rr?+S$76hQ&R|RKrrdjlU)9Cg9DT
+z%qdDyRoeum?k(i<O|oviq!&K{E#&UZd+Eroy?24T4bp8+U&D$At5!n?G}I?#OV?f9
+zTK6t~uk3cvuI_2)fNcGWYP~6`GqUchNcUe*u;sj@(&L`)m-f)ok$rcJOZRWA?qfUv
+z+YQ~(2V0OWjx5&KUBu+WCqy4q+3A$h5Jgw}8^{B2w=_skoGs-(c-r5zRR?o`+IekT
+zhpxMcv-j-Rr)1}=_GUg<_*=s}%tC;E)1AsvpnDY@?)caB^uDzg?5wQ=i-o#}w$~wG
+zU0vVtS_-@?(0aNLp51srpItsB+69|+c$Keo-M;8R5478`ToBtp2YPTzCeYz4c&N#y
+zuOl5mHNlHQ)WEUzp?88^8_FispsmVpuCXmA-wl3w^vC7Z$HRkLUE~+jI2R_G2*t2n
+zgfvZrc~Yo29Sal0a#Cbc87Iw+m!;4$UXff1<Hu6QE8`Z+g=turiD%1rZr);h1-Xz#
+zlBMh<E(B*~^VOb%=JCwb;zF&!w40>L)TTRPW1dZ*G3PAJl)MXG5AWFKmTe3MW;c-?
+zIE=5RLd6o>%tR?W6|q`MaIJ@Zo`8JS`lC)s+B+~BK$yTJ3I-0A6VJ3VnM{%tMC}-9
+z;JMGps9$D-sjQ^6Y_L^S;6$m`M7vbt<Qcu4OYuC(mIXTz^DLbdsN&XrT~#XX{69w{
+zy~Q5lQ?P_z{C84CNi~T+grpQt;J{H8QP2LGv`g>89>9*^M7l#C&^GPUd+>8;lQx}?
+z0FMx&k<+$!ZvY+w)P>*WK{fVntPQ>6eZAqlgTZY}Zdk)_Mj9^!V<uv3k@4jm;U;5P
+zB)c1l-!l8m@&Q8l&A4^o2$nc=-+^7=j1QgAjeJW33x2v><STg(E=;ihTG`Szwd~|f
+ajFn})rO@iPgFQUjdGrv4?OYFO)BP8qx*?DN
+
+diff --git a/AH_clustering/__pycache__/mwkmeans.cpython-39.pyc b/AH_clustering/__pycache__/mwkmeans.cpython-39.pyc
+deleted file mode 100644
+index a9b7b8e9811ae512e1c4078d9785bf2e1b234186..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2097
+zcmZt{O^+Kj)Si#bWb!?mt%@iJp&}6u-5z_W_z;J!gt|fk2`LwMHufgdBr~(N(`^>#
+zv<vESCH_Ei<kBC(&+rW)4twK_IPmObW>bVmw%&Vw-+u2+(rQHr)}Jrd^p`F|e;8zc
+zd4PNgTYL%!MHJ7_5L1V`GiUA&U5t(q^{9W1sL#ABcj#069U9bbfg7FNVmJp_2S0rC
+zoF$nU8S4IeM>{i`(a@ow{~8Tl+MqQWT;rifo3u_NfPCtL_LdHxml~Ztbp|&3YuLhs
+zrLaN-yapM3V*Hpd$vlyhfulXaW@kDiJIb$!ham9x(<91~(NQs39*JZoP8WQ6%!{Kj
+z&ld$LmU5D3M_)Z7quD}8#?x$kG{2b6O>B>fC8#55mP$fCHXc~l@MW*`^-+0y!p+s~
+z`e%$r#%j6h05o7*{~rP%kwP!=6<&oZTsshrqg>@F$g!#c6m04cnRBA!=V><0FT^w@
+zg`9kwUobv!xeFS&4~Gsfro=iqsPmd3cr=lT##4<8-L@`|SSER%QlXm`zhLQjB884P
+zD`x2^kxW4PlGh}aOuG=X&DZuYe(O3UVr%3RK!tf(<V5%~uEMVvxG9T~@vK~j0928`
+zfb3L}`wG8=ig*vLY80&k*dgq?f=Z$2CkN<}$<f*cildy3yJ}e6gKRY{#asIuv}yw0
+z+{&C8DJ*O2pwzvAe7=uXEx<$SPQ4q4hxX0|&NfK4DZX#2A1qqw4oKI>XoFW>)mrr`
+ziydQ8^^|jfHhx95ew5THTE#L_@f8M34*!RGDlTmqD^Km4n|M@wXK@$X0oZM*jyl*l
+zH(0!}Sgg7R<4<nz`5Sdm<)u@~LkwNzuOS1#-%=nyb~c#$;Ay;W%Z`cO=%=+!9eVFB
+z%HH|gt*6SH`e5NN1^HhffPPb*%1)qq6&!B)SM}_XwH0h_tpbaMs%I>(LcqGJzU8$P
+zcu%19R1ALI*~jOvlnWLyyvH+Dx9`|jedRVR55(11f$Hx`1S)(74;5O+DpCQ|5WFQs
+z3>+IDx+d5*A#XzE*?Ro`)->h#$Nt;n-!HGf7#!^Nk1r-k!E`icl9)zeTsI9&Qz4UV
+z#B`AGvB<g9PF83y&!Aa6kzO+GC!8ls?TW=*H!Mup`68L=56DhI!MI5CjGQKdQBt;D
+z?G<PqO?531atWs0G?ThE*%BMGd<-o)BUvu_J@9&PXxo~%O)xOU5%0jEeK}z=;ikEC
+zl#w%*$OQ-2dZxoukguA4*eOXn2ZntJ6PTDF;9xoLbSvlSIL$!R4v>a9cNrPRWj2V+
+zOIphYTSWy<lxlUfO{JMR!w(D2UZwd$kW)6xv#~HL_U`MlQgQhI9F1&`Jv2{2Qu_M8
+zGb&1}8T1(>MV!E4hE#+-`!#VF--F%9O`!D+-FXafj32<~0n~J!;5N_!!jaPkIL7w@
+z4*}}JcX?2ayE|J0?_^hPX2!w5wgoq+ng2zW%o!m%B4nP^#mvA>LQIKlZ@Br7*+=G&
+z4P^codxsgl+|1gKU<)(bLnm}2-_pQ>pDpIal0Se89qj&8wy<?AKYhtY(lYKTwEFEp
+R51(#5`rHWHc^=}X`!D^uAGH7g
+
+diff --git a/AH_clustering/__pycache__/mwpam.cpython-37.pyc b/AH_clustering/__pycache__/mwpam.cpython-37.pyc
+deleted file mode 100644
+index 50e799895b71ca85defbd738082f33dc503583d3..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2213
+zcma)7&2Jk;6rb5|uh-5;tBOD=rf|RrB@#kFQ3NS16bTYVZKWWquxvbIXXEvHGrLRd
+zFnb|^6G#=O9^)et;t!e|LLlYNsTX)}>@*QvSZUtA`FQi*y!rj!eAsCC1inAMI%PK&
+z3Hcp6=br`22DE$~1S5<lq(k-J=$Oo4W?~KPj!g;ZR^klZj!Vfs!ffW85aw|2*zD98
+zeL&jo8SFr|&M3$>RqoEGn><Q$P_J!AqKJ!ll-?GjGG&{bjbfH}asBycg0cZEe+>lJ
+zF?0+@nQ=lOj=J_oI~EIAjrk|EV>1(cHk7@&vweHBYk(Dg_{Vk!T8^idRFV)528-zy
+zhBcgo!>HJ68_LRg(o<eIANiSx8W=piwZ?eVUCZ_+Yk8F9yQP@i6WLlHLeIi%QtXY=
+zwcDSB-K5M5F5<MmHayIt;c7O4y}~$+i!gi{-Rqd>QBy~_dOo#v#$dARg1~P9S{<4W
+z_$lPBAd>9UV_LbA?i-Jc%ByP9Vr1ZncO@;%Q>(D0cTA-*HQ=7ecSg@xA(bU<z2?ip
+zId!Fhwv4WjzA>fe`U|A8Vb<%DDXn})tNLR){$AFlGoX*D_zUK0(vt?-RKfT&@M9d)
+zyX1?Fs(~?``jAXZHZHs}Lz>dQJR;32WNOP`wnjF3#yUCpX@|&QzYe!){z$7P_z7eH
+zvLQW)u8HxZM;K|!ru3%<L~{)^I1@w{^y~*@{L8awP9d76Yz&OkU`m)Zz|{%Zdd%+A
+zDgD11?h5D8J6)VepL5~A<NrPB)MC~OSs|A*vQ8e;gBG0DJzdnf!u&L44Xv3otyQ*c
+z&V0d*`4Ten4yoz~+0G20?v_BzsO8N#9gGh1K^$hq-uCE_3qY<FjpJM(yUzZGum8=}
+zU+?{Pbn-!aNg#QIgQj-A7iC--f+;7DhFQXuEuyp!Lusb0QOa{=M?ypsWgl@d%2m+k
+zMabg3h|(@sP9*xnI8|m|4zZ(6>)IgX2W6C~>$sk$z~@PL7#DjXEWfaSF`RFgaghVz
+z!`&$7EIj0Kf3L{f3j%SkEEW}!q60-UAmpqXD0jXHMxt>T7hIW#gQ4=%nYS1s2ffFm
+zq7<lSf`1*4$~-KUiK{(4L|6<nWe&nv(NfcSCa@B8+%VKkeHA+SDhOiw)TbW34($eL
+z7HyhM+N2vaFrG6|YZ}Y+ZR2y}c^c58#yOGoE)VrxJ>&5e*bcpD9{&jnaFz}X@#ZBy
+zlYQVNaMJ{Qn5ZExrj~So7l6hB5Cy#V#!mq2wr1WBRc-tp^c>w=g-UR-2U=N=?8>j|
+zRZul5U=Fiape7GYaetc}+y@+<j~L=f;V}1@ev63r21MM2IbA&f!S!d_oVPFr9P8Pz
+z`$Dx?Emg~vcW@W>Tab%#NiItd*`tf9xAjmo;J9rnFt2bGX-|VxU}Za6y%VMBsA%<h
+z%0*Q0R@BO&WG1|om)$PU^In;>E=p<J75E^{u-piB!soZ9oN%{{6Q=B5GKva;30Jj`
+z#$BG_%hJB0p(S2I^A-xM!Kzl~d~W9po+WV?g2;8K9TOf7<@e$=N;H5Kjl~;ic@xDe
+zDB37q2cg{Ax>7Y}${e+wdG{Q<wb?A-@n7guwnojzuvdN^1Od$Xv}JgJu_hoepbj(-
+z`ft&r`V48>qHS(%i2w}R<_vPPj)RX)8Vz|EDj!lbVr7DQ5Qa$8*^I!KMIhA0Efn~^
+zT@r{_VS~V=<yb$!zv<u9V{KpAX*tX$;wnri2TB1O4aE|6Tp%XC?Yi(N6J9@kZOR$#
+g?(=S;?JxP!Zqb?Y)@OmfzXHA71K~j)0veeA0HHxRQ~&?~
+
+diff --git a/AH_clustering/__pycache__/mwpam.cpython-39.pyc b/AH_clustering/__pycache__/mwpam.cpython-39.pyc
+deleted file mode 100644
+index d43fa6c59d46d237e43c3afb6f7c0111a7f4b5eb..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2217
+zcma)7OK%)S5bmD$&d#nMi6RUkn81NW$VRz9kQMR(f`q(^l!!<xU>I-ruE#q&JMNyr
+zS<@pSY%U0-9QXlVi3=BgP@h1ELnIEIxj<F#IyU6ONL^F?sIKbj@2gH)t&qU?`{yU@
+z$}%CpVdwnkK<6ejxdnm|Ml;f*=5O_EW-&W+#%|B01av3!#(vMI<St<@^NtDgcyMI*
+z8jRj29sddJK)O#T$PU&1!;iLkl1or8-AhE7mgywFB_>tQwmF-mO!jg8`Ok*VO=$8p
+z5ZuJkvlwO8F@ac`#wYDLEMg579@C!7Z1CIC?)Jlbx3>EhSe<^TW4i-QVg?jdB!&Zm
+z0qtUV<7qrj%H58o9m%tS4&uegPee4p;IHeOj3@ogVt2YJlT7YZVtQ8;n?pE45f{^P
+zcam@3`Y`Til`OeP^Wo<Bph(6W#T536(>yKX_+@l&;-ZIb6XnL~RQCyk$-WQb^jiX@
+z3C#rkC*-jtitN!NTKkIbS)W*SP&bsrNJYfkik9|?Q@ScRqRN_CaA)KjYhbOB+EK1q
+z^I7Sg_{u_CM%T#Dn$c7J1yZ{(8w|;e)*+*HQ#F-0qK~Qg1I8OFP!_JQBk*7y(f7!w
+zH|rKga}q)-9o0JX$1G(l_xy;mFOZq5qWK!t8dzIo|2q}!HQ_ex?`hozACZbcwp0L7
+zwJ~nv%{ytUwhCt!M1mTe1tN<E?tSt!k{=<GwrY*6lW0bmGs3k4JPmV)bVmQLHgGLM
+z0T6H=v)kE;%sH2y9e?(uGlw~AWR0B9$QF4__b(~`WZ7g2v(r`$v}N9`QM;-=_XIZ;
+zD#*xNq;BqK2AY0XAX@b5cAAeS2Xd6gMY(%#a=-;()=3_vQXs#c{0-mm%ZoqX{q^wp
+z-Oh?Y>Ie@_UAdbSTw8)^PbT9c<JuKTK7^sX(9R_1QoD%|$yB?CTuh{nhP;efD$6AA
+zbL}N!I8JkI%W8}rW7;$ZG2gF}Okc+JJO@Tk<Ab!^jbZtj{fqHpyMhY|l#h23$yt2B
+z)8TF@J4*r)uN{_@iKZh>3!vh>9%z5D2u6}eaawY1AB@I2%;(-xh#d3*Ps&Q5UI_k0
+zI;mt_X&YAuc!;<h7up`hsiu`7@?2mI==pJMIQlAd<OT?0hcu)Cy$tONXbuhSHjU^F
+z8d=X-Z3?=zO5d?Qww{O4!`3N<%`OkjUHyx}7hp^DWElJlD8N=avc$D>OeTB4NMNN6
+z2(eK^WXv4p0W%QgfGA*m0BCm&@4l@YpnFDt6Zn5-j~31+ZXMRmI;vYW@P@f-P?blv
+z=u)!()qeNsh$Vg~J?0<LuMzFRh=|)TXKDtZxA|0Ca2CdZV*?j<U#geum3p-f_HU~t
+zwX9austS;g2C+f+foQ=&J5*p+;Ue;ZfvCW0cDQjT$@59MKIAzUNy*ofbqS?1<Lk2O
+z_qmjVDqBA*p&eh~gEU8SD>ms~+?n>`ohr?kb_dxcDFvolH{O5L=LNnjoeKt7;w3a+
+zM}f6hH!8^&cA?-!mi8eCX+rJU@M!38kmgBd;HzmW-ayN%C|*I)LGd~W?a$X$x;0l8
+znC&gPr^s#0X911>!Jc*vW<G$u<Yf>95Es&QD*%K=fWL@(&;saRqle8o&WuIJ?si24
+z1|542xOvCJM<!3kJdSk;DVne<Lp_RPB<Xxc;A<if=;AsGeAmtiM5=H>VA3R35Abh?
+zSIt-_)NWpli>bH>6WW79z$Rm{f*l`diEq0pJKBa<&s>}KCOdn)UmE*!evDgmrh~0{
+Rpf}c_Cj$@x<RPMw{SQ&AG28$E
+
+diff --git a/AH_clustering/__pycache__/mymath.cpython-310.pyc b/AH_clustering/__pycache__/mymath.cpython-310.pyc
+deleted file mode 100644
+index 16ae97ad8423a78b4348bf13321a675f6566feef..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 3993
+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
+F@n20xtc3so
+
+diff --git a/AH_clustering/__pycache__/mymath.cpython-37.pyc b/AH_clustering/__pycache__/mymath.cpython-37.pyc
+deleted file mode 100644
+index 3cf6f6efbbb95ac4a1a04e17611405c2a260e72a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 4035
+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
+
+diff --git a/AH_clustering/__pycache__/mymath.cpython-39.pyc b/AH_clustering/__pycache__/mymath.cpython-39.pyc
+deleted file mode 100644
+index 30265f115086bcec05755a177f13927f9cb2f4cd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 4025
+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
+NT<iCUC{k_R_%8xsxB378
+
+diff --git a/AH_clustering/__pycache__/pam.cpython-37.pyc b/AH_clustering/__pycache__/pam.cpython-37.pyc
+deleted file mode 100644
+index 3a9f4a5c3b7b3720cbc5ee2c15e04fe26ee9d53c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2723
+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
+
+diff --git a/AH_clustering/__pycache__/pam.cpython-39.pyc b/AH_clustering/__pycache__/pam.cpython-39.pyc
+deleted file mode 100644
+index f2c93c289ae9a9849ec6a534cbc8e2e4fa10f7f3..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2729
+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
+
+diff --git a/AH_clustering/__pycache__/ward.cpython-37.pyc b/AH_clustering/__pycache__/ward.cpython-37.pyc
+deleted file mode 100644
+index cd7e28ef9fba45bf26359f925785ce071e36080a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 1159
+zcmYilyKdY@a9`w+6i-ERfGs$7?Q3*Nny3&0<pEf5p~i&_0>+xU<w+EeJl-ye=nhLD
+zfRxS#T=)ZIz>UAh-L^&w{emmc@Fd&2nAv&H?Ck8H!(l{V{r~b>ee?+Vgv{L%KpX&=
+zp8zSM=$s_<2~kY(E24PDE_uQgeMZLO1}w<Y6!G2SKpX&=M}RW$R3u@FDt1M{YoLVk
+zu4p2Z5B`A@$Ej9R2Bx_1MEDE9V1breBB2JbrAK4x2IWeYX>&GaPMB;ybAh~-d?4Bf
+zhtGQxm8H{3eYTpIbZ$;sy?UbS$*EqnwX9do*`k{KaVV$r)-;*UtJBFpP{D4!f>1KA
+z@<vLGWBQWldWiMy-f3<qsHS*BT-yL4Kws?)RF<AYw{}R!8+y$we@8oE;r@#J$3W_V
+zl=o8qtL5Mgy%^bnWrcV{_0vWuc1gS7;(g;;uK0a&N&hA<-gcq&ZMXx`3#QMP&oBN3
+zeW>_7V)-Qli>iyjBD%GBwOnuPH?k4ga1ZbVn|q}3E&BJB&7d~mqHo-NqQsAoc|^J`
+zyJdrd=(XMI0vmR*jk@7-eN2|mk1<;85%BiyaEJUxIN65^k=rLWwgUFBU_eu#;(~q4
+za6W*E@Lp5M8{bL6ZlL%c=?2R^h%GGkE3o3-Z3nT=8G}jik2Jo6<9RjH_y9NfSTG$T
+zy~xctbe=g&>&&sLc7CeU>NIm=QDw$?v-u)zoVSs2)0R$@Sz0;2t@34?jkh%pzY{8L
+zQb&s<TIl>VuhO|J9Bo}V&8kK(a%EgpNucv4&rA|dTdjeUMG};GB~@-3#|xP!0#NP(
+z6v(Em6TgtZfCZkv!r71P1`YbWIE#2A^D`jAA{x=S$J;DmKhT&mI_mKu4XA(}vk_1+
+zeGIS;`(ecx@K^fIj6EFdDlIc9T_k0>Q0*M)SjuIa&NmtzKr;Oh5zhX12&>ZAU2Ka%
+s6tIBzlCf}J)t2>2<3Diz;^aJ=HofY*0DZjvZo&R0`S194{r3v^7j$+F`~Uy|
+
+diff --git a/AH_clustering/__pycache__/ward.cpython-39.pyc b/AH_clustering/__pycache__/ward.cpython-39.pyc
+deleted file mode 100644
+index 93ac6c2ae9085d5877fa59531240976050f57f05..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 1161
+zcmYjQ%Wl*#6!j~aB+XO^Dzz1lHM8jeLZXYRDgvopbx{_eNXVq)%uJfcWb8yRm9uJD
+zBJ~s6CEvr&Tg0Njz>4ckOY6wT_vP#3>zlaW4-kw$UoOQj2ch3qxjz^vdoa}#0D%O~
+zQH1xAAcCGFK@)ODBP#F*G+@^dfeuF&?+*&f9!&KNAc5TiMMPjh&JpbF2_~F#95LZS
+z4$rWUu@oZ$p|``zcD{qDELn{;;=l#s@!<fQUa{asTu%qYFqPzE<MA8IPb6K~@OOJC
+zl6W+%ri-D9b9LOv#lEbD6FF-tUM=eBtQ@{Q;G?`zbt2PpGW-fGwyFiB;%S-IoZCFA
+zqlHiVmgCl~=Nf}+WN&#pRzdJ#c8ouPTjLX`+$L&ijW3C&SGZ*w>LAc}0#*mCw6nVZ
+zBYV21NyaX)+^v})XSnrhM^iyJ&>4P@K3}xHcD26=c{3u#{0O|hpzBD}GXnmy4Zt7V
+z_|NBZ8NIZvp{4fNt`M`1YFFF+9iuUD0xh`HHjrSC;M_ITuILr*Wk^cB(t6r&LmjmJ
+zxtt$CrqDsK)7AY=^afG11Kg~(gLJ4FeEp1oj6n)Ba+m$22i@TOz;I@GYlXO;pxdbJ
+z&0j;jt&peL)lJPT!!d#PcMqklzM*M3mbT>A_KBb;So|$j1K&7m8dr%SWo6u0#^oe2
+zY*r@9IOBX4*Tz}esA>wsiX<+L+mz|NNd~LZw!UE^u499<D45A~l9qAKGlLuBkCL*M
+zvs5S(lpN%=P7@XRqee>5coum@T5^%9+R%)r5d%n#XAQhAs>sdwONg-RD_FZmT|%!r
+z*LI-2k$M4uNPq(zb{G(kJis9)_+f_!*uxAykF0?d;^z=~>US+_bHE?cRc7GWW-j9*
+z;oJnA7c<f1Rt`CzH*vo7NDmH^Pc7JvzXz6;wAHm`Q5HPn(athp#wnYkT1eaZ#+@CX
+aB%``>-AmBr>+a_5EDztcZ`b`)9{mTCd<la9
+
+diff --git a/AH_clustering/__pycache__/wkmeans.cpython-37.pyc b/AH_clustering/__pycache__/wkmeans.cpython-37.pyc
+deleted file mode 100644
+index c13700c1248ec0b35f3d02c1d2ef999ed30928e4..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2789
+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
+E0RjBJ>;M1&
+
+diff --git a/AH_clustering/__pycache__/wkmeans.cpython-39.pyc b/AH_clustering/__pycache__/wkmeans.cpython-39.pyc
+deleted file mode 100644
+index 741cacf2bc893d034ebaafffd8cf4ac2cb155bfd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2775
+zcma)8TZ<#d6|So8)}<x2G&8%-j(5Bn?3hHs%#eN91ZOa79AiW95LiP%tm*WsTACh7
+ztyXm_bD=tf%qDMv{RKvP4EP~GB)^~_PazKrdCXH@lJAr*GaF1ui7K5sb<XKi)!$dA
+zqgKmjXn+6JLjLtWV}GN`-R5HQ6g~eQ2FWBJvmUqqqUU_Zq>#=_CY{*5aeAKQ&sf)e
+z4NG>~r}1v9VDc0_e~clvQF=mhDPFRkBLnG5?<McKvMuY<hvdnQY|0j-imV{+j;a3g
+z=U>E8n)d}FY#PbbKS9rFFPdu>B2~EX(=IpF$yGRsinFdTZXS;ZrWUR>e`1P~`qxj7
+zWgPX7v$Lz?JR0XO=IZJ*l^qY&be@ITRdF^=k3arA?2qSp5vwE}9$$<ml*mzbg=k@t
+zCPf%_DFK@qzwWFvJ=!c9mmK=`tYJs3jb1~yiNDPmE7*c-M^}bo$xFWw+PUFBV_!Wj
+z8;~njeq1&+J9ic?HtFfcNa*H3>@zKNV=Yy6ZRu)%H9ujqcV}<uy5u9FQfU2!w`4zN
+zrJvR?tCRG`Q(M}VV&tfQNI}vA_K=mqHj~fqWb$Fzgw6Un`)pCsl_jS+u)%&WD65A|
+z2YYN$U6Rz=X7tT$k^XQS^RR3n4z0f7yQnSMKp_8r>K0z4bE@h%s@FIr)~y?nX2!dY
+z)igJriqc`M94wgTFfKxw<ONPTwhpGE;w+8|<K**+sYGfxNz!gx5vq+Vqarf(ew-F+
+zn#kPnk#S$d(DAwP({KRCxr%dB+r%_H>+N8Y#VSvxX*kaiBJTOOD&vg8q~{F6#8fZh
+zWO!EO#)&U83$)cxrDwkru5;aldJ*NZ4A(9nz$8D!z<9u$_&w$|9*CL<@K5t5KM_s-
+zh+n_I1=|0Lclvtq2hL36+3eGKf1CjAX`jw>({>;<&@B`LU|92W_FR<p(gzIKoT($t
+z3%(GAqw6<Zi>0`I&84e7YxA|PTA-a3?zsm*03J(GdH||-UZsoTk9<+nLJ9&nfaRr6
+z;Ngx$eu;k%5dFGv7j^Qp6z~XOfDWP)q&81HVX*Rt3?u<`K!~QUjQA^|eCrK=>)k@G
+zVojg`q-iXgAdRboO&rh$WI=X!HO?Medb+i;(Se2FUv%rdwaUM2;~7=m!WclyWMv<D
+z=r+L}`H;S?+q$t7uekaW63zzswFcfZw$0}^Wq_4nB+5=v)twtID<iW1GrWCS9r7jr
+zf2DyZ7{^U#_t(MxI&bc7>D=A%346t7&ox`@*pt8ogFJjXg=G!zslD>uXC*EZDR4P7
+zXW!U+w05e#3wS8HzHp<u(PfgG`WHz$nqK6i#O!XxFe}b}F};YDBC5XrH(Gbsc==hB
+z#YQM;DtR=?#<6NqJi;6(8l`eNF)sb94ymeO9eJoG&Adpd=*m)D1>{C>B{CE9O~bB+
+z@oXNAjZZ8fLL-59VAb8RR9Cy?c8><sIHvY!c!&YTA-W6`m_H!ZKB>Tb1W1Y`&eeCU
+zB2)3Nlj%GU=f;8U>OKgINv7T=ueZpkwedkU2uJ@#_nsey7o*VDjE`ZR{{#bbe6aZd
+zop^n~I~X5upS$P**!>Z2ibv3qOco#V55xm7|9W@J`E5}9X5OeSv`;!cOX&rK0=4^w
+z>I&CYON-y)Hs?fV)R-q!R~7=WAW#r!>$*a)c<z<0GAP?+r`!Q80CVY}J{)j1`*L=$
+z)d+P~IMTi0zvFsG`y-}08xjFdyBmr@-qW4(p57__Sx4{cJpk~Y_K6-{?-Zw-4lHog
+zd&v0u=#wZ-r^VqgPGg0O_AolkQGLhpVLtEo<2)bC$A`C7x$7ElFrG$*1((?k*XMM5
+z_NM;nWk1de+}+*#--Zkm*jj#D5}J0tzLqUWjE|BsPWs3vw}4Sc$kq6RB#p+l`k2<n
+zf@(x!cw!-Pi#qiqcqsY|GS!va+_YE1?UU;(1!0puQts4_+6GDq^!Wh>CQudtlXn4+
+z3VMy^__>(fev53}y4==A9QdhvM4^e>r`-ysTb8d@x>fqTNux;|h6Wg(Oyzt`ax)Bx
+zZ>tqWUon<$>Iq4N@H;u%?5XG}`Z)SNdQJ|=(edy5Kd{<vMbUzKAA|AI`6RnqUk=k3
+a=W)NVM&B0G)J|4OeME@Ksjh=h&VK;o%d+YK
+
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..9331744cd1a538df748fa3d4be97a8b25941feb0
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,45 @@
++# Salsbury Analysis
++
++This repository contains utilities for processing and analyzing molecular dynamics trajectories.
++It bundles a small `analysis` package with reusable helpers for clustering.
++
++## Installation
++
++Install the package and its dependencies with `pip`:
++
++```bash
++pip install -e .
++```
++
++## Usage
++
++The main entry points are two scripts:
++
++- `cluster_HDBSCAN.py` – perform HDBSCAN clustering on a trajectory
++- `cluster_traj.py` – extract the most populated clusters and save representative structures
++- `process.py` – run a simple pipeline using a YAML configuration
++
++Run `python cluster_HDBSCAN.py --help` for detailed CLI options. The pipeline
++script accepts `--config` pointing to a YAML file (defaults to `config.yaml`).
++
++## Development
++
++A minimal test suite using `pytest` lives in the `tests/` directory. Run the
++checks along with syntax validation via:
++
++```bash
++python -m py_compile $(git ls-files '*.py')
++pytest -q
++```
++
++### Configuration
++
++A small YAML file ``config.yaml`` controls default paths used by the pipeline:
++
++```yaml
++analysis_dir: ANALYSIS
++conda_path: /home/USER/miniconda3/bin/
++script_path: group_python
++```
++
++Override these values by passing ``--config myconfig.yaml`` to ``process.py``.
+diff --git a/analysis/__init__.py b/analysis/__init__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..437841b03a9c094314d16d48f8e481293c845aca
+--- /dev/null
++++ b/analysis/__init__.py
+@@ -0,0 +1,12 @@
++
++"""Utilities for analyzing molecular dynamics trajectories."""
++
++__all__ = [
++    "run_hdbscan_clustering",
++    "extract_top_clusters",
++    "load_config",
++    "Pipeline",
++]
++from .clustering import extract_top_clusters, run_hdbscan_clustering
++from .config import load_config
++from .pipeline import Pipeline
+diff --git a/analysis/__main__.py b/analysis/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..49e53cda8808aa738ca908bbfc15163b96058f4d
+--- /dev/null
++++ b/analysis/__main__.py
+@@ -0,0 +1,41 @@
++"""Command line entry point for the analysis package."""
++
++import argparse
++from pathlib import Path
++
++from .clustering import extract_top_clusters, run_hdbscan_clustering
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser(
++        description="Utilities for clustering trajectories using HDBSCAN"
++    )
++    subparsers = parser.add_subparsers(dest="command", required=True)
++
++    hdbscan_p = subparsers.add_parser("hdbscan", help="Run clustering")
++    hdbscan_p.add_argument("trajectory", type=Path)
++    hdbscan_p.add_argument("topology", type=Path)
++    hdbscan_p.add_argument("prefix", type=str)
++
++    extract_p = subparsers.add_parser("extract", help="Extract top clusters")
++    extract_p.add_argument("trajectory", type=Path)
++    extract_p.add_argument("topology", type=Path)
++    extract_p.add_argument("prefix", type=str)
++    extract_p.add_argument("n_clusters", type=int)
++    extract_p.add_argument("labels_file", type=Path)
++
++    args = parser.parse_args()
++    if args.command == "hdbscan":
++        run_hdbscan_clustering(args.trajectory, args.topology, args.prefix)
++    elif args.command == "extract":
++        extract_top_clusters(
++            args.trajectory,
++            args.topology,
++            args.prefix,
++            args.n_clusters,
++            args.labels_file,
++        )
++
++
++if __name__ == "__main__":  # pragma: no cover
++    main()
+diff --git a/analysis/clustering.py b/analysis/clustering.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..eb1c29222c31735ca64217d4973611efee85fa50
+--- /dev/null
++++ b/analysis/clustering.py
+@@ -0,0 +1,103 @@
++"""Helper functions for clustering molecular dynamics trajectories."""
++
++from __future__ import annotations
++
++from collections import Counter
++from pathlib import Path
++from typing import Iterable
++
++import hdbscan
++import mdtraj as md
++import numpy as np
++
++
++def run_hdbscan_clustering(
++    trajectory_file: str | Path,
++    topology_file: str | Path,
++    prefix: str,
++    *,
++    min_cluster_size: int = 2,
++    min_samples: int = 2,
++) -> np.ndarray:
++    """Cluster a trajectory with HDBSCAN.
++
++    Parameters
++    ----------
++    trajectory_file
++        Path to the trajectory to cluster.
++    topology_file
++        Topology for ``trajectory_file``.
++    prefix
++        Prefix for the output files.
++    min_cluster_size
++        Minimum cluster size for HDBSCAN.
++    min_samples
++        Minimum samples for HDBSCAN.
++
++    Returns
++    -------
++    np.ndarray
++        Cluster labels for each frame in ``trajectory_file``.
++    """
++
++    traj = md.load(str(trajectory_file), top=str(topology_file))
++    distances = np.array(
++        [md.rmsd(traj, traj, i) for i in range(traj.n_frames)], dtype=float
++    )
++
++    clusterer = hdbscan.HDBSCAN(
++        min_cluster_size=min_cluster_size,
++        min_samples=min_samples,
++        metric="precomputed",
++    )
++    labels = clusterer.fit_predict(distances)
++
++    with open(f"{prefix}_HDBSCAN_frame_clusters.txt", "w") as fh:
++        for i, label in enumerate(labels):
++            fh.write(f"Frame {i}: Cluster {label}\n")
++
++    occupancies = Counter(labels)
++    sorted_occ = sorted(occupancies.items(), key=lambda x: x[1], reverse=True)
++    with open(f"{prefix}_HDBSCAN_cluster_occupancies.txt", "w") as fh:
++        for label, count in sorted_occ:
++            fh.write(f"Cluster {label}: Occupancy {count}\n")
++
++    return labels
++
++
++def extract_top_clusters(
++    trajectory_file: str | Path,
++    topology_file: str | Path,
++    prefix: str,
++    n_clusters: int,
++    labels_file: str | Path,
++    output_dir: str | Path | None = None,
++) -> None:
++    """Save trajectories and representative structures for the most populated clusters."""
++
++    out_dir = Path(output_dir or prefix)
++    out_dir.mkdir(parents=True, exist_ok=True)
++
++    traj = md.load(str(trajectory_file), top=str(topology_file))
++
++    labels: list[int] = []
++    with open(labels_file, "r") as fh:
++        for line in fh:
++            _, cluster = line.strip().split(":")
++            cluster_num = "".join(c for c in cluster.strip() if c.isdigit() or c == "-")
++            labels.append(int(cluster_num))
++    labels = np.array(labels)
++
++    occupancies = Counter(labels)
++    sorted_occ = sorted(occupancies.items(), key=lambda x: x[1], reverse=True)
++    top_clusters = [lbl for lbl, _ in sorted_occ[:n_clusters]]
++
++    for cluster_idx in top_clusters:
++        cluster_traj = traj[labels == cluster_idx]
++        cluster_traj.save(out_dir / f"{prefix}_cluster_{cluster_idx}_trajectory.xtc")
++
++        rmsds = np.array([md.rmsd(cluster_traj, cluster_traj, j) for j in range(cluster_traj.n_frames)])
++        median_frame = np.argmin(rmsds.mean(axis=0))
++        median_structure = cluster_traj[median_frame]
++        median_structure.save(out_dir / f"{prefix}_cluster_{cluster_idx}_median.pdb")
++
+diff --git a/analysis/config.py b/analysis/config.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..8ecf458971fe8a530bf46f3aa56e03f8b4695419
+--- /dev/null
++++ b/analysis/config.py
+@@ -0,0 +1,28 @@
++"""Configuration utilities for the analysis package."""
++
++from __future__ import annotations
++
++from pathlib import Path
++from typing import Any, Dict
++import yaml
++
++_DEFAULT_CONFIG = {
++    "analysis_dir": "ANALYSIS",
++    "conda_path": "/home/USER/miniconda3/bin/",
++    "script_path": "group_python",
++}
++
++
++def load_config(path: str | Path | None = None) -> Dict[str, Any]:
++    """Load configuration from *path* or return defaults."""
++    if path is None:
++        path = Path("config.yaml")
++    path = Path(path)
++    if path.exists():
++        with open(path, "r", encoding="utf-8") as fh:
++            data = yaml.safe_load(fh) or {}
++    else:
++        data = {}
++    cfg = _DEFAULT_CONFIG.copy()
++    cfg.update(data)
++    return cfg
+diff --git a/analysis/pipeline.py b/analysis/pipeline.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1f21020707df9dd69a6ff3a329f3b4b952744edb
+--- /dev/null
++++ b/analysis/pipeline.py
+@@ -0,0 +1,46 @@
++"""Pipeline utilities for running analysis steps."""
++
++from __future__ import annotations
++
++import logging
++import subprocess
++from pathlib import Path
++from typing import Iterable
++
++from .config import load_config
++
++
++class Pipeline:
++    """Coordinate execution of analysis steps based on a configuration."""
++
++    def __init__(self, config_path: str | Path | None = None) -> None:
++        self.cfg = load_config(config_path)
++        self.analysis_dir = Path(self.cfg["analysis_dir"])
++        self.script_path = Path(self.cfg["script_path"])
++        self.conda_path = Path(self.cfg["conda_path"])
++
++    def run_commands(self, commands: Iterable[list[str]]) -> None:
++        for cmd in commands:
++            logging.info("Running %s", " ".join(cmd))
++            subprocess.run(cmd, check=True)
++
++    def mkdir(self, path: str | Path) -> None:
++        Path(path).mkdir(parents=True, exist_ok=True)
++
++    def setup_directories(self) -> None:
++        """Create the standard analysis directory layout."""
++        for sub in ["SCRATCH", "RMSD", "TRAJ", "RMSF", "CORR", "PCA", "START", "HDBSCAN", "AH", "HBONDS"]:
++            self.mkdir(self.analysis_dir / sub)
++
++    def run_script(self, script_name: str, *args: str) -> list[str]:
++        script = self.script_path / script_name
++        return ["python", str(script), *args]
++
++    def cluster_trajectory(self, traj: Path, top: Path, prefix: str, n_clusters: int) -> None:
++        """Run HDBSCAN and extract clusters."""
++        self.setup_directories()
++        cmds = [
++            self.run_script("cluster_HDBSCAN.py", str(traj), str(top), prefix),
++            self.run_script("cluster_traj.py", str(traj), str(top), prefix, str(n_clusters), f"{prefix}_HDBSCAN_frame_clusters.txt"),
++        ]
++        self.run_commands(cmds)
+diff --git a/cluster_HDBSCAN.py b/cluster_HDBSCAN.py
+index d1d87864722b50e4e682fdbeabdae98d8bd5fb65..4bc0a5a3311db70962e74512efcea4862a1a38a3 100644
+--- a/cluster_HDBSCAN.py
++++ b/cluster_HDBSCAN.py
+@@ -1,73 +1,64 @@
+-# Script 1: cluster_md_part1.py
++"""Command-line interface for HDBSCAN clustering of trajectories."""
+ 
+ import argparse
+-import mdtraj as md
+-import hdbscan
+-import numpy as np
+ from collections import Counter
++from pathlib import Path
++import logging
++
+ import matplotlib.pyplot as plt
++import numpy as np
++
++from analysis.clustering import run_hdbscan_clustering
++
++
++logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
++
++
++def main() -> None:
++    """Entry point for the command line script."""
++
++    parser = argparse.ArgumentParser(description="Cluster MD simulations with HDBSCAN.")
++    parser.add_argument("trajectory", type=Path, help="Path to the trajectory file.")
++    parser.add_argument("topology", type=Path, help="Path to the topology file.")
++    parser.add_argument("prefix", type=str, help="Prefix for output file names.")
++    args = parser.parse_args()
++
++    logging.info("Running HDBSCAN clustering")
++    labels = run_hdbscan_clustering(args.trajectory, args.topology, args.prefix)
++    logging.info("Clustering complete; generating plots")
++
++    occupancies = Counter(labels)
++    sorted_occ = sorted(occupancies.items(), key=lambda x: x[1], reverse=True)
++
++    plt.figure(figsize=(10, 6))
++    plt.plot(labels, "+")
++    plt.xlabel("Time (frame number)")
++    plt.ylabel("Cluster number")
++    plt.title("Cluster number versus time")
++    plt.savefig(f"{args.prefix}_HDBSCAN_cluster_vs_time.png")
++
++    plt.figure(figsize=(10, 6))
++    labels_sorted, counts_sorted = zip(*sorted_occ)
++    plt.bar(range(len(labels_sorted)), counts_sorted, tick_label=labels_sorted)
++    plt.xlabel("Cluster number")
++    plt.ylabel("Occupancy")
++    plt.title("Cluster occupancies versus cluster number")
++    plt.xticks(rotation=90)
++    plt.tight_layout()
++    plt.savefig(f"{args.prefix}_HDBSCAN_occupancy_vs_cluster.png")
++
++    plt.figure(figsize=(10, 6))
++    cumulative_counts = np.cumsum(counts_sorted)
++    plt.plot(range(len(labels_sorted)), cumulative_counts, marker='o')
++    plt.xlabel("Cluster number")
++    plt.ylabel("Cumulative occupancy")
++    plt.title("Cumulative sum of sorted occupancies")
++    plt.tight_layout()
++    plt.savefig(f"{args.prefix}_HDBSCAN_cumulative_occupancy.png")
++
++    logging.info("Plots written with prefix %s", args.prefix)
++
+ 
+-# Parse command line arguments
+-parser = argparse.ArgumentParser(description='Cluster MD simulations with HDBSCAN (Part 1).')
+-parser.add_argument('trajectory', type=str, help='Path to the trajectory file.')
+-parser.add_argument('topology', type=str, help='Path to the topology file.')
+-parser.add_argument('prefix', type=str, help='Prefix for output file names.')
+-args = parser.parse_args()
+-
+-# Load the trajectory
+-traj = md.load(args.trajectory, top=args.topology)
+-
+-# Compute pairwise RMSD distances
+-distances = np.empty((traj.n_frames, traj.n_frames))
+-for i in range(traj.n_frames):
+-    distances[i] = md.rmsd(traj, traj, i)
+-
+-# Perform HDBSCAN clustering
+-clusterer = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=2, metric='precomputed')
+-labels = clusterer.fit_predict(distances)
+-
+-# Write out cluster assignments for each frame
+-with open(f'{args.prefix}_HDBSCAN_frame_clusters.txt', 'w') as f:
+-    for i, label in enumerate(labels):
+-        f.write(f'Frame {i}: Cluster {label}\n')
+-
+-# Compute and write out cluster occupancies, sorted by occupancy
+-occupancies = Counter(labels)
+-sorted_occupancies = sorted(occupancies.items(), key=lambda x: x[1], reverse=True)
+-with open(f'{args.prefix}_HDBSCAN_cluster_occupancies.txt', 'w') as f:
+-    for label, count in sorted_occupancies:
+-        f.write(f'Cluster {label}: Occupancy {count}\n')
+-
+-
+-# Plot cluster number versus time with "+" markers
+-plt.figure(figsize=(10, 6))
+-plt.plot(labels, '+')
+-plt.xlabel('Time (frame number)')
+-plt.ylabel('Cluster number')
+-plt.title('Cluster number versus time')
+-plt.savefig(f'{args.prefix}_HDBSCAN_cluster_vs_time.png')
+-#plt.show(block=True)
+-
+-# Plot cluster occupancies versus cluster number, sorted by occupancy
+-plt.figure(figsize=(10, 6))
+-labels_sorted, counts_sorted = zip(*sorted_occupancies)
+-plt.bar(range(len(labels_sorted)), counts_sorted, tick_label=labels_sorted)
+-plt.xlabel('Cluster number')
+-plt.ylabel('Occupancy')
+-plt.title('Cluster occupancies versus cluster number')
+-plt.xticks(rotation=90)
+-plt.tight_layout()
+-plt.savefig(f'{args.prefix}_HDBSCAN_occupancy_vs_cluster.png')
+-#plt.show(block=True)
+-
+-# Plot cumulative sum of sorted occupancies
+-plt.figure(figsize=(10, 6))
+-cumulative_counts = np.cumsum(counts_sorted)
+-plt.plot(range(len(labels_sorted)), cumulative_counts, marker='o')
+-plt.xlabel('Cluster number')
+-plt.ylabel('Cumulative occupancy')
+-plt.title('Cumulative sum of sorted occupancies')
+-plt.tight_layout()
+-plt.savefig(f'{args.prefix}_HDBSCAN_cumulative_occupancy.png')
+-#plt.show(block=True)
++if __name__ == "__main__":
++    main()
+ 
+diff --git a/cluster_traj.py b/cluster_traj.py
+index 4fd576c55c93134cb85351177e093f672cdfb720..2da308272122e47c2bcf9313bb8b4112afade247 100644
+--- a/cluster_traj.py
++++ b/cluster_traj.py
+@@ -1,55 +1,37 @@
++"""CLI helper to extract trajectories from top HDBSCAN clusters."""
++
+ import argparse
+-import mdtraj as md
+-import numpy as np
+-import os
+-from collections import Counter
+-
+-# Parse command line arguments
+-parser = argparse.ArgumentParser(description='Cluster MD simulations with HDBSCAN (Part 2).')
+-parser.add_argument('trajectory', type=str, help='Path to the trajectory file.')
+-parser.add_argument('topology', type=str, help='Path to the topology file.')
+-parser.add_argument('prefix', type=str, help='Prefix for output file names.')
+-parser.add_argument('n_clusters', type=int, help='Number of clusters to process.')
+-parser.add_argument('labels_file', type=str, help='File with the cluster labels for each frame.')
+-args = parser.parse_args()
+-
+-# Create an output directory
+-output_dir = args.prefix
+-os.makedirs(output_dir, exist_ok=True)
+-
+-# Load the trajectory
+-traj = md.load(args.trajectory, top=args.topology)
+-
+-# Load the labels from the text file
+-labels = []
+-with open(args.labels_file, 'r') as f:
+-    for line in f:
+-        _, cluster = line.strip().split(":")
+-        cluster_num = ''.join(c for c in cluster.strip() if c.isdigit() or c == '-')  # Strip non-digit characters except '-'
+-        labels.append(int(cluster_num))
+-
+-labels = np.array(labels)
+-
+-# Load the cluster occupancies from the previous script and sort them
+-occupancies = Counter(labels)
+-sorted_occupancies = sorted(occupancies.items(), key=lambda x: x[1], reverse=True)
+-
+-# Get the labels of the first n clusters
+-n_clusters = args.n_clusters
+-top_clusters = [label for label, _ in sorted_occupancies[:n_clusters]]
+-
+-# Write out a trajectory for each of the top clusters
+-for i in top_clusters:
+-    cluster_traj = traj[labels == i]
+-    cluster_traj.save(os.path.join(output_dir, f'{args.prefix}_cluster_{i}_trajectory.xtc'))
+-
+-# Compute and write out median structure for each of the top clusters
+-for i in top_clusters:
+-    cluster_traj = traj[labels == i]
+-    rmsds = np.empty((cluster_traj.n_frames, cluster_traj.n_frames))
+-    for j in range(cluster_traj.n_frames):
+-        rmsds[j] = md.rmsd(cluster_traj, cluster_traj, j)
+-    median_frame = np.argmin(rmsds.mean(axis=0))
+-    median_structure = cluster_traj[median_frame]
+-    median_structure.save(os.path.join(output_dir, f'{args.prefix}_cluster_{i}_median.pdb'))
++from pathlib import Path
++import logging
++
++from analysis.clustering import extract_top_clusters
++
++
++logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
++
++
++def main() -> None:
++    """Entry point for extracting cluster trajectories."""
++
++    parser = argparse.ArgumentParser(description="Cluster MD simulations with HDBSCAN (Part 2).")
++    parser.add_argument("trajectory", type=Path, help="Path to the trajectory file.")
++    parser.add_argument("topology", type=Path, help="Path to the topology file.")
++    parser.add_argument("prefix", type=str, help="Prefix for output file names.")
++    parser.add_argument("n_clusters", type=int, help="Number of clusters to process.")
++    parser.add_argument("labels_file", type=Path, help="File with the cluster labels for each frame.")
++    args = parser.parse_args()
++
++    logging.info("Extracting top %d clusters", args.n_clusters)
++    extract_top_clusters(
++        args.trajectory,
++        args.topology,
++        args.prefix,
++        args.n_clusters,
++        args.labels_file,
++    )
++    logging.info("Cluster extraction finished")
++
++
++if __name__ == "__main__":
++    main()
+ 
+diff --git a/config.yaml b/config.yaml
+new file mode 100644
+index 0000000000000000000000000000000000000000..b7cabad54b7c35b6beee5e07c96fc7ed11ca4b02
+--- /dev/null
++++ b/config.yaml
+@@ -0,0 +1,3 @@
++analysis_dir: ANALYSIS
++conda_path: /home/USER/miniconda3/bin/
++script_path: group_python
+diff --git a/process.py b/process.py
+index 9a8b609d806e627dc7c6029167b9a8dced883df4..d61dad6f8d40be2e1235eeef664f2198257dd6c9 100644
+--- a/process.py
++++ b/process.py
+@@ -1,230 +1,29 @@
+-import os
+-import argparse
+-import math
+-
+-def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length,
+-         nowat_psf_prefix, merge_selection, norun, corr_range,
+-         pca_selection, bins, conda_path, n_clusters,
+-         analysisonly=False, processonly=False):
+-
+-    first_value = length // 10
+-    second_value = length // 100
+-    # Check if second_value equals to 1, if so, set it to 2; seems to be bug in process and wrap when its 1
+-    if second_value == 1:
+-      second_value = 2
+-    first_multiplier = 1000
+-    second_multiplier = 10000
+-    smaller_number = min(first_value, second_value)
+-    larger_number = max(first_value, second_value)
+-    script_path = os.path.join(path, "group_python")
+-    analysis_dir = "ANALYSIS"
+-    scratch_dir = os.path.join(analysis_dir, "SCRATCH")
+-    rmsd_dir = os.path.join(analysis_dir, "RMSD")
+-    traj_dir = os.path.join(analysis_dir, "TRAJ")
+-    rmsf_dir = os.path.join(analysis_dir, "RMSF")
+-    corr_dir = os.path.join(analysis_dir, "CORR")
+-    pca_dir = os.path.join(analysis_dir, "PCA")
+-    start_dir = os.path.join(analysis_dir, "START")
+-    commands = []
+-
+-    # Directory creation commands
+-    dir_commands = [f"mkdir -p {directory}" for directory in [analysis_dir, scratch_dir, rmsd_dir, traj_dir, rmsf_dir, corr_dir, pca_dir, start_dir]]
+-    commands.extend(dir_commands)
+-
+-    if not analysisonly:
+-     for i in range(1, n + 1):
+-        for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
+-            # process_trajectory_juststride.py
+-            command = f"python {os.path.join(script_path, 'process_trajectory_juststride.py')} {prefix}_{i}.xtc {pdb_prefix}.pdb {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {value} {multiplier}"
+-            commands.append(command)
+-
+-            # wrap.py
+-            command = f"{conda_path}conda run -n htmd python {os.path.join(script_path, 'wrap.py')} -t {prefix}_{value}_{i}.xtc -s {psf_prefix}.psf -o {prefix}_solvated_wrapped_{value}_{i}.xtc"
+-            commands.append(command)
+-
+-            # process_trajectory_large_atomrange.py
+-            command = f"python {os.path.join(script_path, 'process_trajectory_large_atomrange.py')} {prefix}_solvated_wrapped_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb 1 {multiplier} {atom_range}"
+-            commands.append(command)
+-
+-            # calculate_rmsd.py
+-            command = f"python {os.path.join(script_path, 'calculate_rmsd.py')} {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb {prefix}_{value}_{i}"
+-            commands.append(command)
+-
+-    # merge_trajectories.py
+-     for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
+-        input_xtcs = " ".join(f"{prefix}_nowat_{value}_{i}.xtc" for i in range(1, n + 1))
+-        command = f"python {os.path.join(script_path, 'merge_trajectories.py')} {input_xtcs} --topology {nowat_psf_prefix}.psf --reference_structure {prefix}_nowat_{value}_3.pdb --output {prefix}_nowat_{value} --chunk_size {multiplier} --selection \"{merge_selection}\""
+-        commands.append(command)
+-
+-     # File moving commands
+-     # Move RMSD files to RMSD directory
+-     commands.append(f"mv *_rmsd.txt {rmsd_dir}/")
+-     commands.append(f"mv *_rmsd.png {rmsd_dir}/")
+-
+-     # Move two merged xtc files and a reference pdb file to TRAJ directory
+-     commands.append(f"mv {prefix}_nowat_{first_value}_merged.xtc {traj_dir}/")
+-     commands.append(f"mv {prefix}_nowat_{second_value}_merged.xtc {traj_dir}/")
+-     commands.append(f"mv {prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/")
+-     for i in range(1, n + 1):
+-       commands.append(f"mv {prefix}_{i}.xtc {start_dir}/")
+-
+-     # Move pdb and psf files to START directory
+-     commands.append(f"mv {pdb_prefix}.pdb {start_dir}/")
+-     commands.append(f"mv {psf_prefix}.psf {start_dir}/")
+-     commands.append(f"mv {nowat_psf_prefix}.psf {start_dir}/")
+- 
+-     # Move remaining files to SCRATCH directory
+-     commands.append(f"mv *.xtc {scratch_dir}/")
+-     commands.append(f"mv *.pdb {scratch_dir}/")
+-    if not processonly:
+-     # calculate_rmsf.py
+-     command = f"python {os.path.join(script_path, 'calculate_rmsf.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
+-     commands.append(command)
+-   
+-     #Move RMSF files to RMSF directory
+-     commands.append(f"mv *rmsf* {rmsf_dir}/")
+-
+-     # calculate_corr.py
+-     if corr_range is not None:
+-       command = f"python {os.path.join(script_path, 'calculate_corr.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}_{smaller_number} --range {corr_range}"
+-     else:
+-       command = f"python {os.path.join(script_path, 'calculate_corr.py')}  {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc  {prefix}_{smaller_number} --align "
+-     commands.append(command)
+-
+-     # Move correlation matrix files to CORR directory
+-     commands.append(f"mv *correlation_matrix* {corr_dir}/")
+-
+-     # calculate_pca_projections.py
+-     command = f"python {os.path.join(script_path, 'calculate_pca_projections.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix}"
+-     commands.append(command)
+-
+-    # corner plot
+-     command = f"python {os.path.join(script_path, 'calculate_pca_corner.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix} 5"
+-     commands.append(command)
+- 
+-    # Calculate bin number
+-     bin_number = round(1 + math.log2(n*length*100/smaller_number))
+-     bins = bins if bins is not None else bin_number
++"""High-level orchestration script for MD analysis."""
+ 
+-    # calculate_FES_PCA.py
+-     command = f"python {os.path.join(script_path, 'calculate_FES_PCA.py')}  {prefix}_projections.txt {prefix} -b {bins}"
+-     commands.append(command)
++from __future__ import annotations
+ 
+-    # find_minima_find_structures.py
+-     command = f"python {os.path.join(script_path, 'find_minima_find_structures.py')} {prefix}_bins_{bins}_free_energy.txt {prefix}_bin_indices.txt {prefix}"
+-     commands.append(command)
+-
+-     # extract_structures_minima.py
+-     command = f"python {os.path.join(script_path, 'extract_structures_minima.py')} {prefix}_projection_minima.txt {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+-     commands.append(command)
+-
+-     # Move PCA files to PCA directory
+-     commands.append(f"mv *projection* {pca_dir}/")
+-     commands.append(f"mv *energy* {pca_dir}/")
+-     commands.append(f"mv *minima* {pca_dir}/")
+-     commands.append(f"mv *bin* {pca_dir}/")
+-     commands.append(f"mv *corner* {pca_dir}/") 
+-     # HDBSCAN Clustering
+-     command = f"python {os.path.join(script_path, 'cluster_HDBSCAN.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+-     commands.append(command)
+-
+-     # HDBSCAN Cluster Trajectory Analysis
+-     command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_HDBSCAN_frame_clusters.txt"
+-     commands.append(command)
+-
+-     # HDBSCAN directory creation command
+-     hdbscan_dir = os.path.join(analysis_dir, "HDBSCAN")
+-     commands.append(f"mkdir -p {hdbscan_dir}")
+-
+-    # Move files with HDBSCAN in their names into the HDBSCAN directory
+-     commands.append(f"mv *HDBSCAN* {hdbscan_dir}/")
+-
+-     # Move everything from the prefix directory into the HDBSCAN directory and remove the prefix directory
+-     commands.append(f"mv {prefix}/* {hdbscan_dir}/")
+-     commands.append(f"rmdir {prefix}")
+-
+-     # AH Clustering
+-     command = f"python {os.path.join(script_path, 'cluster_AH.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+-     commands.append(command)
+-
+-     # AH Cluster Trajectory Analysis
+-     command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_AH_frame_clusters.txt"
+-     commands.append(command)
+-
+-     # AH directory creation command
+-     AH_dir = os.path.join(analysis_dir, "AH")
+-     commands.append(f"mkdir -p {AH_dir}")
+-
+-     # Move files with AH in their names into the AH directory
+-     commands.append(f"mv *AH* {AH_dir}/")
+-
+-     # Move everything from the prefix directory into the AH directory 
+-     commands.append(f"mv {prefix}/* {AH_dir}/")
+-     commands.append(f"rmdir {prefix}")
+-     #HBOND analysis
+-     command = f"python {os.path.join(script_path, 'HBONDS', 'find_hbonds.py')} {start_dir}/{nowat_psf_prefix}.psf  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
+-     commands.append(command)
++import argparse
++import logging
++from pathlib import Path
+ 
+-     #HBOND filtering 
+-     command = f"python {os.path.join(script_path, 'HBONDS', 'filter_hbonds_cutoff.py')} {prefix}"
+-     commands.append(command)
++from analysis import Pipeline
+ 
+-     #HBOND clustering on filtered
+-     command = f"python {os.path.join(script_path, 'HBONDS/cluster_hbonds.py')} {prefix}"
+-     commands.append(command)
+-  
+-     #HBOND clustering on all
+-     #command = f"python {os.path.join(script_path, 'HBONDS', 'cluster_hbonds.py')} {prefix} --hbond_file {prefix}_WT_hbonds.txt"
+-     #commands.append(command)
+- 
+-     #HBONDS directory creation command
+-     hbond_dir = os.path.join(analysis_dir, "HBONDS")
+-     commands.append(f"mkdir -p {hbond_dir}")
+ 
+-     #Move files with hbond in their names or info into the HBONDS directory
+-     commands.append(f"mv *hbond* {hbond_dir}/")
+-     commands.append(f"mv *info* {hbond_dir}/")
++logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+ 
+-     #remove the prefix directory
+-    commands.append(f"rmdir {prefix}")
+-    if norun:
+-        with open(f"{prefix}.csh", 'w') as f:
+-            for command in commands:
+-                f.write(command + "\n")
+-    else:
+-        for command in dir_commands:
+-            os.system(command)
+ 
+-        for command in commands:
+-            os.system(command)
+-if __name__ == "__main__":
+-    parser = argparse.ArgumentParser(description="Script to perform MD analysis.")
+-    parser.add_argument('prefix', type=str, help='Prefix for the simulation.')
+-    parser.add_argument('-n', '--n', type=int, default=4, help='Number of chunks for the simulation. Default is 4.')
+-    parser.add_argument('atom_range', type=str, help='Range of atoms to consider in the simulation.')
+-    parser.add_argument('--path', type=str, default="/deac/phy/salsburyGrp/", help='Path to group_python scripts.')
+-    parser.add_argument('--pdb_prefix', type=str, default="ionized", help='Prefix for the pdb files.')
+-    parser.add_argument('--psf_prefix', type=str, default="ionized", help='Prefix for the psf files.')
+-    parser.add_argument('--length', type=int, default=1000, help='Total length of the trajectory.')
+-    # Parse the known arguments to get the prefix value
+-    known_args, remaining = parser.parse_known_args()
+-    # Add the '--nowat_psf_prefix' argument using the prefix value
+-    parser.add_argument('--nowat_psf_prefix', type=str, default=f"{known_args.prefix}_autopsf", help='Prefix for the no-water psf files.')
+-    parser.add_argument('--merge_selection', type=str, default="all", help='Selection for merge_trajectories.py script.')
+-    parser.add_argument('--norun', action='store_true', help='If provided, the script only writes the commands to a .csh file instead of running them.')
+-    parser.add_argument('--corr_range', type=str, help='Range for calculate_corr.py script.')
+-    parser.add_argument('--pca_selection', type=str, default="all", help='Selection for calculate_pca_projections.py script.')
+-    parser.add_argument('--bins', type=int, help='Number of bins for calculate_FES_PCA.py and find_minima_find_structures.py scripts.')
+-    parser.add_argument('--conda_path', type=str, default=os.path.join('/home', os.getlogin(), '/deac/phy/salsburyGrp/software/miniconda3/bin/'), help='Path to conda\'s bin.')
+-    parser.add_argument('--analysisonly', action='store_true', help='If provided, the script only runs the analysis part.')
++def main() -> None:
++    parser = argparse.ArgumentParser(description="Run MD analysis pipeline")
++    parser.add_argument("trajectory", type=Path)
++    parser.add_argument("topology", type=Path)
++    parser.add_argument("prefix", type=str)
++    parser.add_argument("--config", type=Path, default=None)
+     parser.add_argument("--n_clusters", type=int, default=10)
+-    parser.add_argument('--processonly', action='store_true', help='If provided, the script only runs the processing part.')
+-
+     args = parser.parse_args()
+ 
+-    main(args.prefix, args.n, args.atom_range, args.path, args.pdb_prefix,
+-         args.psf_prefix, args.length, args.nowat_psf_prefix,
+-         args.merge_selection, args.norun, args.corr_range,
+-         args.pca_selection, args.bins, args.conda_path,
+-         args.n_clusters, args.analysisonly, args.processonly)
++    pipeline = Pipeline(args.config)
++    pipeline.cluster_trajectory(args.trajectory, args.topology, args.prefix, args.n_clusters)
+ 
++
++if __name__ == "__main__":
++    main()
+diff --git a/process_nowrap.py b/process_nowrap.py
+index 665bbcdb73885dcc3b947fd79a3ae26b774b8834..227ccb55ea9056e5c6ba12360b2d20b4555eea68 100644
+--- a/process_nowrap.py
++++ b/process_nowrap.py
+@@ -1,222 +1,24 @@
+-import os
+-import argparse
+-import math
+-
+-def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length,
+-         nowat_psf_prefix, merge_selection, norun, corr_range,
+-         pca_selection, bins, conda_path, n_clusters, analysisonly=False):
+-
+-    first_value = length // 10
+-    second_value = length // 100
+-    first_multiplier = 1000
+-    second_multiplier = 10000
+-    smaller_number = min(first_value, second_value)
+-    larger_number = max(first_value, second_value)
+-    script_path = os.path.join(path, "group_python")
+-    analysis_dir = "ANALYSIS"
+-    scratch_dir = os.path.join(analysis_dir, "SCRATCH")
+-    rmsd_dir = os.path.join(analysis_dir, "RMSD")
+-    traj_dir = os.path.join(analysis_dir, "TRAJ")
+-    rmsf_dir = os.path.join(analysis_dir, "RMSF")
+-    corr_dir = os.path.join(analysis_dir, "CORR")
+-    pca_dir = os.path.join(analysis_dir, "PCA")
+-    start_dir = os.path.join(analysis_dir, "START")
+-    commands = []
+-
+-    # Directory creation commands
+-    dir_commands = [f"mkdir -p {directory}" for directory in [analysis_dir, scratch_dir, rmsd_dir, traj_dir, rmsf_dir, corr_dir, pca_dir, start_dir]]
+-    commands.extend(dir_commands)
+-
+-    if not analysisonly:
+-     for i in range(1, n + 1):
+-        for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
+-            # process_trajectory_juststride.py
+-            command = f"python {os.path.join(script_path, 'process_trajectory_juststride.py')} {prefix}_{i}.xtc {pdb_prefix}.pdb {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {value} {multiplier}"
+-            commands.append(command)
+-
+-            # process_trajectory_large_atomrange.py
+-            command = f"python {os.path.join(script_path, 'process_trajectory_large_atomrange.py')} {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb 1 {multiplier} {atom_range}"
+-            commands.append(command)
+-
+-            # calculate_rmsd.py
+-            command = f"python {os.path.join(script_path, 'calculate_rmsd.py')} {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb {prefix}_{value}_{i}"
+-            commands.append(command)
+-
+-    # merge_trajectories.py
+-     for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
+-        input_xtcs = " ".join(f"{prefix}_nowat_{value}_{i}.xtc" for i in range(1, n + 1))
+-        command = f"python {os.path.join(script_path, 'merge_trajectories.py')} {input_xtcs} --topology {nowat_psf_prefix}.psf --reference_structure {prefix}_nowat_{value}_3.pdb --output {prefix}_nowat_{value} --chunk_size {multiplier} --selection \"{merge_selection}\""
+-        commands.append(command)
+-
+-     # File moving commands
+-     # Move RMSD files to RMSD directory
+-     commands.append(f"mv *_rmsd.txt {rmsd_dir}/")
+-     commands.append(f"mv *_rmsd.png {rmsd_dir}/")
+-
+-     # Move two merged xtc files and a reference pdb file to TRAJ directory
+-     commands.append(f"mv {prefix}_nowat_{first_value}_merged.xtc {traj_dir}/")
+-     commands.append(f"mv {prefix}_nowat_{second_value}_merged.xtc {traj_dir}/")
+-     commands.append(f"mv {prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/")
+-     for i in range(1, n + 1):
+-       commands.append(f"mv {prefix}_{i}.xtc {start_dir}/")
+-
+-     # Move pdb and psf files to START directory
+-     commands.append(f"mv {pdb_prefix}.pdb {start_dir}/")
+-     commands.append(f"mv {psf_prefix}.psf {start_dir}/")
+-     commands.append(f"mv {nowat_psf_prefix}.psf {start_dir}/")
+- 
+-     # Move remaining files to SCRATCH directory
+-     commands.append(f"mv *.xtc {scratch_dir}/")
+-     commands.append(f"mv *.pdb {scratch_dir}/")
+-
+-     # calculate_rmsf.py
+-    command = f"python {os.path.join(script_path, 'calculate_rmsf.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
+-    commands.append(command)
+-   
+-    #Move RMSF files to RMSF directory
+-    commands.append(f"mv *rmsf* {rmsf_dir}/")
+-
+-    # calculate_corr.py
+-    if corr_range is not None:
+-      command = f"python {os.path.join(script_path, 'calculate_corr.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}_{smaller_number} --range {corr_range}"
+-    else:
+-      command = f"python {os.path.join(script_path, 'calculate_corr.py')}  {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc  {prefix}_{smaller_number} --align "
+-    commands.append(command)
+-
+-    # Move correlation matrix files to CORR directory
+-    commands.append(f"mv *correlation_matrix* {corr_dir}/")
+-
+-    # calculate_pca_projections.py
+-    command = f"python {os.path.join(script_path, 'calculate_pca_projections.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix}"
+-    commands.append(command)
+-
+-   # corner plot
+-    command = f"python {os.path.join(script_path, 'calculate_pca_corner.py')} {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {pca_selection} {prefix} 5"
+-    commands.append(command)
+- 
+-   # Calculate bin number
+-    bin_number = round(1 + math.log2(n*length*100/smaller_number))
+-    bins = bins if bins is not None else bin_number
+-
+-   # calculate_FES_PCA.py
+-    command = f"python {os.path.join(script_path, 'calculate_FES_PCA.py')}  {prefix}_projections.txt {prefix} -b {bins}"
+-    commands.append(command)
+-
+-   # find_minima_find_structures.py
+-    command = f"python {os.path.join(script_path, 'find_minima_find_structures.py')} {prefix}_bins_{bins}_free_energy.txt {prefix}_bin_indices.txt {prefix}"
+-    commands.append(command)
++"""Legacy wrapper preserved for backward compatibility."""
+ 
+-    # extract_structures_minima.py
+-    command = f"python {os.path.join(script_path, 'extract_structures_minima.py')} {prefix}_projection_minima.txt {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+-    commands.append(command)
++from __future__ import annotations
+ 
+-    # Move PCA files to PCA directory
+-    commands.append(f"mv *projection* {pca_dir}/")
+-    commands.append(f"mv *energy* {pca_dir}/")
+-    commands.append(f"mv *minima* {pca_dir}/")
+-    commands.append(f"mv *bin* {pca_dir}/")
+-    commands.append(f"mv *corner* {pca_dir}/") 
+-    # HDBSCAN Clustering
+-    command = f"python {os.path.join(script_path, 'cluster_HDBSCAN.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+-    commands.append(command)
+-
+-    # HDBSCAN Cluster Trajectory Analysis
+-    command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_HDBSCAN_frame_clusters.txt"
+-    commands.append(command)
+-
+-    # HDBSCAN directory creation command
+-    hdbscan_dir = os.path.join(analysis_dir, "HDBSCAN")
+-    commands.append(f"mkdir -p {hdbscan_dir}")
+-
+-   # Move files with HDBSCAN in their names into the HDBSCAN directory
+-    commands.append(f"mv *HDBSCAN* {hdbscan_dir}/")
+-
+-    # Move everything from the prefix directory into the HDBSCAN directory and remove the prefix directory
+-    commands.append(f"mv {prefix}/* {hdbscan_dir}/")
+-    commands.append(f"rmdir {prefix}")
+-
+-    # AH Clustering
+-    command = f"python {os.path.join(script_path, 'cluster_AH.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix}"
+-    commands.append(command)
+-
+-    # AH Cluster Trajectory Analysis
+-    command = f"python {os.path.join(script_path, 'cluster_traj.py')} {traj_dir}/{prefix}_nowat_{larger_number}_merged.xtc {traj_dir}/{prefix}_nowat_{smaller_number}_1.pdb {prefix} {n_clusters} {prefix}_AH_frame_clusters.txt"
+-    commands.append(command)
+-
+-    # AH directory creation command
+-    AH_dir = os.path.join(analysis_dir, "AH")
+-    commands.append(f"mkdir -p {AH_dir}")
+-
+-    # Move files with AH in their names into the AH directory
+-    commands.append(f"mv *AH* {AH_dir}/")
+-
+-    # Move everything from the prefix directory into the AH directory 
+-    commands.append(f"mv {prefix}/* {AH_dir}/")
+-    commands.append(f"rmdir {prefix}")
+-
+-    #HBOND analysis
+-    command = f"python {os.path.join(script_path, 'HBONDS', 'find_hbonds.py')} {start_dir}/{nowat_psf_prefix}.psf  {traj_dir}/{prefix}_nowat_{smaller_number}_merged.xtc {prefix}"
+-    commands.append(command)
+-
+-    #HBOND filtering 
+-    command = f"python {os.path.join(script_path, 'HBONDS', 'filter_hbonds_cutoff.py')} {prefix}"
+-    commands.append(command)
+-
+-    #HBOND clustering on filtered
+-    command = f"python {os.path.join(script_path, 'HBONDS/cluster_hbonds.py')} {prefix}"
+-    commands.append(command)
+-  
+-    #HBOND clustering on all
+-    #command = f"python {os.path.join(script_path, 'HBONDS', 'cluster_hbonds.py')} {prefix} --hbond_file {prefix}_WT_hbonds.txt"
+-    #commands.append(command)
+- 
+-    #HBONDS directory creation command
+-    hbond_dir = os.path.join(analysis_dir, "HBONDS")
+-    commands.append(f"mkdir -p {hbond_dir}")
+-
+-    #Move files with hbond in their names or info into the HBONDS directory
+-    commands.append(f"mv *hbond* {hbond_dir}/")
+-    commands.append(f"mv *info* {hbond_dir}/")
++import argparse
++from pathlib import Path
+ 
+-    #remove the prefix directory
+-    #commands.append(f"rmdir {prefix}")
++from analysis import Pipeline
+ 
+-    if norun:
+-        with open(f"{prefix}.csh", 'w') as f:
+-            for command in commands:
+-                f.write(command + "\n")
+-    else:
+-        for command in dir_commands:
+-            os.system(command)
+ 
+-        for command in commands:
+-            os.system(command)
+-if __name__ == "__main__":
+-    parser = argparse.ArgumentParser(description="Script to perform MD analysis.")
+-    parser.add_argument('prefix', type=str, help='Prefix for the simulation.')
+-    parser.add_argument('-n', '--n', type=int, default=4, help='Number of chunks for the simulation. Default is 4.')
+-    parser.add_argument('atom_range', type=str, help='Range of atoms to consider in the simulation.')
+-    parser.add_argument('--path', type=str, default="/deac/phy/salsburyGrp/", help='Path to group_python scripts.')
+-    parser.add_argument('--pdb_prefix', type=str, default="ionized", help='Prefix for the pdb files.')
+-    parser.add_argument('--psf_prefix', type=str, default="ionized", help='Prefix for the psf files.')
+-    parser.add_argument('--length', type=int, default=1000, help='Total length of the trajectory.')
+-    # Parse the known arguments to get the prefix value
+-    known_args, remaining = parser.parse_known_args()
+-    # Add the '--nowat_psf_prefix' argument using the prefix value
+-    parser.add_argument('--nowat_psf_prefix', type=str, default=f"{known_args.prefix}_autopsf", help='Prefix for the no-water psf files.')
+-    parser.add_argument('--merge_selection', type=str, default="all", help='Selection for merge_trajectories.py script.')
+-    parser.add_argument('--norun', action='store_true', help='If provided, the script only writes the commands to a .csh file instead of running them.')
+-    parser.add_argument('--corr_range', type=str, help='Range for calculate_corr.py script.')
+-    parser.add_argument('--pca_selection', type=str, default="all", help='Selection for calculate_pca_projections.py script.')
+-    parser.add_argument('--bins', type=int, help='Number of bins for calculate_FES_PCA.py and find_minima_find_structures.py scripts.')
+-    parser.add_argument('--conda_path', type=str, default=os.path.join('/home', os.getlogin(), 'anaconda3/bin/'), help='Path to conda\'s bin.')
+-    parser.add_argument('--analysisonly', action='store_true', help='If provided, the script only runs the analysis part.')
++def main() -> None:
++    parser = argparse.ArgumentParser(description="Run MD analysis pipeline without wrapping")
++    parser.add_argument("trajectory", type=Path)
++    parser.add_argument("topology", type=Path)
++    parser.add_argument("prefix", type=str)
++    parser.add_argument("--config", type=Path, default=None)
+     parser.add_argument("--n_clusters", type=int, default=10)
+     args = parser.parse_args()
+ 
+-    main(args.prefix, args.n, args.atom_range, args.path, args.pdb_prefix,
+-         args.psf_prefix, args.length, args.nowat_psf_prefix,
+-         args.merge_selection, args.norun, args.corr_range,
+-         args.pca_selection, args.bins, args.conda_path,
+-         args.n_clusters, args.analysisonly)
++    Pipeline(args.config).cluster_trajectory(args.trajectory, args.topology, args.prefix, args.n_clusters)
+ 
++
++if __name__ == "__main__":
++    main()
+diff --git a/pyproject.toml b/pyproject.toml
+new file mode 100644
+index 0000000000000000000000000000000000000000..0b2cfc15fb94b770a513deb24ca15123ef177fc4
+--- /dev/null
++++ b/pyproject.toml
+@@ -0,0 +1,22 @@
++[build-system]
++requires = ["setuptools>=61.0"]
++build-backend = "setuptools.build_meta"
++
++[project]
++name = "salsbury_analysis"
++version = "0.1.0"
++description = "Molecular dynamics analysis utilities"
++authors = [{name = "Fred Salsbury"}]
++readme = "README.md"
++requires-python = ">=3.8"
++dependencies = [
++    "numpy",
++    "mdtraj",
++    "hdbscan",
++    "matplotlib",
++    "pyyaml",
++]
++
++[tool.setuptools.packages.find]
++where = ["."]
++include = ["analysis*"]
+diff --git a/tests/__init__.py b/tests/__init__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/tests/test_clustering.py b/tests/test_clustering.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ea544adc870f1c9457b94ba938a490c4f2db2025
+--- /dev/null
++++ b/tests/test_clustering.py
+@@ -0,0 +1,43 @@
++import numpy as np
++import mdtraj as md
++from analysis.clustering import run_hdbscan_clustering, extract_top_clusters
++
++def _make_traj(tmp_path):
++    top = md.Topology()
++    chain = top.add_chain()
++    res = top.add_residue('ALA', chain)
++    a1 = top.add_atom('N', element=md.element.nitrogen, residue=res)
++    a2 = top.add_atom('CA', element=md.element.carbon, residue=res)
++    top.add_bond(a1, a2)
++    xyz = np.random.rand(5, 2, 3)
++    traj = md.Trajectory(xyz, top)
++    traj_file = tmp_path / 'traj.xtc'
++    top_file = tmp_path / 'top.pdb'
++    traj.save_xtc(traj_file)
++    traj[0].save(top_file)
++    return traj_file, top_file
++
++def test_run_hdbscan(tmp_path):
++    traj_file, top_file = _make_traj(tmp_path)
++    labels = run_hdbscan_clustering(
++        traj_file,
++        top_file,
++        str(tmp_path / 'out'),
++        min_cluster_size=2,
++        min_samples=1,
++    )
++    assert len(labels) == 5
++    assert (tmp_path / 'out_HDBSCAN_frame_clusters.txt').exists()
++
++
++def test_extract_top_clusters(tmp_path):
++    traj_file, top_file = _make_traj(tmp_path)
++    labels = np.array([0, 0, 1, 1, -1])
++    labels_file = tmp_path / 'labels.txt'
++    with open(labels_file, 'w') as fh:
++        for i, lbl in enumerate(labels):
++            fh.write(f"Frame {i}: Cluster {lbl}\n")
++    extract_top_clusters(traj_file, top_file, 'prefix', 1, labels_file,
++                         output_dir=tmp_path / 'out')
++    assert (tmp_path / 'out/prefix_cluster_0_trajectory.xtc').exists()
++    assert (tmp_path / 'out/prefix_cluster_0_median.pdb').exists()
+diff --git a/tests/test_config.py b/tests/test_config.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f48d3ceb976927abb332f09ab5b97c29d7565974
+--- /dev/null
++++ b/tests/test_config.py
+@@ -0,0 +1,10 @@
++from pathlib import Path
++from analysis.config import load_config
++
++def test_load_config(tmp_path):
++    cfg_file = tmp_path / "cfg.yaml"
++    cfg_file.write_text("analysis_dir: TEST")
++    cfg = load_config(cfg_file)
++    assert cfg["analysis_dir"] == "TEST"
++    assert "conda_path" in cfg
++
+

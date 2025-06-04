@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "salsbury_analysis"
+version = "0.1.0"
+description = "Molecular dynamics analysis utilities"
+authors = [{name = "Fred Salsbury"}]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "mdtraj",
+    "hdbscan",
+    "matplotlib",
+    "pyyaml",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["analysis*"]
