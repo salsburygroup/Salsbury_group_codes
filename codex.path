@@ -1,0 +1,726 @@
+diff --git a/AH_clustering/pam.py b/AH_clustering/pam.py
+index d37c0dfcb19b8b828e161a121f3673b0d8e32321..95c6dbaa363f1e1266e85e6a418720b50a26edc0 100644
+--- a/AH_clustering/pam.py
++++ b/AH_clustering/pam.py
+@@ -40,51 +40,50 @@ import random as rd
+ class PartitionAroundMedoids(object):
+ 
+     def __init__(self, _my_math):
+         self.my_math = _my_math
+ 
+     def __pam(self, data, k, medoids=None, distance='SqEuclidean', p=None, max_ite=100):
+         #Runs PAM once
+         #returns np.array([-1]) if there is an empty cluster
+         n_entities = data.shape[0]
+         if medoids is None:
+             medoids = data[rd.sample(range(n_entities), k), :]
+         previous_u = np.array([])
+         ite = 1
+         while ite <= max_ite:
+             #assign each entity to a cluster
+             #calculates all distances
+             dist_tmp = np.zeros([n_entities, k])
+             for k_i in range(k):
+                 dist_tmp[:, k_i] = self.my_math.get_distance(data, medoids[k_i, :], distance, p)
+             u = dist_tmp.argmin(axis=1)
+             #put the sum of distances to centroids in dist_tmp
+             dist_tmp = np.sum(dist_tmp[np.arange(n_entities), u])
+             #stop if there are no changes in the partitions
+             if np.array_equal(u, previous_u):
+                 return u, medoids, ite, dist_tmp
+-            tmp = np.random.random([3,4])
+             #update medoid
+             for k_i in range(k):
+                 entities_in_k = u == k_i
+                 #Check if cluster k_i has lost all its entities
+                 if sum(entities_in_k) == 0:
+                     return np.array([-1]), np.array([-1]), np.array([-1]), np.array([-1])
+                 #update the medoid
+                 medoids[k_i,:] = data[entities_in_k][self.my_math.get_entity_with_min_distance(data[entities_in_k], distance, p)[0]]
+             previous_u = u[:]
+             ite += 1
+ 
+     def pam(self, data, k, replicates=1, init_medoids=None, dist='SqEuclidean', p=None, max_ite=100):
+         final_dist = float("inf")
+         for replication_i in range(replicates):
+             #loops up to max_ite to try to get a successful clustering for this replication
+             for i in range(max_ite):
+                 [u, medoids, ite, dist_tmp] = self.__pam(data, k, init_medoids, dist, p, max_ite)
+                 #it also breaks the loop if the init_centroids have been defined (pam is deterministic)
+                 if u[0] != -1 or (init_medoids is not None):
+                     break
+             if u[0] == -1:
+                 raise Exception('Cannot generate a single successful clustering')
+             #given a successful clustering, check if its the best
+             if dist_tmp < final_dist:
+                 final_u = u[:]
+diff --git a/HBONDS/count_hbonds.py b/HBONDS/count_hbonds.py
+index 985047b35cc3f8382349ef6cf9c7f904890edcbd..f89894187b4f19a1d28df1c39ee9db67da00de02 100644
+--- a/HBONDS/count_hbonds.py
++++ b/HBONDS/count_hbonds.py
+@@ -1,34 +1,34 @@
+ import argparse
+ from collections import Counter
+ import math
+ 
+ def analyze_hbond_counts(input_file, output_file, frame_step):
+     # Read the data and parse each line by the first nine fields and frame number (field 10)
+     with open(input_file, 'r') as f:
+         # Skip header line
+-        header = f.readline().strip()
++        f.readline()
+         data = []
+         frame_numbers = []
+ 
+         # Parse each line for the hydrogen bond fields and frame number
+         for line in f:
+             fields = line.strip().split()
+             hbond_data = tuple(fields[:9])  # First nine fields
+             frame_number = int(fields[9])   # Tenth field as frame number
+             data.append(hbond_data)
+             frame_numbers.append(frame_number)
+ 
+     # Count occurrences of each unique hydrogen bond by the first nine fields
+     hbond_counter = Counter(data)
+     total_frames = math.ceil((max(frame_numbers) + 1) / frame_step)  # Total frames, rounded up
+ 
+     # Prepare results sorted by frequency (high to low)
+     results = hbond_counter.most_common()
+ 
+     # Write results to output file, including the percentage of frames for each hydrogen bond
+     with open(output_file, 'w') as f:
+         f.write("Donor_resid Donor_resname Donor_name Hydrogen_resid Hydrogen_resname Hydrogen_name "
+                 "Acceptor_resid Acceptor_resname Acceptor_name Count Percent_of_Frames\n")
+         for fields, count in results:
+             percent_of_frames = (count / total_frames) * 100
+             f.write(" ".join(fields) + f" {count} {percent_of_frames:.2f}%\n")
+diff --git a/HBONDS/find_hbonds.py b/HBONDS/find_hbonds.py
+index 249d1c209bfddaec14bf485fe9866e358d056538..dbd08c70174f2376fea839ecce29228e13a88321 100644
+--- a/HBONDS/find_hbonds.py
++++ b/HBONDS/find_hbonds.py
+@@ -1,41 +1,39 @@
+ import argparse
+ import MDAnalysis as mda
+ from MDAnalysis.analysis import hydrogenbonds
+ import numpy as np
+ 
+ def analyze_hbonds(topology_file, trajectory_file, prefix):
+     u = mda.Universe(topology_file, trajectory_file)
+ 
+     # Define the analysis
+     h = hydrogenbonds.HydrogenBondAnalysis(u, 'protein', 'protein', d_h_cutoff=1.2, d_a_cutoff=3.2, d_h_a_angle_cutoff=120.0)
+ 
+     # Analyze the first 100 frames
+     #h.run(start=0, stop=100)
+     h.run()
+-    total_timesteps = len(u.trajectory)
+-    #total_timesteps = 100
+ # Access the results
+     hbonds = h.results.hbonds
+     counts_by_ids = h.count_by_ids()
+     counts_by_time = h.count_by_time()
+ 
+     # Write the results to files with prefix
+     np.savetxt(f'{prefix}_hbonds.txt', hbonds, fmt='%s')
+     np.savetxt(f'{prefix}_hbond_counts_by_ids.txt', counts_by_ids, fmt='%s')
+     np.savetxt(f'{prefix}_hbond_counts_by_time.txt', counts_by_time, fmt='%s')
+ 
+     # Write out residue name, number, atom name, and atom id for each atom
+     atom_info = [[atom.id, atom.resname, atom.resid, atom.name] for atom in u.atoms]
+     np.savetxt(f'{prefix}_atom_info.txt', atom_info, fmt='%s')
+ 
+ def main():
+     parser = argparse.ArgumentParser(description='Find hydrogen bonds in a trajectory.')
+     parser.add_argument('topology_file', help='Path to the topology file.')
+     parser.add_argument('trajectory_file', help='Path to the trajectory file.')
+     parser.add_argument('prefix', help='Prefix for the output files.')
+     args = parser.parse_args()
+ 
+     analyze_hbonds(args.topology_file, args.trajectory_file, args.prefix)
+ 
+ if __name__ == '__main__':
+     main()
+diff --git a/SCREENING/combine_models.py b/SCREENING/combine_models.py
+index 424b1ce83dd3408afa29754ea7c00d23a2886187..7cf2567cef476e8392dcf6a2de57cb53ffa1224b 100644
+--- a/SCREENING/combine_models.py
++++ b/SCREENING/combine_models.py
+@@ -1,27 +1,26 @@
+ import sys
+-import os
+ 
+ def read_clean_protein(protein_pdb):
+     """Reads a PDB file and removes the final END statement, if present."""
+     with open(protein_pdb, 'r') as f:
+         lines = f.readlines()
+     return [line for line in lines if not line.strip().startswith("END")]
+ 
+ def split_and_combine_models(pdbqt_file, protein_pdb, output_base="complex"):
+     with open(pdbqt_file, 'r') as f:
+         lines = f.readlines()
+ 
+     model = []
+     model_index = 0
+     writing_model = False
+ 
+     protein_lines = read_clean_protein(protein_pdb)
+ 
+     for line in lines:
+         if line.startswith("MODEL"):
+             writing_model = True
+             model = [line]
+         elif line.startswith("ENDMDL"):
+             model.append(line)
+             model_index += 1
+             # Remove docking-specific lines
+diff --git a/SCREENING/find_tophits.py b/SCREENING/find_tophits.py
+index f6f614de2e4d2b5902d9903f9a8bee5b447a044e..a5c435bf7d455f290b4c7b15d9225c65d28d9d7b 100644
+--- a/SCREENING/find_tophits.py
++++ b/SCREENING/find_tophits.py
+@@ -1,27 +1,26 @@
+ import os
+-import shutil
+ 
+ def write_model_1_file(input_file, output_file):
+     with open(input_file, 'r') as fin, open(output_file, 'w') as fout:
+         lines = []
+         for line in fin:
+             split_line = line.split()
+             if len(split_line) >= 3 and split_line[1] == '1':
+                 lines.append(line)
+         lines.sort(key=lambda x: float(x.split()[0]))
+         fout.write(''.join(lines))
+     return len([line for line in lines if float(line.split()[0]) <= -8.2])
+ 
+ def modify_and_copy_pdb(src_file, dest_file):
+     with open(src_file, 'r') as fin, open(dest_file, 'w') as fout:
+         copy_line = False
+         for line in fin:
+             if line.strip() == 'MODEL 1':
+                 copy_line = True
+             elif line.strip() == 'ENDMDL':
+                 copy_line = False
+             if copy_line:
+                 fout.write(line)
+ 
+ def modify_and_copy_pdb_rdkit(src_file, dest_file):
+     with open(src_file, 'r') as fin, open(dest_file, 'w') as fout:
+diff --git a/SCREENING/screening_setup.py b/SCREENING/screening_setup.py
+index 36f04a10aaf9b52598d6cc5be91d947eff995c49..89e68bf6f88eeb7dc56970edd2515ced72573c0d 100644
+--- a/SCREENING/screening_setup.py
++++ b/SCREENING/screening_setup.py
+@@ -1,27 +1,26 @@
+ import sys
+-import os
+ 
+ def generate_scripts(screen_type, center, pdb_prefix, project_name):
+     centers = center.split()
+ 
+     # Generate ligand_prep.sh
+     with open('ligand_prep.sh', 'w') as f:
+         f.write('#!/bin/bash\n')
+         f.write('for((i=$1;i<=$1+$2;i++))\n')
+         f.write('do\n')
+         f.write(f'  cd /deac/phy/salsburyGrp/autodock/{project_name}/screen_{screen_type}/screen_$n/zinc\"$i\"\n')
+         f.write('/home/luy/MGLTools-1.5.4/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py -l zinc.pdb\n')
+         f.write('done\n')
+ 
+     # Generate run_vina.sh
+     with open('run_vina.sh', 'w') as f:
+         f.write('#!/bin/bash -l\n')
+         f.write('. /etc/profile.d/modules.sh\n')
+         f.write('module load rhel7/vina/1.1.2-intel-2018\n')
+         f.write('for((i=$1;i<=$1+$2;i++))\n')
+         f.write('do\n')
+         f.write(f'cd /deac/phy/salsburyGrp/autodock/{project_name}/screen_{screen_type}/screen_$n/zinc\"$i\"\n')
+         f.write(f'vina --receptor {pdb_prefix}.pdbqt --ligand zinc.pdbqt --center_x {centers[0]} --center_y {centers[1]}  --center_z {centers[2]} --size_x 30 --size_y 30 --size_z 30 --cpu 1 > log_zinc\"$i\"\n')
+         f.write('done\n')
+ 
+     # Generate docking_{screen}.slurm
+diff --git a/SCREENING/screening_single_setup.py b/SCREENING/screening_single_setup.py
+index 501f6b8d4835fbc5c638edd8837c44024cde293e..2b509b14e32fc0d5ced9dc967ea24991ae06ba9b 100644
+--- a/SCREENING/screening_single_setup.py
++++ b/SCREENING/screening_single_setup.py
+@@ -1,71 +1,69 @@
+-import sys
+ import os
+ import argparse
+ import numpy as np
+-import shutil
+ 
+ def compute_box(pdb_file, margin=5.0):
+     coords = []
+     with open(pdb_file, 'r') as f:
+         for line in f:
+             if line.startswith("ATOM") or line.startswith("HETATM"):
+                 try:
+                     x = float(line[30:38])
+                     y = float(line[38:46])
+                     z = float(line[46:54])
+                     coords.append([x, y, z])
+                 except ValueError:
+                     continue
+     if not coords:
+         raise ValueError("No atomic coordinates found in PDB file.")
+     
+     coords = np.array(coords)
+     min_coords = coords.min(axis=0)
+     max_coords = coords.max(axis=0)
+     center = (min_coords + max_coords) / 2
+     size = (max_coords - min_coords) + 2 * margin
+     return center.tolist(), size.tolist()
+ 
+ def generate_scripts(pdb_file, project_name, ligand_name, ligand_file_path, margin):
+     pdb_prefix = os.path.splitext(os.path.basename(pdb_file))[0]
+     docking_dir = f"/deac/phy/salsburyGrp/autodock/{project_name}/ligand_{ligand_name}"
+     ligand_ext = os.path.splitext(ligand_file_path)[1].lower()
+ 
+     center, size = compute_box(pdb_file, margin)
+     center_x, center_y, center_z = [f"{c:.2f}" for c in center]
+     size_x, size_y, size_z = [f"{s:.2f}" for s in size]
+ 
+     os.makedirs("SCREENING", exist_ok=True)
+ 
+     with open("SCREENING/ligand_prep.sh", "w") as f:
+         f.write('#!/bin/bash\n')
+         f.write(f'mkdir -p {docking_dir}\n')
+         f.write(f'cp {ligand_file_path} {docking_dir}/ligand{ligand_ext}\n')
+         f.write(f'cd {docking_dir}\n')
+         if ligand_ext == ".mol2":
+-            f.write(f'/home/salsbufr/babel/bin/babel -i mol2 ligand.mol2 -o pdb ligand.pdb\n')
++            f.write('/home/salsbufr/babel/bin/babel -i mol2 ligand.mol2 -o pdb ligand.pdb\n')
+         else:
+             f.write(f'cp ligand{ligand_ext} ligand.pdb\n')  # fallback copy if already PDB
+         f.write('/home/luy/MGLTools-1.5.4/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py -l ligand.pdb\n')
+ 
+     with open("SCREENING/run_vina.sh", "w") as f:
+         f.write('#!/bin/bash -l\n')
+         f.write('. /etc/profile.d/modules.sh\n')
+         f.write('module load apps/vina/1.2.5\n')
+         f.write(f'cd {docking_dir}\n')
+         f.write(f'vina --receptor {pdb_prefix}.pdbqt --ligand ligand.pdbqt '
+                 f'--center_x {center_x} --center_y {center_y} --center_z {center_z} '
+                 f'--size_x {size_x} --size_y {size_y} --size_z {size_z} --cpu 1 > log.txt\n')
+ 
+     with open(f"docking_{ligand_name}.slurm", "w") as f:
+         f.write('#!/bin/bash -l\n')
+         f.write('#SBATCH --partition=small\n')
+         f.write(f'#SBATCH --job-name="dock_{ligand_name}"\n')
+         f.write('#SBATCH --nodes=1\n')
+         f.write('#SBATCH --ntasks=1\n')
+         f.write('#SBATCH --cpus-per-task=1\n')
+         f.write('#SBATCH --time=2:00:00\n')
+         f.write('#SBATCH --account="salsburyGrp"\n')
+         f.write(f'#SBATCH --output="SLURM_OUTS/dock_{ligand_name}_%j.o"\n')
+         f.write(f'#SBATCH --error="SLURM_ERRORS/dock_{ligand_name}_%j.e"\n')
+         f.write('#SBATCH --mem=1gb\n')
+diff --git a/SCREENING/split_models.py b/SCREENING/split_models.py
+index c2973c0137e7403a8fd169a6dc6720881b82b9a4..6139785cc692a563b3531ae783d22fcede254cab 100644
+--- a/SCREENING/split_models.py
++++ b/SCREENING/split_models.py
+@@ -1,27 +1,26 @@
+ import sys
+-import os
+ 
+ def split_pdbqt_models(input_file, output_base="model"):
+     with open(input_file, 'r') as f:
+         lines = f.readlines()
+ 
+     model = []
+     model_index = 0
+     writing_model = False
+ 
+     for line in lines:
+         if line.startswith("MODEL"):
+             writing_model = True
+             model = [line]
+         elif line.startswith("ENDMDL"):
+             model.append(line)
+             model_index += 1
+             # Remove unwanted PDBQT-specific lines
+             cleaned_model = [
+                 l for l in model
+                 if not (l.startswith("ROOT") or l.startswith("ENDROOT") or
+                         l.startswith("BRANCH") or l.startswith("ENDBRANCH"))
+             ]
+             output_filename = f"{output_base}_model{model_index}.pdb"
+             with open(output_filename, 'w') as out:
+                 out.writelines(cleaned_model)
+diff --git a/calculate_FES_PCA.py b/calculate_FES_PCA.py
+index 59ea13ca2b1e7b3c5402f78c3b3fc058c9396fbd..cd7dec2ee7eff2a4d923046cb8313200d1542c81 100644
+--- a/calculate_FES_PCA.py
++++ b/calculate_FES_PCA.py
+@@ -1,29 +1,28 @@
+ import numpy as np
+ import matplotlib.pyplot as plt
+ import argparse
+-import math
+ 
+ # Constants
+ k_b = 0.0019872041  # Boltzmann constant in kcal/(mol*K)
+ T = 300  # Temperature in K
+ 
+ # Handle command line arguments
+ parser = argparse.ArgumentParser(description='Calculate 2D free energy surface from PCA projections.')
+ parser.add_argument('input_file', help='Input file containing the PCA projections.')
+ parser.add_argument('output_prefix', help='The prefix for the output files.')
+ parser.add_argument('-b', '--bins', type=int, default=None, help='Number of bins to use. If not specified, Sturges\' rule is used.')
+ args = parser.parse_args()
+ 
+ # Load the projections
+ projections = np.loadtxt(args.input_file)
+ 
+ # Determine the number of bins using Sturges' rule or user input
+ num_bins = args.bins if args.bins is not None else int(round(1 + np.log2(projections.shape[0])))
+ 
+ # Calculate 2D histogram and bin edges
+ hist, x_edges, y_edges = np.histogram2d(projections[:, 0], projections[:, 1], bins=num_bins, density=True)
+ 
+ # Calculate bin centers
+ x_centers = x_edges[:-1] + 0.5 * (x_edges[1] - x_edges[0])
+ y_centers = y_edges[:-1] + 0.5 * (y_edges[1] - y_edges[0])
+ 
+diff --git a/calculate_pca_corner.py b/calculate_pca_corner.py
+index c4913109f0c8d26fe651779ac32fe732fb61ad45..ffa692da6735511056529aaf68a602dd5555199e 100644
+--- a/calculate_pca_corner.py
++++ b/calculate_pca_corner.py
+@@ -1,28 +1,27 @@
+ import MDAnalysis as mda
+ from sklearn.decomposition import PCA
+-import matplotlib.pyplot as plt
+ import numpy as np
+ import argparse
+ import corner  # This is the new package needed
+ 
+ # Handle command line arguments
+ parser = argparse.ArgumentParser(description='Perform PCA on a molecular dynamics trajectory.')
+ parser.add_argument('pdb_file', help='The PDB file.')
+ parser.add_argument('trajectory_file', help='The trajectory file.')
+ parser.add_argument('selection', help='The selection criteria for the atoms.')
+ parser.add_argument('output_prefix', help='The prefix for the output files.')
+ parser.add_argument('n_components', type=int, help='Number of components for PCA.')
+ args = parser.parse_args()
+ 
+ # Load the universe
+ u = mda.Universe(args.pdb_file, args.trajectory_file, in_memory=False)
+ 
+ # Select the atoms
+ atomgroup = u.select_atoms(args.selection, updating=True)
+ 
+ # Create an empty list to store the coordinates
+ coordinates = []
+ 
+ # Loop over the trajectory and append the atom coordinates to the list
+ for ts in u.trajectory:
+     coordinates.append(atomgroup.positions)
+diff --git a/cluster_HDBSCAN.py b/cluster_HDBSCAN.py
+index 8beb5ba852a5667a939af9f4103fbcd72e80eb0b..d1d87864722b50e4e682fdbeabdae98d8bd5fb65 100644
+--- a/cluster_HDBSCAN.py
++++ b/cluster_HDBSCAN.py
+@@ -1,32 +1,31 @@
+ # Script 1: cluster_md_part1.py
+ 
+ import argparse
+ import mdtraj as md
+ import hdbscan
+ import numpy as np
+-import pickle
+ from collections import Counter
+ import matplotlib.pyplot as plt
+ 
+ # Parse command line arguments
+ parser = argparse.ArgumentParser(description='Cluster MD simulations with HDBSCAN (Part 1).')
+ parser.add_argument('trajectory', type=str, help='Path to the trajectory file.')
+ parser.add_argument('topology', type=str, help='Path to the topology file.')
+ parser.add_argument('prefix', type=str, help='Prefix for output file names.')
+ args = parser.parse_args()
+ 
+ # Load the trajectory
+ traj = md.load(args.trajectory, top=args.topology)
+ 
+ # Compute pairwise RMSD distances
+ distances = np.empty((traj.n_frames, traj.n_frames))
+ for i in range(traj.n_frames):
+     distances[i] = md.rmsd(traj, traj, i)
+ 
+ # Perform HDBSCAN clustering
+ clusterer = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=2, metric='precomputed')
+ labels = clusterer.fit_predict(distances)
+ 
+ # Write out cluster assignments for each frame
+ with open(f'{args.prefix}_HDBSCAN_frame_clusters.txt', 'w') as f:
+     for i, label in enumerate(labels):
+diff --git a/compare_two.py b/compare_two.py
+index 4a3d5406e2e558e125e6120ec6015b3141d6c558..dbc6ca26b269b4b9b347f2836f9d9aadcb5d9c33 100644
+--- a/compare_two.py
++++ b/compare_two.py
+@@ -1,28 +1,27 @@
+ import subprocess
+ import sys
+-import os
+ 
+ # Getting the prefixes from the command line arguments
+ prefix1 = sys.argv[1]
+ prefix2 = sys.argv[2]
+ script_path = sys.argv[3]
+ 
+ # Define the command templates
+ cmds = [
+     "python {0}/calculate_rmsf_diff.py {1}_all_rmsf.pdb {2}_all_rmsf.pdb {1}_{2}_diff_rmsf.pdb",
+     "python {0}/calculate_matrix_difference.py {1}_1_protein_correlation_matrix.txt {2}_1_protein_correlation_matrix.txt {1}_{2}_difference_correlation_matrix",
+     "python {0}/extract_common_pairwise.py {1} {2} {1} {2} 1",
+     "python {0}/calculate_pca_projections_split.py {1}_{2}_common.pdb {1}_{2}_common_1.xtc all {1}_{2}_common_1 0 39999 40000 79999",
+     "python {0}/calculate_FES_PCA.py {1}_{2}_common_1_projections_40000_79999.txt {1}_{2}_{2}",
+     "python {0}/calculate_FES_PCA.py {1}_{2}_common_1_projections_0_39999.txt {1}_{2}_{1}",
+     "python {0}/find_minima_find_structures.py {1}_{2}_{1}_bins_16_free_energy.txt {1}_{2}_{1}_bin_indices.txt {1}_{2}_{1}",
+     "python {0}/find_minima_find_structures.py {1}_{2}_{2}_bins_16_free_energy.txt {1}_{2}_{2}_bin_indices.txt {1}_{2}_{2}",
+     "python {0}/extract_structures_minima.py {1}_{2}_{1}_projection_minima.txt {1}_{2}_common_1.xtc {1}_{2}_common.pdb {1}_{2}_{1}",
+     "python {0}/extract_structures_minima.py {1}_{2}_{2}_projection_minima.txt {1}_{2}_common_1.xtc {1}_{2}_common.pdb {1}_{2}_{2}",
+ ]
+ 
+ # Run each command with the prefixes
+ for cmd in cmds:
+     # Format the command with the correct prefixes and the script path
+     cmd = cmd.format(script_path, prefix1, prefix2)
+     # Use subprocess to execute the command
+diff --git a/extract_common_pairwise.py b/extract_common_pairwise.py
+index 1aeca3f052a02cb3ff1826921d50b983042a94b0..973ada5b025f02741b4152ab7801562e85b8e623 100644
+--- a/extract_common_pairwise.py
++++ b/extract_common_pairwise.py
+@@ -1,27 +1,26 @@
+ import MDAnalysis as mda
+-import numpy as np
+ import argparse
+ 
+ def merge_common_atoms(prefix1, prefix2, xtcname1, xtcname2, stepsize):
+     # Load the PDB and XTC files
+     u1 = mda.Universe(f'{prefix1}_nowat_1_1.pdb', f'{xtcname1}_nowat_1_merged.xtc')
+     u2 = mda.Universe(f'{prefix2}_nowat_1_1.pdb', f'{xtcname2}_nowat_1_merged.xtc')
+ 
+     # Get the atoms from each structure
+     atoms1 = [(atom.resid, atom.resname, atom.name) for atom in u1.atoms]
+     atoms2 = [(atom.resid, atom.resname, atom.name) for atom in u2.atoms]
+ 
+     # Find common atoms
+     common_atoms = [atom for atom in atoms1 if atom in atoms2]
+ 
+     # Find indices of the common atoms
+     indices_u1 = [i for i, atom in enumerate(atoms1) if atom in common_atoms]
+     indices_u2 = [i for i, atom in enumerate(atoms2) if atom in common_atoms]
+ 
+     # Write out the common atoms to a new PDB file
+     u1.atoms[indices_u1].write(f'{prefix1}_{prefix2}_common.pdb')
+ 
+     # Create a new XTC file with the common atoms
+     with mda.Writer(f'{prefix1}_{prefix2}_common_{stepsize}.xtc', len(indices_u1)) as W:
+         for ts in u1.trajectory:
+             W.write(u1.atoms[indices_u1])
+diff --git a/htmd_register.py b/htmd_register.py
+index 3472bd53a6775bb46eea1ae11c5fbf465c4b546d..8425fe2ef318d154135dad77c7ce170ad64be62b 100644
+--- a/htmd_register.py
++++ b/htmd_register.py
+@@ -1,3 +1,4 @@
+-from htmd.ui import *
++from htmd.ui import htmd_register
++
+ htmd_register()
+ 
+diff --git a/prep_mutate.py b/prep_mutate.py
+index 64ef07fd7fb8916d35663581d038a582785720bf..c6e432b31654cde50a6c94d5c2c9239e982538a7 100644
+--- a/prep_mutate.py
++++ b/prep_mutate.py
+@@ -1,29 +1,28 @@
+ import numpy as np
+-from simtk.openmm import Vec3
+ from simtk.openmm.app import PDBFile
+-from simtk.unit import nanometer, nanometers, Quantity
++from simtk.unit import nanometers, Quantity
+ import pdbfixer
+ import argparse
+ 
+ # Parse command-line arguments
+ parser = argparse.ArgumentParser(description='Process PDB file for ACEMD3.')
+ parser.add_argument('pdbfile', metavar='pdbfile', type=str, help='Input PDB file name')
+ parser.add_argument('pdbid', metavar='pdbid', type=str, help='Input PDB code')
+ parser.add_argument('chain', metavar='chain', type=str, help='Chain identifier')
+ parser.add_argument('resid', metavar='resid', type=int, help='Residue number')
+ parser.add_argument('mutation', metavar='mutation', type=str, help='Three-letter code of the amino acid to mutate to')
+ args = parser.parse_args()
+ 
+ # Initialize PDBFixer
+ fixer = pdbfixer.PDBFixer(filename=args.pdbfile)
+ 
+ # Identify the residue to mutate
+ mutations = []
+ for residue in fixer.topology.residues():
+     if residue.chain.id == args.chain and residue.id == str(args.resid):
+         old_residue_name = residue.name
+         new_residue_name = args.mutation
+         mutations.append(f"{old_residue_name}-{residue.id}-{new_residue_name}")
+ 
+ # Apply the mutation
+ fixer.applyMutations(mutations, args.chain)
+diff --git a/prepare_fix.py b/prepare_fix.py
+index 426144bdfa8a5e7221f90e793623673126db80f5..d319f52a18ee289f71d9061d85af92dcf2405406 100644
+--- a/prepare_fix.py
++++ b/prepare_fix.py
+@@ -1,29 +1,28 @@
+ import numpy as np
+-from simtk.openmm import Vec3
+ from simtk.openmm.app import PDBFile
+-from simtk.unit import nanometer, nanometers, Quantity
++from simtk.unit import nanometers, Quantity
+ import pdbfixer
+ import argparse
+ 
+ 
+ # Parse command-line arguments
+ parser = argparse.ArgumentParser(description='Process PDB file for ACEMD3.')
+ parser.add_argument('pdbfile', metavar='pdbfile', type=str, help='Input PDB file name')
+ parser.add_argument('pdbid', metavar='pdbid', type=str, help='Input PDB code')
+ args = parser.parse_args()
+ 
+ # Initialize PDBFixer
+ fixer = pdbfixer.PDBFixer(filename=args.pdbfile)
+ 
+ # Add missing atoms and assign bond orders
+ fixer.findMissingResidues()
+ fixer.findMissingAtoms()
+ fixer.addMissingAtoms()
+ fixer.addMissingHydrogens(7.0)
+ 
+ # Centering the protein at (0,0,0)
+ positions = np.array([pos.value_in_unit(nanometers) for pos in fixer.positions])
+ mean_coords = np.mean(positions, axis=0)
+ centered_positions = positions - mean_coords
+ centered_positions = Quantity(centered_positions, nanometers)
+ 
+diff --git a/process.py b/process.py
+index 11740db451a537440d2f96b5b0dee6e9627b1114..1729676b380b170bd084116e33d49e50ffd6340a 100644
+--- a/process.py
++++ b/process.py
+@@ -1,44 +1,42 @@
+ import os
+ import argparse
+-import glob
+ import math
+-import subprocess
+ 
+ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_prefix, merge_selection, norun, corr_range, pca_selection, bins, conda_path, n_clusters):
+ 
+     first_value = length // 10
+     second_value = length // 100
+     # Check if second_value equals to 1, if so, set it to 2; seems to be bug in process and wrap when its 1
+     if second_value == 1:
+       second_value = 2
+     first_multiplier = 1000
+     second_multiplier = 10000
+     smaller_number = min(first_value, second_value)
+     larger_number = max(first_value, second_value)
+     script_path = os.path.join(path, "group_python")
+-    analysis_dir = f"ANALYSIS"
++    analysis_dir = "ANALYSIS"
+     scratch_dir = os.path.join(analysis_dir, "SCRATCH")
+     rmsd_dir = os.path.join(analysis_dir, "RMSD")
+     traj_dir = os.path.join(analysis_dir, "TRAJ")
+     rmsf_dir = os.path.join(analysis_dir, "RMSF")
+     corr_dir = os.path.join(analysis_dir, "CORR")
+     pca_dir = os.path.join(analysis_dir, "PCA")
+     start_dir = os.path.join(analysis_dir, "START")
+     commands = []
+ 
+     # Directory creation commands
+     dir_commands = [f"mkdir -p {directory}" for directory in [analysis_dir, scratch_dir, rmsd_dir, traj_dir, rmsf_dir, corr_dir, pca_dir, start_dir]]
+     commands.extend(dir_commands)
+ 
+     if not args.analysisonly:
+      for i in range(1, n + 1):
+         for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
+             # process_trajectory_juststride.py
+             command = f"python {os.path.join(script_path, 'process_trajectory_juststride.py')} {prefix}_{i}.xtc {pdb_prefix}.pdb {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {value} {multiplier}"
+             commands.append(command)
+ 
+             # wrap.py
+             command = f"{conda_path}conda run -n htmd python {os.path.join(script_path, 'wrap.py')} -t {prefix}_{value}_{i}.xtc -s {psf_prefix}.psf -o {prefix}_solvated_wrapped_{value}_{i}.xtc"
+             commands.append(command)
+ 
+             # process_trajectory_large_atomrange.py
+diff --git a/process_nowrap.py b/process_nowrap.py
+index 189e3edf15b88059b80d833a06f589bfea419039..a14beb40fb31718c69ff38afc2a5ad04299a1dc6 100644
+--- a/process_nowrap.py
++++ b/process_nowrap.py
+@@ -1,41 +1,39 @@
+ import os
+ import argparse
+-import glob
+ import math
+-import subprocess
+ 
+ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_prefix, merge_selection, norun, corr_range, pca_selection, bins, conda_path, n_clusters):
+ 
+     first_value = length // 10
+     second_value = length // 100
+     first_multiplier = 1000
+     second_multiplier = 10000
+     smaller_number = min(first_value, second_value)
+     larger_number = max(first_value, second_value)
+     script_path = os.path.join(path, "group_python")
+-    analysis_dir = f"ANALYSIS"
++    analysis_dir = "ANALYSIS"
+     scratch_dir = os.path.join(analysis_dir, "SCRATCH")
+     rmsd_dir = os.path.join(analysis_dir, "RMSD")
+     traj_dir = os.path.join(analysis_dir, "TRAJ")
+     rmsf_dir = os.path.join(analysis_dir, "RMSF")
+     corr_dir = os.path.join(analysis_dir, "CORR")
+     pca_dir = os.path.join(analysis_dir, "PCA")
+     start_dir = os.path.join(analysis_dir, "START")
+     commands = []
+ 
+     # Directory creation commands
+     dir_commands = [f"mkdir -p {directory}" for directory in [analysis_dir, scratch_dir, rmsd_dir, traj_dir, rmsf_dir, corr_dir, pca_dir, start_dir]]
+     commands.extend(dir_commands)
+ 
+     if not args.analysisonly:
+      for i in range(1, n + 1):
+         for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
+             # process_trajectory_juststride.py
+             command = f"python {os.path.join(script_path, 'process_trajectory_juststride.py')} {prefix}_{i}.xtc {pdb_prefix}.pdb {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {value} {multiplier}"
+             commands.append(command)
+ 
+             # process_trajectory_large_atomrange.py
+             command = f"python {os.path.join(script_path, 'process_trajectory_large_atomrange.py')} {prefix}_{value}_{i}.xtc {prefix}_{value}_{i}.pdb {prefix}_nowat_{value}_{i}.xtc {prefix}_nowat_{value}_{i}.pdb 1 {multiplier} {atom_range}"
+             commands.append(command)
+ 
+             # calculate_rmsd.py
+diff --git a/wrap.py b/wrap.py
+index 4bc8d65d6d43721ed74632ddcad2d6f1ec71a9a4..14b51a62e31c40e23f8aa6c5d256914d255f2377 100644
+--- a/wrap.py
++++ b/wrap.py
+@@ -1,26 +1,26 @@
+-from htmd.ui import *
++from htmd.ui import Molecule
+ import argparse
+ #htmd_register()
+ parser = argparse.ArgumentParser(description='Calculate, save and plot RMSF', add_help=False)
+ inputs = parser.add_argument_group('Input arguments')
+ inputs.add_argument('-h', '--help', action='help')
+ inputs.add_argument('-s',
+                     action='store',
+                     dest='structure',
+                     help='Structure file corresponding to trajectory',
+                     type=str,
+                     required=True)
+ 
+ inputs.add_argument('-t',
+                     action='store',
+                     dest='trajectory',
+                     help='Trajectory',
+                     type=str,
+                     required=True)
+ 
+ inputs.add_argument('-sel',
+                     action='store',
+                     dest='sel',
+                     help='Atom selection',
+                     type=str,
+                     default='protein')
+
