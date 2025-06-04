@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 
 from .clustering import extract_top_clusters, run_hdbscan_clustering
+from .pipeline import Pipeline
 
 
 def main() -> None:
@@ -24,6 +25,13 @@ def main() -> None:
     extract_p.add_argument("n_clusters", type=int)
     extract_p.add_argument("labels_file", type=Path)
 
+    pipeline_p = subparsers.add_parser("pipeline", help="Run simple analysis pipeline")
+    pipeline_p.add_argument("trajectory", type=Path)
+    pipeline_p.add_argument("topology", type=Path)
+    pipeline_p.add_argument("prefix", type=str)
+    pipeline_p.add_argument("--config", type=Path, default=None)
+    pipeline_p.add_argument("--n_clusters", type=int, default=10)
+
     args = parser.parse_args()
     if args.command == "hdbscan":
         run_hdbscan_clustering(args.trajectory, args.topology, args.prefix)
@@ -34,6 +42,14 @@ def main() -> None:
             args.prefix,
             args.n_clusters,
             args.labels_file,
+        )
+    elif args.command == "pipeline":
+        pipeline = Pipeline(args.config)
+        pipeline.cluster_trajectory(
+            args.trajectory,
+            args.topology,
+            args.prefix,
+            args.n_clusters,
         )
 
 
