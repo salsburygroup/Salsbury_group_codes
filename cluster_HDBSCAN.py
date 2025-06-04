@@ -4,7 +4,6 @@ import argparse
 import mdtraj as md
 import hdbscan
 import numpy as np
-import pickle
 from collections import Counter
 import matplotlib.pyplot as plt
 

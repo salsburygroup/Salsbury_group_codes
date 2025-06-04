@@ -1,5 +1,4 @@
 import MDAnalysis as mda
-import numpy as np
 import argparse
 
 def merge_common_atoms(prefix1, prefix2, xtcname1, xtcname2, stepsize):

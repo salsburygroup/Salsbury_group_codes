@@ -1,4 +1,4 @@
-from htmd.ui import *
+from htmd.ui import Molecule
 import argparse
 #htmd_register()
 parser = argparse.ArgumentParser(description='Calculate, save and plot RMSF', add_help=False)

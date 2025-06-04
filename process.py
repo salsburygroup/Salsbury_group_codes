@@ -1,10 +1,8 @@
 import os
 import argparse
-import glob
 import math
-import subprocess
 
-def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_prefix, merge_selection, norun, corr_range, pca_selection, bins, conda_path, n_clusters):
+def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_prefix, merge_selection, norun, corr_range, pca_selection, bins, conda_path, n_clusters, analysisonly):
 
     first_value = length // 10
     second_value = length // 100
@@ -16,7 +14,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     smaller_number = min(first_value, second_value)
     larger_number = max(first_value, second_value)
     script_path = os.path.join(path, "group_python")
-    analysis_dir = f"ANALYSIS"
+    analysis_dir = "ANALYSIS"
     scratch_dir = os.path.join(analysis_dir, "SCRATCH")
     rmsd_dir = os.path.join(analysis_dir, "RMSD")
     traj_dir = os.path.join(analysis_dir, "TRAJ")
@@ -30,7 +28,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     dir_commands = [f"mkdir -p {directory}" for directory in [analysis_dir, scratch_dir, rmsd_dir, traj_dir, rmsf_dir, corr_dir, pca_dir, start_dir]]
     commands.extend(dir_commands)
 
-    if not args.analysisonly:
+    if not analysisonly:
      for i in range(1, n + 1):
         for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
             # process_trajectory_juststride.py
@@ -185,8 +183,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
      commands.append(f"mv *info* {hbond_dir}/")
 
      #remove the prefix directory
-     commands.append(f"rmdir {prefix}")
-     pass 
+    commands.append(f"rmdir {prefix}")
     if norun:
         with open(f"{prefix}.csh", 'w') as f:
             for command in commands:
@@ -206,9 +203,7 @@ if __name__ == "__main__":
     parser.add_argument('--pdb_prefix', type=str, default="ionized", help='Prefix for the pdb files.')
     parser.add_argument('--psf_prefix', type=str, default="ionized", help='Prefix for the psf files.')
     parser.add_argument('--length', type=int, default=1000, help='Total length of the trajectory.')
-    # Parse the known arguments to get the prefix value
-    known_args, remaining = parser.parse_known_args()
-    # Add the '--nowat_psf_prefix' argument using the prefix value
+    known_args, _ = parser.parse_known_args()
     parser.add_argument('--nowat_psf_prefix', type=str, default=f"{known_args.prefix}_autopsf", help='Prefix for the no-water psf files.')
     parser.add_argument('--merge_selection', type=str, default="all", help='Selection for merge_trajectories.py script.')
     parser.add_argument('--norun', action='store_true', help='If provided, the script only writes the commands to a .csh file instead of running them.')
@@ -221,8 +216,21 @@ if __name__ == "__main__":
     parser.add_argument('--processonly', action='store_true', help='If provided, the script only runs the processing part.')
     args = parser.parse_args()
 
-if __name__ == "__main__":
-    args = parser.parse_args()
-
-main(args.prefix, args.n, args.atom_range, args.path, args.pdb_prefix, args.psf_prefix, args.length, args.nowat_psf_prefix, args.merge_selection, args.norun, args.corr_range, args.pca_selection, args.bins, args.conda_path, args.n_clusters)
-
+    main(
+        args.prefix,
+        args.n,
+        args.atom_range,
+        args.path,
+        args.pdb_prefix,
+        args.psf_prefix,
+        args.length,
+        args.nowat_psf_prefix,
+        args.merge_selection,
+        args.norun,
+        args.corr_range,
+        args.pca_selection,
+        args.bins,
+        args.conda_path,
+        args.n_clusters,
+        args.analysisonly,
+    )

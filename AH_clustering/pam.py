@@ -62,7 +62,6 @@ class PartitionAroundMedoids(object):
             #stop if there are no changes in the partitions
             if np.array_equal(u, previous_u):
                 return u, medoids, ite, dist_tmp
-            tmp = np.random.random([3,4])
             #update medoid
             for k_i in range(k):
                 entities_in_k = u == k_i
