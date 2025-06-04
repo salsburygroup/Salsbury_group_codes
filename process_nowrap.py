@@ -2,7 +2,9 @@ import os
 import argparse
 import math
 
-def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_prefix, merge_selection, norun, corr_range, pca_selection, bins, conda_path, n_clusters):
+def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length,
+         nowat_psf_prefix, merge_selection, norun, corr_range,
+         pca_selection, bins, conda_path, n_clusters, analysisonly=False):
 
     first_value = length // 10
     second_value = length // 100
@@ -25,7 +27,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     dir_commands = [f"mkdir -p {directory}" for directory in [analysis_dir, scratch_dir, rmsd_dir, traj_dir, rmsf_dir, corr_dir, pca_dir, start_dir]]
     commands.extend(dir_commands)
 
-    if not args.analysisonly:
+    if not analysisonly:
      for i in range(1, n + 1):
         for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
             # process_trajectory_juststride.py
@@ -43,7 +45,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     # merge_trajectories.py
      for value, multiplier in zip([first_value, second_value], [first_multiplier, second_multiplier]):
         input_xtcs = " ".join(f"{prefix}_nowat_{value}_{i}.xtc" for i in range(1, n + 1))
-        command = f"python {os.path.join(script_path, 'merge_trajectories.py')} {input_xtcs} --topology {nowat_psf_prefix}.psf --reference_structure {prefix}_nowat_{value}_3.pdb --output {prefix}_nowat_{value} --chunk_size {multiplier} --selection \"{args.merge_selection}\""
+        command = f"python {os.path.join(script_path, 'merge_trajectories.py')} {input_xtcs} --topology {nowat_psf_prefix}.psf --reference_structure {prefix}_nowat_{value}_3.pdb --output {prefix}_nowat_{value} --chunk_size {multiplier} --selection \"{merge_selection}\""
         commands.append(command)
 
      # File moving commands
@@ -212,8 +214,9 @@ if __name__ == "__main__":
     parser.add_argument("--n_clusters", type=int, default=10)
     args = parser.parse_args()
 
-if __name__ == "__main__":
-    args = parser.parse_args()
-
-main(args.prefix, args.n, args.atom_range, args.path, args.pdb_prefix, args.psf_prefix, args.length, args.nowat_psf_prefix, args.merge_selection, args.norun, args.corr_range, args.pca_selection, args.bins, args.conda_path, args.n_clusters)
+    main(args.prefix, args.n, args.atom_range, args.path, args.pdb_prefix,
+         args.psf_prefix, args.length, args.nowat_psf_prefix,
+         args.merge_selection, args.norun, args.corr_range,
+         args.pca_selection, args.bins, args.conda_path,
+         args.n_clusters, args.analysisonly)
 
