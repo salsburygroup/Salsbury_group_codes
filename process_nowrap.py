@@ -1,8 +1,6 @@
 import os
 import argparse
-import glob
 import math
-import subprocess
 
 def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_prefix, merge_selection, norun, corr_range, pca_selection, bins, conda_path, n_clusters):
 
@@ -13,7 +11,7 @@ def main(prefix, n, atom_range, path, pdb_prefix, psf_prefix, length, nowat_psf_
     smaller_number = min(first_value, second_value)
     larger_number = max(first_value, second_value)
     script_path = os.path.join(path, "group_python")
-    analysis_dir = f"ANALYSIS"
+    analysis_dir = "ANALYSIS"
     scratch_dir = os.path.join(analysis_dir, "SCRATCH")
     rmsd_dir = os.path.join(analysis_dir, "RMSD")
     traj_dir = os.path.join(analysis_dir, "TRAJ")

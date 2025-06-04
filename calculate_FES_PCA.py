@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
-import math
 
 # Constants
 k_b = 0.0019872041  # Boltzmann constant in kcal/(mol*K)

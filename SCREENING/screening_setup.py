@@ -1,5 +1,4 @@
 import sys
-import os
 
 def generate_scripts(screen_type, center, pdb_prefix, project_name):
     centers = center.split()

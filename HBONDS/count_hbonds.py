@@ -6,7 +6,7 @@ def analyze_hbond_counts(input_file, output_file, frame_step):
     # Read the data and parse each line by the first nine fields and frame number (field 10)
     with open(input_file, 'r') as f:
         # Skip header line
-        header = f.readline().strip()
+        f.readline()
         data = []
         frame_numbers = []
 

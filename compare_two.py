@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import os
 
 # Getting the prefixes from the command line arguments
 prefix1 = sys.argv[1]
