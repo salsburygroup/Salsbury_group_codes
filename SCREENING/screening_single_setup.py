@@ -1,8 +1,6 @@
-import sys
 import os
 import argparse
 import numpy as np
-import shutil
 
 def compute_box(pdb_file, margin=5.0):
     coords = []
@@ -43,7 +41,7 @@ def generate_scripts(pdb_file, project_name, ligand_name, ligand_file_path, marg
         f.write(f'cp {ligand_file_path} {docking_dir}/ligand{ligand_ext}\n')
         f.write(f'cd {docking_dir}\n')
         if ligand_ext == ".mol2":
-            f.write(f'/home/salsbufr/babel/bin/babel -i mol2 ligand.mol2 -o pdb ligand.pdb\n')
+            f.write('/home/salsbufr/babel/bin/babel -i mol2 ligand.mol2 -o pdb ligand.pdb\n')
         else:
             f.write(f'cp ligand{ligand_ext} ligand.pdb\n')  # fallback copy if already PDB
         f.write('/home/luy/MGLTools-1.5.4/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py -l ligand.pdb\n')

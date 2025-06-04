@@ -1,6 +1,5 @@
 import MDAnalysis as mda
 from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
 import numpy as np
 import argparse
 import corner  # This is the new package needed
