@@ -10,7 +10,7 @@ def write_model_1_file(input_file, output_file):
                 lines.append(line)
         lines.sort(key=lambda x: float(x.split()[0]))
         fout.write(''.join(lines))
-    return len([line for line in lines if float(line.split()[0]) <= -9.0])
+    return len([line for line in lines if float(line.split()[0]) <= -8.2])
 
 def modify_and_copy_pdb(src_file, dest_file):
     with open(src_file, 'r') as fin, open(dest_file, 'w') as fout:
