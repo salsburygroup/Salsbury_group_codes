@@ -1,6 +1,7 @@
 import numpy as np
+from simtk.openmm import Vec3
 from simtk.openmm.app import PDBFile
-from simtk.unit import nanometers, Quantity
+from simtk.unit import nanometer, nanometers, Quantity
 import pdbfixer
 import argparse
 

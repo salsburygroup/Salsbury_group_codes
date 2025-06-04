@@ -1,4 +1,5 @@
 import sys
+import os
 
 def read_clean_protein(protein_pdb):
     """Reads a PDB file and removes the final END statement, if present."""

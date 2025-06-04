@@ -1,4 +1,5 @@
 import sys
+import os
 
 def split_pdbqt_models(input_file, output_base="model"):
     with open(input_file, 'r') as f:

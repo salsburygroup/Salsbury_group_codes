@@ -1,4 +1,5 @@
 import os
+import shutil
 
 def write_model_1_file(input_file, output_file):
     with open(input_file, 'r') as fin, open(output_file, 'w') as fout:

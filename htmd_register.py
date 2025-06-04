@@ -1,4 +1,3 @@
-from htmd.ui import htmd_register
-
+from htmd.ui import *
 htmd_register()
 

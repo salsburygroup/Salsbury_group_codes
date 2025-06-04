@@ -12,6 +12,8 @@ def analyze_hbonds(topology_file, trajectory_file, prefix):
     # Analyze the first 100 frames
     #h.run(start=0, stop=100)
     h.run()
+    total_timesteps = len(u.trajectory)
+    #total_timesteps = 100
 # Access the results
     hbonds = h.results.hbonds
     counts_by_ids = h.count_by_ids()
