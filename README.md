@@ -13,14 +13,19 @@ pip install -e .
 
 ## Usage
 
-The main entry points are two scripts:
+The main entry point is the `analysis` package which exposes a small command line
+interface:
 
-- `cluster_HDBSCAN.py` – perform HDBSCAN clustering on a trajectory
-- `cluster_traj.py` – extract the most populated clusters and save representative structures
-- `process.py` – run a simple pipeline using a YAML configuration
+- `python -m analysis hdbscan` – perform HDBSCAN clustering on a trajectory
+- `python -m analysis extract` – extract the most populated clusters and save
+  representative structures
+- `python -m analysis pipeline` – run the simple pipeline using a YAML configuration
+  (pass `--full` to execute the complete workflow including trajectory processing)
 
-Run `python cluster_HDBSCAN.py --help` for detailed CLI options. The pipeline
-script accepts `--config` pointing to a YAML file (defaults to `config.yaml`).
+Run `python -m analysis hdbscan --help` for detailed CLI options. The pipeline
+command accepts `--config` pointing to a YAML file (defaults to `config.yaml`).
+Additional parameters (number of chunks, atom range, etc.) can be supplied when
+`--full` is used.
 
 ## Development
 
@@ -42,4 +47,4 @@ conda_path: /home/USER/miniconda3/bin/
 script_path: group_python
 ```
 
-Override these values by passing ``--config myconfig.yaml`` to ``process.py``.
+Override these values by passing ``--config myconfig.yaml`` to ``python -m analysis pipeline``.
