@@ -20,6 +20,10 @@ interface:
 - `python -m analysis extract` – extract the most populated clusters and save
   representative structures
 - `python -m analysis pipeline` – run the simple pipeline using a YAML configuration
+- `python cluster_HDBSCAN.py` – command line wrapper for HDBSCAN clustering
+- `python cluster_traj.py` – extract top clusters from a labelled trajectory
+- `python process.py` – run the full processing and analysis workflow
+- `python process_nowrap.py` – same as `process.py` but without trajectory wrapping
 
 Run `python -m analysis hdbscan --help` for detailed CLI options. The pipeline
 command accepts `--config` pointing to a YAML file (defaults to `config.yaml`).
