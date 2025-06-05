@@ -1,0 +1,211 @@
+diff --git a/README.md b/README.md
+index 9331744cd1a538df748fa3d4be97a8b25941feb0..f769e6bf7aa8daa4b0f9cd028935b42518ae01d5 100644
+--- a/README.md
++++ b/README.md
+@@ -1,45 +1,47 @@
+ # Salsbury Analysis
+ 
+ This repository contains utilities for processing and analyzing molecular dynamics trajectories.
+ It bundles a small `analysis` package with reusable helpers for clustering.
+ 
+ ## Installation
+ 
+ Install the package and its dependencies with `pip`:
+ 
+ ```bash
+ pip install -e .
+ ```
+ 
+ ## Usage
+ 
+-The main entry points are two scripts:
++The main entry point is the `analysis` package which exposes a small command line
++interface:
+ 
+-- `cluster_HDBSCAN.py` – perform HDBSCAN clustering on a trajectory
+-- `cluster_traj.py` – extract the most populated clusters and save representative structures
+-- `process.py` – run a simple pipeline using a YAML configuration
++- `python -m analysis hdbscan` – perform HDBSCAN clustering on a trajectory
++- `python -m analysis extract` – extract the most populated clusters and save
++  representative structures
++- `python -m analysis pipeline` – run the simple pipeline using a YAML configuration
+ 
+-Run `python cluster_HDBSCAN.py --help` for detailed CLI options. The pipeline
+-script accepts `--config` pointing to a YAML file (defaults to `config.yaml`).
++Run `python -m analysis hdbscan --help` for detailed CLI options. The pipeline
++command accepts `--config` pointing to a YAML file (defaults to `config.yaml`).
+ 
+ ## Development
+ 
+ A minimal test suite using `pytest` lives in the `tests/` directory. Run the
+ checks along with syntax validation via:
+ 
+ ```bash
+ python -m py_compile $(git ls-files '*.py')
+ pytest -q
+ ```
+ 
+ ### Configuration
+ 
+ A small YAML file ``config.yaml`` controls default paths used by the pipeline:
+ 
+ ```yaml
+ analysis_dir: ANALYSIS
+ conda_path: /home/USER/miniconda3/bin/
+ script_path: group_python
+ ```
+ 
+-Override these values by passing ``--config myconfig.yaml`` to ``process.py``.
++Override these values by passing ``--config myconfig.yaml`` to ``python -m analysis pipeline``.
+diff --git a/analysis/__main__.py b/analysis/__main__.py
+index 49e53cda8808aa738ca908bbfc15163b96058f4d..0277e3eecba6750e7a157d9279b7a8bf4a56c32d 100644
+--- a/analysis/__main__.py
++++ b/analysis/__main__.py
+@@ -1,41 +1,57 @@
+ """Command line entry point for the analysis package."""
+ 
+ import argparse
+ from pathlib import Path
+ 
+ from .clustering import extract_top_clusters, run_hdbscan_clustering
++from .pipeline import Pipeline
+ 
+ 
+ def main() -> None:
+     parser = argparse.ArgumentParser(
+         description="Utilities for clustering trajectories using HDBSCAN"
+     )
+     subparsers = parser.add_subparsers(dest="command", required=True)
+ 
+     hdbscan_p = subparsers.add_parser("hdbscan", help="Run clustering")
+     hdbscan_p.add_argument("trajectory", type=Path)
+     hdbscan_p.add_argument("topology", type=Path)
+     hdbscan_p.add_argument("prefix", type=str)
+ 
+     extract_p = subparsers.add_parser("extract", help="Extract top clusters")
+     extract_p.add_argument("trajectory", type=Path)
+     extract_p.add_argument("topology", type=Path)
+     extract_p.add_argument("prefix", type=str)
+     extract_p.add_argument("n_clusters", type=int)
+     extract_p.add_argument("labels_file", type=Path)
+ 
++    pipeline_p = subparsers.add_parser("pipeline", help="Run simple analysis pipeline")
++    pipeline_p.add_argument("trajectory", type=Path)
++    pipeline_p.add_argument("topology", type=Path)
++    pipeline_p.add_argument("prefix", type=str)
++    pipeline_p.add_argument("--config", type=Path, default=None)
++    pipeline_p.add_argument("--n_clusters", type=int, default=10)
++
+     args = parser.parse_args()
+     if args.command == "hdbscan":
+         run_hdbscan_clustering(args.trajectory, args.topology, args.prefix)
+     elif args.command == "extract":
+         extract_top_clusters(
+             args.trajectory,
+             args.topology,
+             args.prefix,
+             args.n_clusters,
+             args.labels_file,
+         )
++    elif args.command == "pipeline":
++        pipeline = Pipeline(args.config)
++        pipeline.cluster_trajectory(
++            args.trajectory,
++            args.topology,
++            args.prefix,
++            args.n_clusters,
++        )
+ 
+ 
+ if __name__ == "__main__":  # pragma: no cover
+     main()
+diff --git a/analysis/pipeline.py b/analysis/pipeline.py
+index 1f21020707df9dd69a6ff3a329f3b4b952744edb..fa2eaef7e2fdd46ec5a6de3ec4208158cec1a323 100644
+--- a/analysis/pipeline.py
++++ b/analysis/pipeline.py
+@@ -1,46 +1,43 @@
+ """Pipeline utilities for running analysis steps."""
+ 
+ from __future__ import annotations
+ 
+ import logging
+-import subprocess
+ from pathlib import Path
+-from typing import Iterable
+ 
+ from .config import load_config
++from .clustering import extract_top_clusters, run_hdbscan_clustering
+ 
+ 
+ class Pipeline:
+     """Coordinate execution of analysis steps based on a configuration."""
+ 
+     def __init__(self, config_path: str | Path | None = None) -> None:
+         self.cfg = load_config(config_path)
+         self.analysis_dir = Path(self.cfg["analysis_dir"])
+-        self.script_path = Path(self.cfg["script_path"])
+-        self.conda_path = Path(self.cfg["conda_path"])
+-
+-    def run_commands(self, commands: Iterable[list[str]]) -> None:
+-        for cmd in commands:
+-            logging.info("Running %s", " ".join(cmd))
+-            subprocess.run(cmd, check=True)
++        # Paths to external tools are kept for backward compatibility but are
++        # no longer used directly by the refactored pipeline.
++        self.script_path = Path(self.cfg.get("script_path", "."))
++        self.conda_path = Path(self.cfg.get("conda_path", "."))
+ 
+     def mkdir(self, path: str | Path) -> None:
+         Path(path).mkdir(parents=True, exist_ok=True)
+ 
+     def setup_directories(self) -> None:
+         """Create the standard analysis directory layout."""
+         for sub in ["SCRATCH", "RMSD", "TRAJ", "RMSF", "CORR", "PCA", "START", "HDBSCAN", "AH", "HBONDS"]:
+             self.mkdir(self.analysis_dir / sub)
+ 
+-    def run_script(self, script_name: str, *args: str) -> list[str]:
+-        script = self.script_path / script_name
+-        return ["python", str(script), *args]
+-
+     def cluster_trajectory(self, traj: Path, top: Path, prefix: str, n_clusters: int) -> None:
+-        """Run HDBSCAN and extract clusters."""
++        """Run HDBSCAN and extract the most populated clusters."""
+         self.setup_directories()
+-        cmds = [
+-            self.run_script("cluster_HDBSCAN.py", str(traj), str(top), prefix),
+-            self.run_script("cluster_traj.py", str(traj), str(top), prefix, str(n_clusters), f"{prefix}_HDBSCAN_frame_clusters.txt"),
+-        ]
+-        self.run_commands(cmds)
++        prefix_path = self.analysis_dir / "HDBSCAN" / prefix
++        labels = run_hdbscan_clustering(traj, top, prefix_path)
++        extract_top_clusters(
++            traj,
++            top,
++            prefix_path,
++            n_clusters,
++            prefix_path.with_name(prefix_path.name + "_HDBSCAN_frame_clusters.txt"),
++            output_dir=self.analysis_dir / "HDBSCAN",
++        )
+diff --git a/tests/test_pipeline.py b/tests/test_pipeline.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ebc6e695a2365afe3a2c4c22aa7aff989edbf5dd
+--- /dev/null
++++ b/tests/test_pipeline.py
+@@ -0,0 +1,16 @@
++from pathlib import Path
++import numpy as np
++import mdtraj as md
++from analysis.pipeline import Pipeline
++
++from tests.test_clustering import _make_traj
++
++
++def test_pipeline_cluster(tmp_path):
++    traj_file, top_file = _make_traj(tmp_path)
++    cfg_file = tmp_path / "cfg.yaml"
++    cfg_file.write_text(f"analysis_dir: {tmp_path / 'ANALYSIS'}")
++    pipeline = Pipeline(cfg_file)
++    pipeline.cluster_trajectory(traj_file, top_file, 'prefix', 1)
++    files = list((tmp_path / 'ANALYSIS' / 'HDBSCAN').glob('prefix_cluster_*_median.pdb'))
++    assert files, "No median structure written"
+
